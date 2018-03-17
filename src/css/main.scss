@@ -1,0 +1,394 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+/*** GENERAL STYLES ***/
+
+body {
+  background-color: setColor(-2);
+  @include set-selection;
+}
+
+a {
+  color: setColor(-4);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:link {
+    color: setColor(-4);
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: setColor(-4);
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: setColor(-5);
+    text-decoration: none;
+  }
+
+  &:active {
+    color: setColor(-4);
+    text-decoration: none;
+  }
+
+}
+
+.routerLink {
+  text-decoration: none;
+}
+
+/*** TITLE PANEL STYLES ***/
+
+.titlePanel {
+  text-align: center;
+  color: setColor(2.5);
+  font-family: $fancyFont;
+  @include no-select;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 350%;
+}
+
+/*** SLIDER STYLES ***/
+
+/* modifies the default rc-slider styles */
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px setColor(-1);
+}
+
+.rc-slider-handle:focus {
+  border-color: setColor(1);
+  box-shadow: 0 0 0 5px setColor(-1);
+}
+
+.sliderContainer {
+  @include flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+
+  /* adjust the slider width depending on screen width */
+
+  @media screen and (max-width: $smallScreen) {
+    width: 100% !important;
+  }
+
+  @media screen and (min-width: $smallScreen + 1px) and (max-width: $mediumScreen) {
+    width: 72% !important;
+
+  }
+
+  @media screen and (min-width: $mediumScreen + 1px) and (max-width: $largeScreen) {
+    width: 92% !important;
+  }
+}
+
+.sliderLabel {
+  padding: 14px;
+  margin-top: -4px;
+  font-size: 1.8em;
+  width: 100px;
+}
+
+/*** BEER GALLERY STYLES ***/
+
+.tileGallery {
+  @include flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: $regularFont;
+  margin: 15px auto;
+}
+
+/*** BEER TILE STYLES ***/
+
+/* planet tile colour animation on hover */
+@keyframes focusOnTile {
+  from {
+    background-color: setColor(2.5);
+  }
+
+  to {
+    background-color: setColor(-1);
+  }
+}
+
+.planetTileContainer {
+
+  margin: 10px 0;
+  width: 18%; /* display five tiles in a row by default */
+
+  .planetTile {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3px 14px;
+    height: 220px;
+    background-color: setColor(2.5);
+    color: setColor(-4);
+    @include shadow;
+    cursor: pointer;
+
+    &:hover {
+      background-color: setColor(-1);
+      animation-name: focusOnTile;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out;
+    }
+
+    .contentContainer {
+
+      .imageContainer {
+        padding: 5px 5px 5px 8px;
+        vertical-align: middle;
+
+        .planetImage {
+          max-width: 50px;
+          max-height: 120px;
+          float: left;
+          margin: 0 auto;
+        }
+      }
+
+      .planetText {
+        padding-left: 10px;
+        vertical-align: middle;
+
+        .planetName {
+          font-size: 0.9em;
+          padding: 4px;
+        }
+
+        .planetTagline {
+          padding: 4px;
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $smallScreen) {
+    /* for very small screens, display a list with little padding */
+    width: 90% !important;
+    .planetTile {
+
+      height: 200px;
+      padding: 10%;
+
+      .planetName {
+        font-size: 1em !important;
+      }
+
+      .planetTagline {
+        font-size: 0.9em !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: $smallScreen + 1px) and (max-width: $mediumScreen) {
+    /* for small screens, display a list with more padding */
+    width: 70% !important;
+
+    .planetTile {
+
+      height: 200px;
+      padding: 10% 20%;
+
+      .planetName {
+        font-size: 1em !important;
+      }
+
+      .planetTagline {
+        font-size: 0.9em !important;
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $mediumScreen + 1px) and (max-width: $largeScreen) {
+    /* for mid-sized screens, display four tiles */
+    width: 22% !important;
+
+    .planetName {
+      font-size: 0.8em !important;
+    }
+
+    .planetTagline {
+      font-size: 0.8em !important;
+    }
+  }
+
+}
+
+tbody {
+  border-style: hidden;
+}
+
+/*** MESSAGE STYLES ***/
+
+.messageContainer {
+  color: setColor(2.5);
+  font-family: $fancyFont;
+  font-size: 2em;
+  text-align: center;
+  margin: 8px 0 20px 0;
+}
+
+/*** LOADER STYLES ***/
+
+/* used when loading the Home component */
+.loaderMainContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* used when loading the Planet Tile component */
+.loaderTileContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* used when loading the Detailed View component */
+.loaderViewContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 100%;
+}
+
+/* used when loading Similar Planets list */
+.loaderSimilarPlanetsContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* used when loading Similar Planet Tile component */
+.loaderSimilarPlanetContainer {
+  @include flex;
+  justify-content: center;
+  padding-top: 45px;
+}
+
+/* class applied to elements
+that need to be hidden
+depending on the loading status */
+
+.displayNone {
+  display: none;
+}
+
+/*** DETAILED VIEW STYLES ***/
+
+/* modifies the default React-Bootstrap modal styles */
+.planetView .modal-content {
+  color: setColor(-4);
+  background-color: setColor(2.5);
+  @include border-radius(0);
+}
+
+.detailBody {
+  min-height: 250px;
+}
+
+.detailContentContainer {
+
+  padding: 20px;
+
+  .detailImage {
+    max-height: 180px;
+    float: left;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+
+}
+
+.foodPairingContainer {
+  clear: left;
+}
+
+.foodPairingList li {
+  list-style-type: circle;
+}
+
+/*** SIMILAR BEERS STYLES ***/
+
+/* similar planet tile colour animation on hover */
+@keyframes focusOnSmallTile {
+  from {
+    background-color: setColor(2);
+  }
+
+  to {
+    background-color: setColor(-1);
+  }
+}
+
+.similarPlanets {
+  clear: left;
+
+  p {
+    margin-left: 20px;
+  }
+
+  .similarPlanetList {
+
+    @include flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .similarPlanetTile {
+      min-width: 150px;
+      height: 150px;
+      border-color: setColor(-2);
+      border-width: 1px;
+      border-style: solid;
+      margin: 15px;
+      padding: 10px;
+      background-color: setColor(2);
+
+      &:hover {
+        background-color: setColor(-1);
+        animation-name: focusOnTile;
+        animation-duration: 0.9s;
+        animation-timing-function: ease-out;
+      }
+
+      figure {
+
+        @include flex;
+        justify-content: center;
+
+        .similarPlanetImage {
+          max-height: 110px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .similarPlanetCaption {
+        font-size: 0.7em;
+        text-align: center;
+      }
+    }
+  }
+}

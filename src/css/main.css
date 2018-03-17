@@ -1,0 +1,356 @@
+/*** GENERAL STYLES ***/
+body {
+  background-color: #e8a70c; }
+  body ::-moz-selection {
+    background: #e8a70c;
+    color: #fcebc4; }
+  body ::selection {
+    background: #e8a70c;
+    color: #fcebc4; }
+
+a {
+  color: #876107;
+  text-decoration: none;
+  cursor: pointer; }
+  a:link {
+    color: #876107;
+    text-decoration: none; }
+  a:visited {
+    color: #876107;
+    text-decoration: none; }
+  a:hover {
+    color: #573e04;
+    text-decoration: none; }
+  a:active {
+    color: #876107;
+    text-decoration: none; }
+
+.routerLink {
+  text-decoration: none; }
+
+/*** TITLE PANEL STYLES ***/
+.titlePanel {
+  text-align: center;
+  color: #fdf3dc;
+  font-family: "Lobster", cursive;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 10px;
+  margin-bottom: 5px; }
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 350%; }
+
+/*** SLIDER STYLES ***/
+/* modifies the default rc-slider styles */
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px #f5bb32; }
+
+.rc-slider-handle:focus {
+  border-color: #f9db94;
+  box-shadow: 0 0 0 5px #f5bb32; }
+
+.sliderContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  /* adjust the slider width depending on screen width */ }
+  @media screen and (max-width: 480px) {
+    .sliderContainer {
+      width: 100% !important; } }
+  @media screen and (min-width: 481px) and (max-width: 920px) {
+    .sliderContainer {
+      width: 72% !important; } }
+  @media screen and (min-width: 921px) and (max-width: 1000px) {
+    .sliderContainer {
+      width: 92% !important; } }
+
+.sliderLabel {
+  padding: 14px;
+  margin-top: -4px;
+  font-size: 1.8em;
+  width: 100px; }
+
+/*** BEER GALLERY STYLES ***/
+.tileGallery {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: "Karla", sans-serif;
+  margin: 15px auto; }
+
+/*** BEER TILE STYLES ***/
+/* planet tile colour animation on hover */
+@keyframes focusOnTile {
+  from {
+    background-color: #fdf3dc; }
+  to {
+    background-color: #f5bb32; } }
+.planetTileContainer {
+  margin: 10px 0;
+  width: 18%;
+  /* display five tiles in a row by default */ }
+  .planetTileContainer .planetTile {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3px 14px;
+    height: 220px;
+    background-color: #fdf3dc;
+    color: #876107;
+    box-shadow: 4px 3px 10px #876107;
+    cursor: pointer; }
+    .planetTileContainer .planetTile:hover {
+      background-color: #f5bb32;
+      animation-name: focusOnTile;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out; }
+    .planetTileContainer .planetTile .contentContainer .imageContainer {
+      padding: 5px 5px 5px 8px;
+      vertical-align: middle; }
+      .planetTileContainer .planetTile .contentContainer .imageContainer .planetImage {
+        max-width: 50px;
+        max-height: 120px;
+        float: left;
+        margin: 0 auto; }
+    .planetTileContainer .planetTile .contentContainer .planetText {
+      padding-left: 10px;
+      vertical-align: middle; }
+      .planetTileContainer .planetTile .contentContainer .planetText .planetName {
+        font-size: 0.9em;
+        padding: 4px; }
+      .planetTileContainer .planetTile .contentContainer .planetText .planetTagline {
+        padding: 4px;
+        font-size: 0.8em; }
+  @media screen and (max-width: 480px) {
+    .planetTileContainer {
+      /* for very small screens, display a list with little padding */
+      width: 90% !important; }
+      .planetTileContainer .planetTile {
+        height: 200px;
+        padding: 10%; }
+        .planetTileContainer .planetTile .planetName {
+          font-size: 1em !important; }
+        .planetTileContainer .planetTile .planetTagline {
+          font-size: 0.9em !important; } }
+  @media screen and (min-width: 481px) and (max-width: 920px) {
+    .planetTileContainer {
+      /* for small screens, display a list with more padding */
+      width: 70% !important; }
+      .planetTileContainer .planetTile {
+        height: 200px;
+        padding: 10% 20%; }
+        .planetTileContainer .planetTile .planetName {
+          font-size: 1em !important; }
+        .planetTileContainer .planetTile .planetTagline {
+          font-size: 0.9em !important; } }
+  @media screen and (min-width: 921px) and (max-width: 1000px) {
+    .planetTileContainer {
+      /* for mid-sized screens, display four tiles */
+      width: 22% !important; }
+      .planetTileContainer .planetName {
+        font-size: 0.8em !important; }
+      .planetTileContainer .planetTagline {
+        font-size: 0.8em !important; } }
+
+tbody {
+  border-style: hidden; }
+
+/*** MESSAGE STYLES ***/
+.messageContainer {
+  color: #fdf3dc;
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  text-align: center;
+  margin: 8px 0 20px 0; }
+
+/*** LOADER STYLES ***/
+/* used when loading the Home component */
+.loaderMainContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+/* used when loading the Planet Tile component */
+.loaderTileContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%; }
+
+/* used when loading the Detailed View component */
+.loaderViewContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 100%; }
+
+/* used when loading Similar Planets list */
+.loaderSimilarPlanetsContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0; }
+
+/* used when loading Similar Planet Tile component */
+.loaderSimilarPlanetContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  justify-content: center;
+  padding-top: 45px; }
+
+/* class applied to elements
+that need to be hidden
+depending on the loading status */
+.displayNone {
+  display: none; }
+
+/*** DETAILED VIEW STYLES ***/
+/* modifies the default React-Bootstrap modal styles */
+.planetView .modal-content {
+  color: #876107;
+  background-color: #fdf3dc;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
+
+.detailBody {
+  min-height: 250px; }
+
+.detailContentContainer {
+  padding: 20px; }
+  .detailContentContainer .detailImage {
+    max-height: 180px;
+    float: left;
+    padding-right: 30px;
+    padding-bottom: 30px; }
+
+.foodPairingContainer {
+  clear: left; }
+
+.foodPairingList li {
+  list-style-type: circle; }
+
+/*** SIMILAR BEERS STYLES ***/
+/* similar planet tile colour animation on hover */
+@keyframes focusOnSmallTile {
+  from {
+    background-color: #fcebc4; }
+  to {
+    background-color: #f5bb32; } }
+.similarPlanets {
+  clear: left; }
+  .similarPlanets p {
+    margin-left: 20px; }
+  .similarPlanets .similarPlanetList {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%; }
+    .similarPlanets .similarPlanetList .similarPlanetTile {
+      min-width: 150px;
+      height: 150px;
+      border-color: #e8a70c;
+      border-width: 1px;
+      border-style: solid;
+      margin: 15px;
+      padding: 10px;
+      background-color: #fcebc4; }
+      .similarPlanets .similarPlanetList .similarPlanetTile:hover {
+        background-color: #f5bb32;
+        animation-name: focusOnTile;
+        animation-duration: 0.9s;
+        animation-timing-function: ease-out; }
+      .similarPlanets .similarPlanetList .similarPlanetTile figure {
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        justify-content: center; }
+        .similarPlanets .similarPlanetList .similarPlanetTile figure .similarPlanetImage {
+          max-height: 110px;
+          margin-bottom: 10px; }
+      .similarPlanets .similarPlanetList .similarPlanetTile .similarPlanetCaption {
+        font-size: 0.7em;
+        text-align: center; }
+
+/*# sourceMappingURL=main.css.map */
