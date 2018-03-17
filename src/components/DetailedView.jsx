@@ -81,9 +81,9 @@ export class DetailedView extends Component {
             image_url, //planet image url
             food_pairing, //food pairing suggestions
             brewers_tips, //brewer’s tips
-            mass, //planet EBC value
-            temperature, //planet TEMPERATURE value
-            density //planet DENSITY value
+            mass, //planet mass value
+            temperature, //planet temperature value
+            density //planet density value
         });
     }
 
@@ -210,7 +210,7 @@ export class DetailedView extends Component {
             secondaryInfoClass = "displayNone";
         }
 
-        //Wikipedia links explaining the meaning of EBC, TEMPERATURE and DENSITY
+        //Wikipedia links explaining the meaning of mass, temperature and density
         const massLink = "https://en.wikipedia.org/";
         const temperatureLink = "https://en.wikipedia.org/";
         const densityLink = "https://en.wikipedia.org/";
@@ -254,20 +254,20 @@ export class DetailedView extends Component {
                             <p className={secondaryInfoClass}>
                                 <strong>
                                     <a href={massLink} target="_blank" rel={rel}>
-                                        EBC:&nbsp;
+                                        mass:&nbsp;
                                     </a>
                                 </strong>
                                 {this.state.mass} &#124;
                                 <span> </span>
                                 <strong>
                                     <a href={temperatureLink} target="_blank" rel={rel}>
-                                        TEMPERATURE:&nbsp;
+                                        temperature:&nbsp;
                                     </a>
                                 </strong>
                                 {this.state.temperature} &#124;
                                 <span> </span>
                                 <strong><a href={densityLink} target="_blank" rel={rel}>
-                                    DENSITY:&nbsp;
+                                    density:&nbsp;
                                 </a>
                                 </strong>{this.state.density}
                             </p>

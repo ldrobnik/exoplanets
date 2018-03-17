@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import Options from "./Options"; //component containing sliders adjusting the EBC, TEMPERATURE and DENSITY values
+import Options from "./Options"; //component containing sliders adjusting the mass, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 import {
@@ -63,10 +63,10 @@ export class Home extends Component {
         //fetch data only if API requests are allowed (dataReload is true)
         if (this.props.dataReload === true) {
 
-            // get the EBC, TEMPERATURE and DENSITY min and max values as specified by the sliders
+            // get the mass, temperature and density min and max values as specified by the sliders
             const {mass, temperature, density} = this.props;
 
-            //based on the above values, set EBC, TEMPERATURE and DENSITY min and max values to be used to fetch planet data
+            //based on the above values, set mass, temperature and density min and max values to be used to fetch planet data
             const massMin = mass.min;
             const massMax = (mass.max === 60) ? 2000 : mass.max; //if the slider is set to maximum, account for all planets with mass over 60
 
@@ -85,16 +85,16 @@ export class Home extends Component {
 
             for (let i = 1; i <= numberOfRequests; i++) {
 
-                //if the EBC slider is not in the default position, add an EBC range to the request
+                //if the mass slider is not in the default position, add a mass range to the request
                 let massRange = ((this.props.mass.min === 0) && (this.props.mass.max === 60)) ? "" : `&mass_gt=${massMin}&mass_lt=${massMax}`;
 
-                //if the TEMPERATURE slider is not in the default position, add an TEMPERATURE range to the request
+                //if the temperature slider is not in the default position, add a temperature range to the request
                 let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}`;
 
-                //if the DENSITY slider is not in the default position, add an DENSITY range to the request
+                //if the density slider is not in the default position, add a density range to the request
                 let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&density_gt=${densityMin}&density_lt=${densityMax}`;
 
-                //URL addresses to get planets from a given page, within specified EBC, TEMPERATURE and DENSITY ranges
+                //URL addresses to get planets from a given page, within specified mass, temperature and density ranges
                 urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${massRange}${temperatureRange}${densityRange}`;
 
             }
