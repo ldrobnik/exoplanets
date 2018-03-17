@@ -121,7 +121,7 @@ export class PlanetTile extends Component {
 
                         <div className={loaderClass}>
                             <ScaleLoader
-                                color={"#F7CB63"}
+                                color={"#838383"}
                                 loading={this.state.loading}
                             />
                         </div>

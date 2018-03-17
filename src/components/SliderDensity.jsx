@@ -50,17 +50,17 @@ export class SliderDensity extends Component {
                    max={this.state.max}
                    step={3}
                    onChange={this.onSliderChange}
-                   trackStyle={[{backgroundColor: "#f9db94"}]}
+                   trackStyle={[{backgroundColor: "#B6B6B6"}]}
                    handleStyle={[
                        {
-                           backgroundColor: "#f9db94",
-                           borderColor: "#f9db94"
+                           backgroundColor: "#B6B6B6",
+                           borderColor: "#B6B6B6"
                        },
                        {
-                           backgroundColor: "#f9db94",
-                           borderColor: "#f9db94"
+                           backgroundColor: "#B6B6B6",
+                           borderColor: "#B6B6B6"
                        }]}
-                   railStyle={{backgroundColor: "#fdf3dc"}}
+                   railStyle={{backgroundColor: "#E3E3E3"}}
                    pushable
             />
         );
