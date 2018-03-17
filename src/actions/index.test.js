@@ -1,5 +1,5 @@
 import {
-    SET_EBC,
+    SET_MASS,
     SET_IBU,
     SET_ABV,
     SET_PLANET_DATA,
@@ -17,18 +17,18 @@ describe("actions", () => {
     const bool = false;
     const number = 20;
 
-    it("creates an action to change the EBC min and max values", () => {
+    it("creates an action to change the mass min and max values", () => {
 
         const expectedAction = {
-            type: SET_EBC,
+            type: SET_MASS,
             min,
             max
         };
 
-        expect(actions.setEbc(min, max)).toEqual(expectedAction);
+        expect(actions.setMass(min, max)).toEqual(expectedAction);
     });
 
-    it("creates an action to change the IBU min and max values", () => {
+    it("creates an action to change the temperature min and max values", () => {
 
         const expectedAction = {
             type: SET_IBU,
@@ -39,7 +39,7 @@ describe("actions", () => {
         expect(actions.setIbu(min, max)).toEqual(expectedAction);
     });
 
-    it("creates an action to change the ABV min and max values", () => {
+    it("creates an action to change the density min and max values", () => {
 
         const expectedAction = {
             type: SET_ABV,

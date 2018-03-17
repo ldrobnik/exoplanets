@@ -1,5 +1,5 @@
 import {
-    SET_EBC,
+    SET_MASS,
     SET_IBU,
     SET_ABV,
     SET_PLANET_DATA,
@@ -8,17 +8,17 @@ import {
     SET_PLANETS_DISPLAYED
 } from "../constants";
 
-//changes the EBC min and max values
-export function setEbc(min, max) {
+//changes the mass min and max values
+export function setMass(min, max) {
     const action = {
-        type: SET_EBC,
+        type: SET_MASS,
         min,
         max
     };
     return action;
 }
 
-//changes the IBU min and max values
+//changes the temperature min and max values
 export function setIbu(min, max) {
     const action = {
         type: SET_IBU,
@@ -28,7 +28,7 @@ export function setIbu(min, max) {
     return action;
 }
 
-//changes the ABV min and max values
+//changes the density min and max values
 export function setAbv(min, max) {
     const action = {
         type: SET_ABV,

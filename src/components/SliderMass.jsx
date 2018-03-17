@@ -3,25 +3,25 @@ import {connect} from "react-redux";
 import {Range} from "rc-slider"; //range slider
 import "rc-slider/assets/index.css"; //slider stylesheet
 import {
-    setEbc, //sets EBV min and max values
+    setMass, //sets EBV min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
 } from "../actions";
 
-export class SliderEbc extends Component {
+export class SliderMass extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             min: 0,
             max: 60,
-            ebc: {min: 0, max: 60},
+            mass: {min: 0, max: 60},
         };
     }
 
     //sets the min and max ABV values
-    updateEbc(min, max) {
-        this.props.setEbc(min, max);
+    updateMass(min, max) {
+        this.props.setMass(min, max);
     }
 
     //specifies whether API requests are allowed
@@ -39,7 +39,7 @@ export class SliderEbc extends Component {
     //specifies what happens when the slider position changes
     onSliderChange = (value) => {
         this.updatePlanetsToDisplay(20); //set the default number of planets to display
-        this.updateEbc(value[0], value[1]); //set EBC range
+        this.updateMass(value[0], value[1]); //set mass range
         this.updateDataReload(true); //allow reloading of data
     };
 
@@ -69,18 +69,18 @@ export class SliderEbc extends Component {
 
 function mapStateToProps(state) {
     const {
-        ebc, //EBC min and max values
+        mass, //mass min and max values
         dataReload //specifies whether API requests are allowed
     } = state;
 
     return {
-        ebc,
+        mass,
         dataReload
     }
 }
 
 export default connect(mapStateToProps, {
-    setEbc, //sets EBV min and max values
+    setMass, //sets EBV min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the number of planets that need to be displayed
-})(SliderEbc);
+})(SliderMass);

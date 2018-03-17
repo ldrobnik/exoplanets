@@ -64,11 +64,11 @@ export class Home extends Component {
         if (this.props.dataReload === true) {
 
             // get the EBC, IBU and ABV min and max values as specified by the sliders
-            const {ebc, ibu, abv} = this.props;
+            const {mass, ibu, abv} = this.props;
 
             //based on the above values, set EBC, IBU and ABV min and max values to be used to fetch planet data
-            const ebcMin = ebc.min;
-            const ebcMax = (ebc.max === 60) ? 2000 : ebc.max; //if the slider is set to maximum, account for all planets with ebc over 60
+            const massMin = mass.min;
+            const massMax = (mass.max === 60) ? 2000 : mass.max; //if the slider is set to maximum, account for all planets with mass over 60
 
             const ibuMin = ibu.min;
             const ibuMax = (ibu.max === 120) ? 2000 : ibu.max; //if the slider is set to maximum, account for all planets with ibu over 150
@@ -86,7 +86,7 @@ export class Home extends Component {
             for (let i = 1; i <= numberOfRequests; i++) {
 
                 //if the EBC slider is not in the default position, add an EBC range to the request
-                let ebcRange = ((this.props.ebc.min === 0) && (this.props.ebc.max === 60)) ? "" : `&ebc_gt=${ebcMin}&ebc_lt=${ebcMax}`;
+                let massRange = ((this.props.mass.min === 0) && (this.props.mass.max === 60)) ? "" : `&mass_gt=${massMin}&mass_lt=${massMax}`;
 
                 //if the IBU slider is not in the default position, add an IBU range to the request
                 let ibuRange = ((this.props.ibu.min === 0) && (this.props.ibu.max === 120)) ? "" : `&ibu_gt=${ibuMin}&ibu_lt=${ibuMax}`;
@@ -95,7 +95,7 @@ export class Home extends Component {
                 let abvRange = ((this.props.abv.min === 0) && (this.props.abv.max === 12)) ? "" : `&abv_gt=${abvMin}&abv_lt=${abvMax}`;
 
                 //URL addresses to get planets from a given page, within specified EBC, IBU and ABV ranges
-                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${ebcRange}${ibuRange}${abvRange}`;
+                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${massRange}${ibuRange}${abvRange}`;
 
             }
 
@@ -250,9 +250,9 @@ export class Home extends Component {
 function mapStateToProps(state) {
 
     const {
-        ebc, //EBC min and max values
-        ibu, //IBU min and max values
-        abv, //ABV min and max values
+        mass, //mass min and max values
+        ibu, //temperature min and max values
+        abv, //density min and max values
         planetData, //planet details
         dataReload, //specifies whether API requests are allowed
         planetsToDisplay, //number of planets to be displayed
@@ -260,7 +260,7 @@ function mapStateToProps(state) {
     } = state;
 
     return {
-        ebc,
+        mass,
         ibu,
         abv,
         planetData,

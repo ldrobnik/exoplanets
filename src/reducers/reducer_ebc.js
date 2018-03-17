@@ -1,21 +1,21 @@
-import {SET_EBC} from "../constants";
+import {SET_MASS} from "../constants";
 
 //default min and max values
-let ebc = {
+let mass = {
     min: 0,
     max: 60
 };
 
-//reducer for changing the EBC min and max values
-export default (state = ebc, action) => {
+//reducer for changing the mass min and max values
+export default (state = mass, action) => {
     switch (action.type) {
-        case SET_EBC:
+        case SET_MASS:
             const {min, max} = action;
-            ebc = {
+            mass = {
                 min,
                 max
             };
-            return ebc;
+            return mass;
         default:
             return state;
     }

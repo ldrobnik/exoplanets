@@ -1,4 +1,4 @@
-import {SET_ABV} from "../constants";
+import {SET_DENSITY} from "../constants";
 
 //default min and max values
 let abv = {
@@ -6,7 +6,7 @@ let abv = {
     max: 12
 };
 
-//reducer for changing the ABV min and max values
+//reducer for changing the density min and max values
 export default (state = abv, action) => {
     switch (action.type) {
         case SET_ABV:

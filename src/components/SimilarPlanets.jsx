@@ -16,25 +16,25 @@ export class SimilarPlanets extends Component {
     }
 
 
-    //finds planets with similar EBC, IBU and ABV values
+    //finds planets with similar mass, temperature and density values
     getSimilarPlanets() {
 
-        //margins of similarity for EBC, IBU and ABV
-        const ebcMargin = 15;
+        //margins of similarity for mass, temperature and density
+        const massMargin = 15;
         const ibuMargin = 15;
         const abvMargin = 5;
 
-        //take EBC, IBU and ABV values from the props
-        const {ebc, ibu, abv} = this.props;
+        //take mass, temperature and density values from the props
+        const {mass, ibu, abv} = this.props;
 
         //convert strings to integers
-        const ebcVal = Math.round(Number(ebc));
+        const massVal = Math.round(Number(mass));
         const ibuVal = Math.round(Number(ibu));
         const abvVal = Math.round(Number(abv));
 
-        //set min and max values of EBC, IBU and ABV
-        const ebcMin = (ebcVal > ebcMargin) ? ebcVal - ebcMargin : 0; //so that the value is not below 0
-        const ebcMax = ebcVal + ebcMargin;
+        //set min and max values of mass, temperature and density
+        const massMin = (massVal > massMargin) ? massVal - massMargin : 0; //so that the value is not below 0
+        const massMax = massVal + massMargin;
         const ibuMin = (ibuVal > ibuMargin) ? ibuVal - ibuMargin : 0; //so that the value is not below 0
         const ibuMax = ibuVal + ibuMargin;
         const abvMin = (abvVal > abvMargin) ? abvVal - abvMargin : 0; //so that the value is not below 0
@@ -42,11 +42,11 @@ export class SimilarPlanets extends Component {
 
 
 
-        let ebcRange = (ebc !== undefined) ? `&ebc_gt=${ebcMin}&ebc_lt=${ebcMax}` : ""; //if EBC is not undefined, add an EBC range to the request
-        let ibuRange = (ibu !== undefined) ? `&ibu_gt=${ibuMin}&ibu_lt=${ibuMax}` : ""; //if IBU is not undefined, add an IBU range to the request
-        let abvRange = (abv !== undefined) ? `&abv_gt=${abvMin}&abv_lt=${abvMax}` : ""; //if ABV is not undefined, add an ABV range to the request
+        let massRange = (mass !== undefined) ? `&mass_gt=${massMin}&mass_lt=${massMax}` : ""; //if mass is not undefined, add a mass range to the request
+        let ibuRange = (ibu !== undefined) ? `&ibu_gt=${ibuMin}&ibu_lt=${ibuMax}` : ""; //if temperature is not undefined, add a temperature range to the request
+        let abvRange = (abv !== undefined) ? `&abv_gt=${abvMin}&abv_lt=${abvMax}` : ""; //if density is not undefined, add a density range to the request
 
-        const FETCH_URL = `${BASE_URL}?page=1&per_page=20${ebcRange}${ibuRange}${abvRange}`; //URL address to get planets of in the specified EBC, IBU and ABV ranges
+        const FETCH_URL = `${BASE_URL}?page=1&per_page=20${massRange}${ibuRange}${abvRange}`; //URL address to get planets of in the specified mass, temperature and density ranges
 
         //fetch planet data from the API
         fetch(FETCH_URL, {
