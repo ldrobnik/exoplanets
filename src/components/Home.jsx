@@ -233,7 +233,7 @@ export class Home extends Component {
         return (
             <Grid>
                 <Row className="titlePanel">
-                    <h1>You like your exoplanets&hellip;</h1>
+                    <h1>you like your exoplanets&hellip;</h1>
                     <Options />
                 </Row>
                 <Row>
