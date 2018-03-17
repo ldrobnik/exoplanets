@@ -219,8 +219,6 @@ export class Home extends Component {
 
     render() {
 
-        console.log(BASE_URL);
-
         if (this.state.loading) {
             return (
                 <div className="loaderMainContainer">
