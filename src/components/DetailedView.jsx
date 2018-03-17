@@ -25,8 +25,8 @@ export class DetailedView extends Component {
             food_pairing: [], //food pairing suggestions
             brewers_tips: "", //brewer’s tips
             mass: 0, //planet mass value
-            ibu: 0, //planet temperature value
-            abv: 0 //planet density value
+            temperature: 0, //planet temperature value
+            density: 0 //planet density value
         };
     }
 
@@ -73,7 +73,7 @@ export class DetailedView extends Component {
     }
 
     //updates the state with all the details
-    setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, ibu, abv) {
+    setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density) {
         this.setState({
             name, //planetn ame
             tagline, //planet tagline
@@ -82,8 +82,8 @@ export class DetailedView extends Component {
             food_pairing, //food pairing suggestions
             brewers_tips, //brewer’s tips
             mass, //planet EBC value
-            ibu, //planet IBU value
-            abv //planet ABV value
+            temperature, //planet TEMPERATURE value
+            density //planet DENSITY value
         });
     }
 
@@ -118,10 +118,10 @@ export class DetailedView extends Component {
         if (idInPlanetData !== undefined) {
 
             //if the planet is already loaded, take all the details from memory
-            let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, ibu, abv} = this.props.planetData[idInPlanetData];
+            let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density} = this.props.planetData[idInPlanetData];
 
             //update the detailed view data
-            this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, ibu, abv);
+            this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density);
 
         } else {
 
@@ -140,10 +140,10 @@ export class DetailedView extends Component {
                     if (planetDetails[0] !== undefined) {
 
                         //get planet details from the single-item array containing the details of the requested planet
-                        let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, ibu, abv} = planetDetails[0];
+                        let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density} = planetDetails[0];
 
                         //update planet details with data fetched from the API
-                        this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, ibu, abv);
+                        this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density);
                     }
                 })
                 .catch(() => {
@@ -210,10 +210,10 @@ export class DetailedView extends Component {
             secondaryInfoClass = "displayNone";
         }
 
-        //Wikipedia links explaining the meaning of EBC, IBU and ABV
+        //Wikipedia links explaining the meaning of EBC, TEMPERATURE and DENSITY
         const massLink = "https://en.wikipedia.org/";
-        const ibuLink = "https://en.wikipedia.org/";
-        const abvLink = "https://en.wikipedia.org/";
+        const temperatureLink = "https://en.wikipedia.org/";
+        const densityLink = "https://en.wikipedia.org/";
 
         //rel parameter - precaution against reverse tabnabbing
         const rel = "noopener noreferrer";
@@ -260,16 +260,16 @@ export class DetailedView extends Component {
                                 {this.state.mass} &#124;
                                 <span> </span>
                                 <strong>
-                                    <a href={ibuLink} target="_blank" rel={rel}>
-                                        IBU:&nbsp;
+                                    <a href={temperatureLink} target="_blank" rel={rel}>
+                                        TEMPERATURE:&nbsp;
                                     </a>
                                 </strong>
-                                {this.state.ibu} &#124;
+                                {this.state.temperature} &#124;
                                 <span> </span>
-                                <strong><a href={abvLink} target="_blank" rel={rel}>
-                                    ABV:&nbsp;
+                                <strong><a href={densityLink} target="_blank" rel={rel}>
+                                    DENSITY:&nbsp;
                                 </a>
-                                </strong>{this.state.abv}
+                                </strong>{this.state.density}
                             </p>
                             <p>{this.state.description}</p>
                             <p className={secondaryInfoClass}><strong>Brewer&#8217;s
@@ -291,8 +291,8 @@ export class DetailedView extends Component {
                             <SimilarPlanets
                                 id={this.props.match.params.id}
                                 mass={this.state.mass}
-                                ibu={this.state.ibu}
-                                abv={this.state.abv}
+                                temperature={this.state.temperature}
+                                density={this.state.density}
                             />
                         </div>
                     </Modal.Body>

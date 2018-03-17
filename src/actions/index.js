@@ -1,7 +1,7 @@
 import {
     SET_MASS,
-    SET_IBU,
-    SET_ABV,
+    SET_TEMPERATURE,
+    SET_DENSITY,
     SET_PLANET_DATA,
     SET_DATA_RELOAD,
     SET_PLANETS_TO_DISPLAY,
@@ -19,9 +19,9 @@ export function setMass(min, max) {
 }
 
 //changes the temperature min and max values
-export function setIbu(min, max) {
+export function setTemperature(min, max) {
     const action = {
-        type: SET_IBU,
+        type: SET_TEMPERATURE,
         min,
         max
     };
@@ -29,9 +29,9 @@ export function setIbu(min, max) {
 }
 
 //changes the density min and max values
-export function setAbv(min, max) {
+export function setDensity(min, max) {
     const action = {
-        type: SET_ABV,
+        type: SET_DENSITY,
         min,
         max
     };

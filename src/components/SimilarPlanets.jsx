@@ -21,32 +21,32 @@ export class SimilarPlanets extends Component {
 
         //margins of similarity for mass, temperature and density
         const massMargin = 15;
-        const ibuMargin = 15;
-        const abvMargin = 5;
+        const temperatureMargin = 15;
+        const densityMargin = 5;
 
         //take mass, temperature and density values from the props
-        const {mass, ibu, abv} = this.props;
+        const {mass, temperature, density} = this.props;
 
         //convert strings to integers
         const massVal = Math.round(Number(mass));
-        const ibuVal = Math.round(Number(ibu));
-        const abvVal = Math.round(Number(abv));
+        const temperatureVal = Math.round(Number(temperature));
+        const densityVal = Math.round(Number(density));
 
         //set min and max values of mass, temperature and density
         const massMin = (massVal > massMargin) ? massVal - massMargin : 0; //so that the value is not below 0
         const massMax = massVal + massMargin;
-        const ibuMin = (ibuVal > ibuMargin) ? ibuVal - ibuMargin : 0; //so that the value is not below 0
-        const ibuMax = ibuVal + ibuMargin;
-        const abvMin = (abvVal > abvMargin) ? abvVal - abvMargin : 0; //so that the value is not below 0
-        const abvMax = abvVal + abvMargin;
+        const temperatureMin = (temperatureVal > temperatureMargin) ? temperatureVal - temperatureMargin : 0; //so that the value is not below 0
+        const temperatureMax = temperatureVal + temperatureMargin;
+        const densityMin = (densityVal > densityMargin) ? densityVal - densityMargin : 0; //so that the value is not below 0
+        const densityMax = densityVal + densityMargin;
 
 
 
         let massRange = (mass !== undefined) ? `&mass_gt=${massMin}&mass_lt=${massMax}` : ""; //if mass is not undefined, add a mass range to the request
-        let ibuRange = (ibu !== undefined) ? `&ibu_gt=${ibuMin}&ibu_lt=${ibuMax}` : ""; //if temperature is not undefined, add a temperature range to the request
-        let abvRange = (abv !== undefined) ? `&abv_gt=${abvMin}&abv_lt=${abvMax}` : ""; //if density is not undefined, add a density range to the request
+        let temperatureRange = (temperature !== undefined) ? `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}` : ""; //if temperature is not undefined, add a temperature range to the request
+        let densityRange = (density !== undefined) ? `&density_gt=${densityMin}&density_lt=${densityMax}` : ""; //if density is not undefined, add a density range to the request
 
-        const FETCH_URL = `${BASE_URL}?page=1&per_page=20${massRange}${ibuRange}${abvRange}`; //URL address to get planets of in the specified mass, temperature and density ranges
+        const FETCH_URL = `${BASE_URL}?page=1&per_page=20${massRange}${temperatureRange}${densityRange}`; //URL address to get planets of in the specified mass, temperature and density ranges
 
         //fetch planet data from the API
         fetch(FETCH_URL, {

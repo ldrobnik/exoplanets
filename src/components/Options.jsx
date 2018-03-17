@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import SliderMass from "./SliderMass"; //component containing the EBC slider
-import SliderIbu from "./SliderIbu"; //component containing the IBU slider
-import SliderAbv from "./SliderAbv"; //component containing the ABV slider
+import SliderTemperature from "./SliderTemperature"; //component containing the TEMPERATURE slider
+import SliderDensity from "./SliderDensity"; //component containing the DENSITY slider
 
 export class Options extends Component {
 
@@ -15,12 +15,12 @@ export class Options extends Component {
                 </div>
                 <div className="sliderContainer">
                     <div className="sliderLabel">cold</div>
-                    <SliderIbu />
+                    <SliderTemperature />
                     <div className="sliderLabel">hot</div>
                 </div>
                 <div className="sliderContainer">
                     <div className="sliderLabel">puffy</div>
-                    <SliderAbv />
+                    <SliderDensity />
                     <div className="sliderLabel">solid</div>
                 </div>
             </div>

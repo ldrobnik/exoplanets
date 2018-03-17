@@ -1,15 +1,15 @@
 import rootReducer from "./index";
 import mass from "./reducer_mass"; //reducer for changing the mass min and max values
-import ibu from "./reducer_ibu"; //reducer for changing the temperature min and max values
-import abv from "./reducer_abv"; //reducer for changing the density min and max values
+import temperature from "./reducer_temperature"; //reducer for changing the temperature min and max values
+import density from "./reducer_density"; //reducer for changing the density min and max values
 import planetData from "./reducer_planet_data"; //reducer for updating info about planets
 import dataReload from "./reducer_data_reload"; //reducer for enabling or disabling API requests
 import planetsToDisplay from "./reducer_planets_to_display"; //reducer for changing the number of planets that can be displayed
 import planetsDisplayed from "./reducer_planets_displayed"; //reducer for changing the number of planets already displayed
 import {
     SET_MASS,
-    SET_IBU,
-    SET_ABV,
+    SET_TEMPERATURE,
+    SET_DENSITY,
     SET_BEER_DATA,
     SET_DATA_RELOAD,
     SET_BEERS_TO_DISPLAY,
@@ -27,13 +27,13 @@ describe("root reducer", () => {
 
     it("returns initial state", () => {
         expect(rootReducer({}, {})).toEqual({
-            "abv": {"max": 12, "min": 0},
+            "density": {"max": 12, "min": 0},
             "planetData": [],
             "planetsDisplayed": 0,
             "planetsToDisplay": 20,
             "dataReload": true,
             "mass": {"max": 60, "min": 0},
-            "ibu": {"max": 120, "min": 0}
+            "temperature": {"max": 120, "min": 0}
         });
     });
 });
@@ -53,7 +53,7 @@ describe("temperature reducer", () => {
 
     it("changes the temperature min and max values", () => {
 
-        expect(ibu({}, {type: SET_IBU, min, max})).toEqual({min, max});
+        expect(temperature({}, {type: SET_TEMPERATURE, min, max})).toEqual({min, max});
 
     });
 });
@@ -63,7 +63,7 @@ describe("density reducer", () => {
 
     it("changes the density min and max values", () => {
 
-        expect(abv({}, {type: SET_ABV, min, max})).toEqual({min, max});
+        expect(density({}, {type: SET_DENSITY, min, max})).toEqual({min, max});
 
     });
 });

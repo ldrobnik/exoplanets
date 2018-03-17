@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import Options from "./Options"; //component containing sliders adjusting the EBC, IBU and ABV values
+import Options from "./Options"; //component containing sliders adjusting the EBC, TEMPERATURE and DENSITY values
 import Planets from "./Planets"; //component containing the list of planets
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 import {
@@ -63,18 +63,18 @@ export class Home extends Component {
         //fetch data only if API requests are allowed (dataReload is true)
         if (this.props.dataReload === true) {
 
-            // get the EBC, IBU and ABV min and max values as specified by the sliders
-            const {mass, ibu, abv} = this.props;
+            // get the EBC, TEMPERATURE and DENSITY min and max values as specified by the sliders
+            const {mass, temperature, density} = this.props;
 
-            //based on the above values, set EBC, IBU and ABV min and max values to be used to fetch planet data
+            //based on the above values, set EBC, TEMPERATURE and DENSITY min and max values to be used to fetch planet data
             const massMin = mass.min;
             const massMax = (mass.max === 60) ? 2000 : mass.max; //if the slider is set to maximum, account for all planets with mass over 60
 
-            const ibuMin = ibu.min;
-            const ibuMax = (ibu.max === 120) ? 2000 : ibu.max; //if the slider is set to maximum, account for all planets with ibu over 150
+            const temperatureMin = temperature.min;
+            const temperatureMax = (temperature.max === 120) ? 2000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over 150
 
-            const abvMin = abv.min;
-            const abvMax = (abv.max === 12) ? 2000 : abv.max; //if the slider is set to maximum, account for all planets with abv over 20
+            const densityMin = density.min;
+            const densityMax = (density.max === 12) ? 2000 : density.max; //if the slider is set to maximum, account for all planets with density over 20
 
             // const BASE_URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=json"; //basic URL address
 
@@ -88,14 +88,14 @@ export class Home extends Component {
                 //if the EBC slider is not in the default position, add an EBC range to the request
                 let massRange = ((this.props.mass.min === 0) && (this.props.mass.max === 60)) ? "" : `&mass_gt=${massMin}&mass_lt=${massMax}`;
 
-                //if the IBU slider is not in the default position, add an IBU range to the request
-                let ibuRange = ((this.props.ibu.min === 0) && (this.props.ibu.max === 120)) ? "" : `&ibu_gt=${ibuMin}&ibu_lt=${ibuMax}`;
+                //if the TEMPERATURE slider is not in the default position, add an TEMPERATURE range to the request
+                let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}`;
 
-                //if the ABV slider is not in the default position, add an ABV range to the request
-                let abvRange = ((this.props.abv.min === 0) && (this.props.abv.max === 12)) ? "" : `&abv_gt=${abvMin}&abv_lt=${abvMax}`;
+                //if the DENSITY slider is not in the default position, add an DENSITY range to the request
+                let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&density_gt=${densityMin}&density_lt=${densityMax}`;
 
-                //URL addresses to get planets from a given page, within specified EBC, IBU and ABV ranges
-                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${massRange}${ibuRange}${abvRange}`;
+                //URL addresses to get planets from a given page, within specified EBC, TEMPERATURE and DENSITY ranges
+                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${massRange}${temperatureRange}${densityRange}`;
 
             }
 
@@ -251,8 +251,8 @@ function mapStateToProps(state) {
 
     const {
         mass, //mass min and max values
-        ibu, //temperature min and max values
-        abv, //density min and max values
+        temperature, //temperature min and max values
+        density, //density min and max values
         planetData, //planet details
         dataReload, //specifies whether API requests are allowed
         planetsToDisplay, //number of planets to be displayed
@@ -261,8 +261,8 @@ function mapStateToProps(state) {
 
     return {
         mass,
-        ibu,
-        abv,
+        temperature,
+        density,
         planetData,
         dataReload,
         planetsToDisplay,

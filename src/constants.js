@@ -1,6 +1,6 @@
 export const SET_MASS = 'SET_MASS'; //changes the mass min and max values
-export const SET_IBU = 'SET_IBU'; //changes the temperature min and max values
-export const SET_ABV = 'SET_ABV'; //changes the density min and max values
+export const SET_TEMPERATURE = 'SET_TEMPERATURE'; //changes the temperature min and max values
+export const SET_DENSITY = 'SET_DENSITY'; //changes the density min and max values
 export const SET_PLANET_DATA = 'SET_PLANET_DATA'; //updates info about beers
 export const SET_DATA_RELOAD = 'SET_DATA_RELOAD'; //enables or disables API requests
 export const SET_PLANETS_TO_DISPLAY = 'SET_PLANETS_TO_DISPLAY'; //changes the number of beers that can be displayed

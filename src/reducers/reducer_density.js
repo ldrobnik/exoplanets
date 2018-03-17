@@ -1,21 +1,21 @@
 import {SET_DENSITY} from "../constants";
 
 //default min and max values
-let abv = {
+let density = {
     min: 0,
     max: 12
 };
 
 //reducer for changing the density min and max values
-export default (state = abv, action) => {
+export default (state = density, action) => {
     switch (action.type) {
-        case SET_ABV:
+        case SET_DENSITY:
             const {min, max} = action;
-            abv = {
+            density = {
                 min,
                 max
             };
-            return abv;
+            return density;
         default:
             return state;
     }

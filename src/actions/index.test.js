@@ -1,7 +1,7 @@
 import {
     SET_MASS,
-    SET_IBU,
-    SET_ABV,
+    SET_TEMPERATURE,
+    SET_DENSITY,
     SET_PLANET_DATA,
     SET_DATA_RELOAD,
     SET_PLANETS_TO_DISPLAY,
@@ -31,23 +31,23 @@ describe("actions", () => {
     it("creates an action to change the temperature min and max values", () => {
 
         const expectedAction = {
-            type: SET_IBU,
+            type: SET_TEMPERATURE,
             min,
             max
         };
 
-        expect(actions.setIbu(min, max)).toEqual(expectedAction);
+        expect(actions.setTemperature(min, max)).toEqual(expectedAction);
     });
 
     it("creates an action to change the density min and max values", () => {
 
         const expectedAction = {
-            type: SET_ABV,
+            type: SET_DENSITY,
             min,
             max
         };
 
-        expect(actions.setAbv(min, max)).toEqual(expectedAction);
+        expect(actions.setDensity(min, max)).toEqual(expectedAction);
     });
 
     it("creates an action to update planet details", () => {
