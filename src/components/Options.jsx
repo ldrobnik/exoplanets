@@ -21,7 +21,7 @@ export class Options extends Component {
                 <div className="sliderContainer">
                     <div className="sliderLabel">puffy</div>
                     <SliderDensity />
-                    <div className="sliderLabel">solid</div>
+                    <div className="sliderLabel">rocky</div>
                 </div>
             </div>
         );
