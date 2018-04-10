@@ -82,7 +82,7 @@ h1 {
   font-size: 1.8em;
   width: 100px; }
 
-/*** BEER GALLERY STYLES ***/
+/*** PLANET GALLERY STYLES ***/
 .tileGallery {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
@@ -98,7 +98,7 @@ h1 {
   font-family: "Karla", sans-serif;
   margin: 15px auto; }
 
-/*** BEER TILE STYLES ***/
+/*** PLANET TILE STYLES ***/
 /* planet tile colour animation on hover */
 @keyframes focusOnTile {
   from {
@@ -299,7 +299,7 @@ depending on the loading status */
 .foodPairingList li {
   list-style-type: circle; }
 
-/*** SIMILAR BEERS STYLES ***/
+/*** SIMILAR PLANETS STYLES ***/
 /* similar planet tile colour animation on hover */
 @keyframes focusOnSmallTile {
   from {

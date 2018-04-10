@@ -97,7 +97,7 @@ h1 {
   width: 100px;
 }
 
-/*** BEER GALLERY STYLES ***/
+/*** PLANET GALLERY STYLES ***/
 
 .tileGallery {
   @include flex;
@@ -108,7 +108,7 @@ h1 {
   margin: 15px auto;
 }
 
-/*** BEER TILE STYLES ***/
+/*** PLANET TILE STYLES ***/
 
 /* planet tile colour animation on hover */
 @keyframes focusOnTile {
@@ -331,7 +331,7 @@ depending on the loading status */
   list-style-type: circle;
 }
 
-/*** SIMILAR BEERS STYLES ***/
+/*** SIMILAR PLANETS STYLES ***/
 
 /* similar planet tile colour animation on hover */
 @keyframes focusOnSmallTile {
