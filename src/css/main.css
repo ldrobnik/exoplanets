@@ -270,7 +270,6 @@ depending on the loading status */
   display: none; }
 
 /*** DETAILED VIEW STYLES ***/
-/* modifies the default React-Bootstrap modal styles */
 .planetView .modal-content {
   color: #1d1d1d;
   background-color: #c3c3c3;
@@ -279,6 +278,9 @@ depending on the loading status */
   border-radius: 0 !important;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */ }
+
+.modal-header {
+  border-bottom-color: #505050; }
 
 .detailBody {
   min-height: 250px; }

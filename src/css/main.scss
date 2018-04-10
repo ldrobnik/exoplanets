@@ -296,11 +296,14 @@ depending on the loading status */
 
 /*** DETAILED VIEW STYLES ***/
 
-/* modifies the default React-Bootstrap modal styles */
 .planetView .modal-content {
   color: setColor(-4);
   background-color: setColor(2.5);
   @include border-radius(0);
+}
+
+.modal-header {
+  border-bottom-color: setColor(-2);
 }
 
 .detailBody {
