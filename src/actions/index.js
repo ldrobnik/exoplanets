@@ -1,5 +1,5 @@
 import {
-    SET_MASS,
+    SET_RADIUS,
     SET_TEMPERATURE,
     SET_DENSITY,
     SET_PLANET_DATA,
@@ -8,10 +8,10 @@ import {
     SET_PLANETS_DISPLAYED
 } from "../constants";
 
-//changes the mass min and max values
-export function setMass(min, max) {
+//changes the radius min and max values
+export function setRadius(min, max) {
     const action = {
-        type: SET_MASS,
+        type: SET_RADIUS,
         min,
         max
     };

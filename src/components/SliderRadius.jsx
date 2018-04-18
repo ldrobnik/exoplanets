@@ -3,25 +3,25 @@ import {connect} from "react-redux";
 import {Range} from "rc-slider"; //range slider
 import "rc-slider/assets/index.css"; //slider stylesheet
 import {
-    setMass, //sets EBV min and max values
+    setRadius, //sets EBV min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
 } from "../actions";
 
-export class SliderMass extends Component {
+export class SliderRadius extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             min: 0,
             max: 60,
-            mass: {min: 0, max: 60},
+            radius: {min: 0, max: 60},
         };
     }
 
     //sets the min and max ABV values
-    updateMass(min, max) {
-        this.props.setMass(min, max);
+    updateRadius(min, max) {
+        this.props.setRadius(min, max);
     }
 
     //specifies whether API requests are allowed
@@ -39,7 +39,7 @@ export class SliderMass extends Component {
     //specifies what happens when the slider position changes
     onSliderChange = (value) => {
         this.updatePlanetsToDisplay(20); //set the default number of planets to display
-        this.updateMass(value[0], value[1]); //set mass range
+        this.updateRadius(value[0], value[1]); //set radius range
         this.updateDataReload(true); //allow reloading of data
     };
 
@@ -69,18 +69,18 @@ export class SliderMass extends Component {
 
 function mapStateToProps(state) {
     const {
-        mass, //mass min and max values
+        radius, //radius min and max values
         dataReload //specifies whether API requests are allowed
     } = state;
 
     return {
-        mass,
+        radius,
         dataReload
     }
 }
 
 export default connect(mapStateToProps, {
-    setMass, //sets EBV min and max values
+    setRadius, //sets EBV min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the number of planets that need to be displayed
-})(SliderMass);
+})(SliderRadius);

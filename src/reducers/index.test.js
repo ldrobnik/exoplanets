@@ -1,5 +1,5 @@
 import rootReducer from "./index";
-import mass from "./reducer_mass"; //reducer for changing the mass min and max values
+import radius from "./reducer_radius"; //reducer for changing the radius min and max values
 import temperature from "./reducer_temperature"; //reducer for changing the temperature min and max values
 import density from "./reducer_density"; //reducer for changing the density min and max values
 import planetData from "./reducer_planet_data"; //reducer for updating info about planets
@@ -7,7 +7,7 @@ import dataReload from "./reducer_data_reload"; //reducer for enabling or disabl
 import planetsToDisplay from "./reducer_planets_to_display"; //reducer for changing the number of planets that can be displayed
 import planetsDisplayed from "./reducer_planets_displayed"; //reducer for changing the number of planets already displayed
 import {
-    SET_MASS,
+    SET_RADIUS,
     SET_TEMPERATURE,
     SET_DENSITY,
     SET_BEER_DATA,
@@ -32,18 +32,18 @@ describe("root reducer", () => {
             "planetsDisplayed": 0,
             "planetsToDisplay": 20,
             "dataReload": true,
-            "mass": {"max": 60, "min": 0},
+            "radius": {"max": 60, "min": 0},
             "temperature": {"max": 120, "min": 0}
         });
     });
 });
 
 
-describe("mass reducer", () => {
+describe("radius reducer", () => {
 
-    it("changes the mass min and max values", () => {
+    it("changes the radius min and max values", () => {
 
-        expect(mass({}, {type: SET_MASS, min, max})).toEqual({min, max});
+        expect(radius({}, {type: SET_RADIUS, min, max})).toEqual({min, max});
 
     });
 });

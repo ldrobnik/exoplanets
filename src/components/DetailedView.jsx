@@ -24,7 +24,7 @@ export class DetailedView extends Component {
             image_url: "", //planet image url
             food_pairing: [], //food pairing suggestions
             brewers_tips: "", //brewer’s tips
-            mass: 0, //planet mass value
+            radius: 0, //planet radius value
             temperature: 0, //planet temperature value
             density: 0 //planet density value
         };
@@ -73,7 +73,7 @@ export class DetailedView extends Component {
     }
 
     //updates the state with all the details
-    setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density) {
+    setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density) {
         this.setState({
             name, //planetn ame
             tagline, //planet tagline
@@ -81,7 +81,7 @@ export class DetailedView extends Component {
             image_url, //planet image url
             food_pairing, //food pairing suggestions
             brewers_tips, //brewer’s tips
-            mass, //planet mass value
+            radius, //planet radius value
             temperature, //planet temperature value
             density //planet density value
         });
@@ -118,10 +118,10 @@ export class DetailedView extends Component {
         if (idInPlanetData !== undefined) {
 
             //if the planet is already loaded, take all the details from memory
-            let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density} = this.props.planetData[idInPlanetData];
+            let {name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density} = this.props.planetData[idInPlanetData];
 
             //update the detailed view data
-            this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density);
+            this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density);
 
         } else {
 
@@ -140,10 +140,10 @@ export class DetailedView extends Component {
                     if (planetDetails[0] !== undefined) {
 
                         //get planet details from the single-item array containing the details of the requested planet
-                        let {name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density} = planetDetails[0];
+                        let {name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density} = planetDetails[0];
 
                         //update planet details with data fetched from the API
-                        this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, mass, temperature, density);
+                        this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density);
                     }
                 })
                 .catch(() => {
@@ -210,8 +210,8 @@ export class DetailedView extends Component {
             secondaryInfoClass = "displayNone";
         }
 
-        //Wikipedia links explaining the meaning of mass, temperature and density
-        const massLink = "https://en.wikipedia.org/";
+        //Wikipedia links explaining the meaning of radius, temperature and density
+        const radiusLink = "https://en.wikipedia.org/";
         const temperatureLink = "https://en.wikipedia.org/";
         const densityLink = "https://en.wikipedia.org/";
 
@@ -253,11 +253,11 @@ export class DetailedView extends Component {
                             </div>
                             <p className={secondaryInfoClass}>
                                 <strong>
-                                    <a href={massLink} target="_blank" rel={rel}>
-                                        mass:&nbsp;
+                                    <a href={radiusLink} target="_blank" rel={rel}>
+                                        radius:&nbsp;
                                     </a>
                                 </strong>
-                                {this.state.mass} &#124;
+                                {this.state.radius} &#124;
                                 <span> </span>
                                 <strong>
                                     <a href={temperatureLink} target="_blank" rel={rel}>
@@ -290,7 +290,7 @@ export class DetailedView extends Component {
                         <div className={secondaryInfoClass}>
                             <SimilarPlanets
                                 id={this.props.match.params.id}
-                                mass={this.state.mass}
+                                radius={this.state.radius}
                                 temperature={this.state.temperature}
                                 density={this.state.density}
                             />

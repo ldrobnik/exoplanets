@@ -1,4 +1,4 @@
-export const SET_MASS = 'SET_MASS'; //changes the mass min and max values
+export const SET_RADIUS = 'SET_RADIUS'; //changes the radius min and max values
 export const SET_TEMPERATURE = 'SET_TEMPERATURE'; //changes the temperature min and max values
 export const SET_DENSITY = 'SET_DENSITY'; //changes the density min and max values
 export const SET_PLANET_DATA = 'SET_PLANET_DATA'; //updates info about beers

@@ -1,5 +1,5 @@
 import {
-    SET_MASS,
+    SET_RADIUS,
     SET_TEMPERATURE,
     SET_DENSITY,
     SET_PLANET_DATA,
@@ -17,15 +17,15 @@ describe("actions", () => {
     const bool = false;
     const number = 20;
 
-    it("creates an action to change the mass min and max values", () => {
+    it("creates an action to change the radius min and max values", () => {
 
         const expectedAction = {
-            type: SET_MASS,
+            type: SET_RADIUS,
             min,
             max
         };
 
-        expect(actions.setMass(min, max)).toEqual(expectedAction);
+        expect(actions.setRadius(min, max)).toEqual(expectedAction);
     });
 
     it("creates an action to change the temperature min and max values", () => {

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import Options from "./Options"; //component containing sliders adjusting the mass, temperature and density values
+import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 import {
@@ -63,12 +63,12 @@ export class Home extends Component {
         //fetch data only if API requests are allowed (dataReload is true)
         if (this.props.dataReload === true) {
 
-            // get the mass, temperature and density min and max values as specified by the sliders
-            const {mass, temperature, density} = this.props;
+            // get the radius, temperature and density min and max values as specified by the sliders
+            const {radius, temperature, density} = this.props;
 
-            //based on the above values, set mass, temperature and density min and max values to be used to fetch planet data
-            const massMin = mass.min;
-            const massMax = (mass.max === 60) ? 2000 : mass.max; //if the slider is set to maximum, account for all planets with mass over 60
+            //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
+            const radiusMin = radius.min;
+            const radiusMax = (radius.max === 60) ? 2000 : radius.max; //if the slider is set to maximum, account for all planets with radius over 60
 
             const temperatureMin = temperature.min;
             const temperatureMax = (temperature.max === 120) ? 2000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over 150
@@ -85,8 +85,8 @@ export class Home extends Component {
 
             for (let i = 1; i <= numberOfRequests; i++) {
 
-                //if the mass slider is not in the default position, add a mass range to the request
-                let massRange = ((this.props.mass.min === 0) && (this.props.mass.max === 60)) ? "" : `&mass_gt=${massMin}&mass_lt=${massMax}`;
+                //if the radius slider is not in the default position, add a radius range to the request
+                let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `&radius_gt=${radiusMin}&radius_lt=${radiusMax}`;
 
                 //if the temperature slider is not in the default position, add a temperature range to the request
                 let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}`;
@@ -94,8 +94,8 @@ export class Home extends Component {
                 //if the density slider is not in the default position, add a density range to the request
                 let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&density_gt=${densityMin}&density_lt=${densityMax}`;
 
-                //URL addresses to get planets from a given page, within specified mass, temperature and density ranges
-                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${massRange}${temperatureRange}${densityRange}`;
+                //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
+                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${radiusRange}${temperatureRange}${densityRange}`;
 
             }
 
@@ -250,7 +250,7 @@ export class Home extends Component {
 function mapStateToProps(state) {
 
     const {
-        mass, //mass min and max values
+        radius, //radius min and max values
         temperature, //temperature min and max values
         density, //density min and max values
         planetData, //planet details
@@ -260,7 +260,7 @@ function mapStateToProps(state) {
     } = state;
 
     return {
-        mass,
+        radius,
         temperature,
         density,
         planetData,

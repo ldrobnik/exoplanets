@@ -6,8 +6,8 @@ describe("Options", () => {
 
     const options = shallow(<Options />);
 
-    it("renders the mass slider", () => {
-        expect(options.find("Connect(SliderMass)").exists()).toBe(true);
+    it("renders the radius slider", () => {
+        expect(options.find("Connect(SliderRadius)").exists()).toBe(true);
     });
 
     it("renders the temperature slider", () => {

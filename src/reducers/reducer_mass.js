@@ -1,21 +1,21 @@
-import {SET_MASS} from "../constants";
+import {SET_RADIUS} from "../constants";
 
 //default min and max values
-let mass = {
+let radius = {
     min: 0,
     max: 60
 };
 
-//reducer for changing the mass min and max values
-export default (state = mass, action) => {
+//reducer for changing the radius min and max values
+export default (state = radius, action) => {
     switch (action.type) {
-        case SET_MASS:
+        case SET_RADIUS:
             const {min, max} = action;
-            mass = {
+            radius = {
                 min,
                 max
             };
-            return mass;
+            return radius;
         default:
             return state;
     }

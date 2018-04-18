@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import SliderMass from "./SliderMass"; //component containing the EBC slider
+import SliderRadius from "./SliderRadius"; //component containing the EBC slider
 import SliderTemperature from "./SliderTemperature"; //component containing the TEMPERATURE slider
 import SliderDensity from "./SliderDensity"; //component containing the DENSITY slider
 
@@ -10,7 +10,7 @@ export class Options extends Component {
             <div>
                 <div className="sliderContainer">
                     <div className="sliderLabel">small</div>
-                    <SliderMass />
+                    <SliderRadius />
                     <div className="sliderLabel">big</div>
                 </div>
                 <div className="sliderContainer">
