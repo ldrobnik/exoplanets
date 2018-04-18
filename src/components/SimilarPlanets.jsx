@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {ScaleLoader} from "react-spinners"; //spinner
 import {SimilarPlanetTile} from "./SimilarPlanetTile"; //component containing details of a single similar planet
-import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY} from "../data/constants"; //basic URL for fetching planets
 
 export class SimilarPlanets extends Component {
     constructor(props) {
@@ -42,11 +42,11 @@ export class SimilarPlanets extends Component {
 
 
 
-        let radiusRange = (radius !== undefined) ? `&radius_gt=${radiusMin}&radius_lt=${radiusMax}` : ""; //if radius is not undefined, add a radius range to the request
-        let temperatureRange = (temperature !== undefined) ? `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}` : ""; //if temperature is not undefined, add a temperature range to the request
-        let densityRange = (density !== undefined) ? `&density_gt=${densityMin}&density_lt=${densityMax}` : ""; //if density is not undefined, add a density range to the request
+        let radiusRange = (radius !== undefined) ? `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}` : ""; //if radius is not undefined, add a radius range to the request
+        let temperatureRange = (temperature !== undefined) ? `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}` : ""; //if temperature is not undefined, add a temperature range to the request
+        let densityRange = (density !== undefined) ? `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}` : ""; //if density is not undefined, add a density range to the request
 
-        const FETCH_URL = `${BASE_URL}?page=1&per_page=20${radiusRange}${temperatureRange}${densityRange}`; //URL address to get planets of in the specified radius, temperature and density ranges
+        const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}`; //URL address to get planets of in the specified radius, temperature and density ranges
 
         //fetch planet data from the API
         fetch(FETCH_URL, {
