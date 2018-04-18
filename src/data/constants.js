@@ -7,6 +7,6 @@ export const SELECTION = "&select=pl_hostname,pl_letter,pl_radj,pl_rade,pl_dens,
 
 export const WHERE = "&where="; //bit of the URL to specify parameter ranges
 
-export const RADIUS = "&pl_radj"; //name of the column specifying planet radius (Jupiter radii)
-export const TEMP = "&pl_eqt"; //name of the column specifying planet equilibrium temperature [K]
-export const DENSITY = "&pl_radj"; //name of the column specifying planet density (g/cm**3)
+export const RADIUS = "pl_radj"; //name of the column specifying planet radius (Jupiter radii)
+export const TEMP = "pl_eqt"; //name of the column specifying planet equilibrium temperature [K]
+export const DENSITY = "pl_radj"; //name of the column specifying planet density (g/cm**3)

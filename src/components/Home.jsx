@@ -4,7 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY} from "../data/constants"; //constant to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
@@ -57,7 +57,7 @@ export class Home extends Component {
     }
 
 
-    //fetches planets from punkapi.com
+    //fetches planets from NASA Exoplanet Archive
     getPlanets() {
 
         //fetch data only if API requests are allowed (dataReload is true)
@@ -78,49 +78,50 @@ export class Home extends Component {
 
             // const BASE_URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=json"; //basic URL address
 
-            let urls = []; //array holding all fetch urls
+            // let urls = []; //array holding all fetch urls
 
-            //if more than 80 planets need to be displayed, create multiple urls, each for 80 planets
-            const numberOfRequests = Math.floor(this.props.planetsToDisplay / 80) + 1; //required number of API requests
-
-            for (let i = 1; i <= numberOfRequests; i++) {
+            // //if more than 80 planets need to be displayed, create multiple urls, each for 80 planets
+            // const numberOfRequests = Math.floor(this.props.planetsToDisplay / 80) + 1; //required number of API requests
+            //
+            // for (let i = 1; i <= numberOfRequests; i++) {
 
                 //if the radius slider is not in the default position, add a radius range to the request
-                let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `&radius_gt=${radiusMin}&radius_lt=${radiusMax}`;
+                let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
 
                 //if the temperature slider is not in the default position, add a temperature range to the request
-                let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&temperature_gt=${temperatureMin}&temperature_lt=${temperatureMax}`;
+                let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}`;
 
                 //if the density slider is not in the default position, add a density range to the request
-                let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&density_gt=${densityMin}&density_lt=${densityMax}`;
+                let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
-                //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
-                urls[i - 1] = `${BASE_URL}?page=${i}&per_page=80${radiusRange}${temperatureRange}${densityRange}`;
+                // //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
+                const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
+                console.log(FETCH_URL);
 
-            }
+            // }
 
 
-            // fetch planet data from the API using the array of URLs created above
-            Promise.all(urls.map(url => fetch(url, {
+            // fetch planet data from the API
+            fetch(FETCH_URL, {
                 method: "GET"
-            })))
-                .then(response => Promise.all(response.map(r => r.json())))
-                .then(result => {
+            })
+                .then(response => response.json())
+                .then(json => {
 
-                    let fetchedPlanets = []; //an empty array to hold all planets
+                    // let fetchedPlanets = []; //an empty array to hold all planets
 
-                    //merge the results into a single array
-                    for (let i = 0; i < result.length; i++) {
-                        fetchedPlanets = fetchedPlanets.concat(result[i]);
-                    }
+                    // //merge the results into a single array
+                    // for (let i = 0; i < json.length; i++) {
+                    //     fetchedPlanets = fetchedPlanets.concat(json[i]);
+                    // }
 
                     //if no planets or no planets matching the specified criteria can be found, display a message
-                    if (fetchedPlanets.length === 0) {
+                    if (json.length === 0) {
 
                         //if no planets have been fetched, update the message to:
                         this.updateMessage("no planets matching the specified criteria!");
 
-                    } else if (fetchedPlanets.length <= this.props.planetsToDisplay) {
+                    } else if (json.length <= this.props.planetsToDisplay) {
 
                         //if all planets have been loaded, update the message to:
                         this.updateMessage("no more planets matching the specified criteria!");
@@ -132,7 +133,7 @@ export class Home extends Component {
 
                     }
 
-                    this.updatePlanetData(fetchedPlanets); //replace stored planet data with data just fetched from the API
+                    this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
