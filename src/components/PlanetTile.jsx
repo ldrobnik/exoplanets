@@ -13,8 +13,7 @@ export class PlanetTile extends Component {
 
         this.state = {
             loading: true, //specifies whether the spinner should be visible
-            name: "",
-            tagline: ""
+            name: ""
         }
     }
 
@@ -62,13 +61,14 @@ export class PlanetTile extends Component {
     //takes the name and tagline from the props, shortens them if necessary and updates the state
     handleDetails() {
 
-        if ((this.props.name !== undefined) && (this.props.tagline !== undefined)) {
+        if (this.props.name !== undefined) {
 
-            const adjustedName = this.shortenString(this.props.name, 35); //shorten the name if too long
-            const adjustedTagline = this.shortenString(this.props.tagline, 35); //shorten the tagline if too long
+            // const adjustedName = this.shortenString(this.props.name, 35); //shorten the name if too long
+            // const adjustedTagline = this.shortenString(this.props.tagline, 35); //shorten the tagline if too long
 
-            this.setState({name: adjustedName}); //update the state with a new name
-            this.setState({tagline: adjustedTagline}); //update the state with a new tagline
+            const planetName = this.props.hostname + " " + this.props.letter;
+
+            this.setState({name: planetName}); //update the state with a new name
 
         }
 
@@ -129,21 +129,21 @@ export class PlanetTile extends Component {
                         <Table className={containerClass}>
                             <tbody>
                             <tr>
-                                <td className="imageContainer">
-                                    <Image
-                                        className="planetImage"
-                                        src={this.props.image_url}
-                                        alt={this.props.name}
-                                        onLoad={this.turnOffLoader.bind(this)}
-                                    />
-                                </td>
+                                {/*<td className="imageContainer">*/}
+                                    {/*<Image*/}
+                                        {/*className="planetImage"*/}
+                                        {/*src={this.props.image_url}*/}
+                                        {/*alt={this.props.name}*/}
+                                        {/*onLoad={this.turnOffLoader.bind(this)}*/}
+                                    {/*/>*/}
+                                {/*</td>*/}
                                 <td className="planetText">
                                     <p className="planetName">
                                         <strong>{this.state.name}</strong>
                                     </p>
-                                    <p className="planetTagline">
-                                        {this.state.tagline}
-                                    </p>
+                                    {/*<p className="planetTagline">*/}
+                                        {/*{this.state.tagline}*/}
+                                    {/*</p>*/}
                                 </td>
                             </tr>
                             </tbody>

@@ -28,14 +28,14 @@ export class Planets extends Component {
                 if (this.props.planetData[i] !== undefined) {
 
                     //take id, image_url, name and tagline from the props
-                    let {id, image_url, name, tagline} = this.props.planetData[i];
-
+                    let {pl_hostname, pl_letter, pl_radj, pl_eqt, pl_dens} = this.props.planetData[i];
                     //update the array with a planet tile containing the above details
                     planetTiles.push(<PlanetTile
-                        id={id}
-                        image_url={image_url}
-                        name={name}
-                        tagline={tagline}
+                        hostname={pl_hostname}
+                        letter={pl_letter}
+                        radius={pl_radj}
+                        temperature={pl_eqt}
+                        density={pl_dens}
                     />);
                 }
             }

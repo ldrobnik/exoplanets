@@ -76,15 +76,6 @@ export class Home extends Component {
             const densityMin = density.min;
             const densityMax = (density.max === 12) ? 2000 : density.max; //if the slider is set to maximum, account for all planets with density over 20
 
-            // const BASE_URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=json"; //basic URL address
-
-            // let urls = []; //array holding all fetch urls
-
-            // //if more than 80 planets need to be displayed, create multiple urls, each for 80 planets
-            // const numberOfRequests = Math.floor(this.props.planetsToDisplay / 80) + 1; //required number of API requests
-            //
-            // for (let i = 1; i <= numberOfRequests; i++) {
-
                 //if the radius slider is not in the default position, add a radius range to the request
                 let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
 
@@ -96,9 +87,6 @@ export class Home extends Component {
 
                 // //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
                 const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
-                console.log(FETCH_URL);
-
-            // }
 
 
             // fetch planet data from the API
@@ -108,12 +96,6 @@ export class Home extends Component {
                 .then(response => response.json())
                 .then(json => {
 
-                    // let fetchedPlanets = []; //an empty array to hold all planets
-
-                    // //merge the results into a single array
-                    // for (let i = 0; i < json.length; i++) {
-                    //     fetchedPlanets = fetchedPlanets.concat(json[i]);
-                    // }
 
                     //if no planets or no planets matching the specified criteria can be found, display a message
                     if (json.length === 0) {
