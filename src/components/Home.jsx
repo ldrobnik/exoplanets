@@ -4,7 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY} from "../data/constants"; //constant to create URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT} from "../data/constants"; //constant to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
@@ -86,8 +86,8 @@ export class Home extends Component {
                 let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
                 // //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
-                const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
-
+                const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}`;
+                console.log(FETCH_URL);
 
             // fetch planet data from the API
             fetch(FETCH_URL, {
@@ -95,7 +95,6 @@ export class Home extends Component {
             })
                 .then(response => response.json())
                 .then(json => {
-
 
                     //if no planets or no planets matching the specified criteria can be found, display a message
                     if (json.length === 0) {
