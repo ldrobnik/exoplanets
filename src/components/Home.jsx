@@ -22,7 +22,8 @@ export class Home extends Component {
 
         this.state = {
             loading: true, //specifies whether the spinner should be visible
-            message: "" //specifies the content of the message at the bottom of the page
+            message: "", //specifies the content of the message at the bottom of the page
+            allDataLoaded: false //specifies whether or planet data have been loaded or only those from the initial, limited fetch
         }
     }
 
@@ -113,7 +114,7 @@ export class Home extends Component {
 
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
-            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${ORDER}`;
 
             // fetch initial planet data from the API, limited by distance to the planetary system
             fetch(INITIAL_URL, {
@@ -145,6 +146,7 @@ export class Home extends Component {
                     this.setState({loading: false}); //hide the spinner
                     // this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+                    console.log('initial fetch', json);
                 })
                 .catch(() => {
                     //in case of an error:
@@ -182,6 +184,7 @@ export class Home extends Component {
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+                    console.log('proper fetch', json);
                 })
                 .catch(() => {
                     //in case of an error:
