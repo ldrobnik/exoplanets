@@ -4,7 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT} from "../data/constants"; //constant to create URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT} from "../data/constants"; //constants to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
@@ -57,7 +57,7 @@ export class Home extends Component {
     }
 
 
-    //fetches planets from NASA Exoplanet Archive
+    //fetches planets from the NASA Exoplanet Archive
     getPlanets() {
 
         //fetch data only if API requests are allowed (dataReload is true)
@@ -85,7 +85,7 @@ export class Home extends Component {
                 //if the density slider is not in the default position, add a density range to the request
                 let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
-                // //URL addresses to get planets from a given page, within specified radius, temperature and density ranges
+                //URL address to fetch planets within specified radius, temperature and density ranges
                 const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}`;
                 console.log(FETCH_URL);
 

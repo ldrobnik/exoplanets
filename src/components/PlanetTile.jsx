@@ -61,7 +61,9 @@ export class PlanetTile extends Component {
     //takes the name and tagline from the props, shortens them if necessary and updates the state
     handleDetails() {
 
-        if (this.props.name !== undefined) {
+        console.log(this.props.pl_hostname);
+
+        if (this.props.hostname !== undefined) {
 
             // const adjustedName = this.shortenString(this.props.name, 35); //shorten the name if too long
             // const adjustedTagline = this.shortenString(this.props.tagline, 35); //shorten the tagline if too long
@@ -69,6 +71,8 @@ export class PlanetTile extends Component {
             const planetName = this.props.hostname + " " + this.props.letter;
 
             this.setState({name: planetName}); //update the state with a new name
+
+            this.setState({loading: false});
 
         }
 
