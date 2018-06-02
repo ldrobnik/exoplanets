@@ -23,7 +23,7 @@ export class Home extends Component {
         this.state = {
             loading: true, //specifies whether the spinner should be visible
             message: "", //specifies the content of the message at the bottom of the page
-            allDataLoaded: false //specifies whether or planet data have been loaded or only those from the initial, limited fetch
+            allDataLoaded: false, //specifies whether all planet data has been loaded or only that from the initial, limited fetch
         }
     }
 
@@ -130,26 +130,9 @@ export class Home extends Component {
                 .then(response => response.json())
                 .then(json => {
 
-                    // //if no planets or no planets matching the specified criteria can be found, display a message
-                    // if (json.length === 0) {
-                    //
-                    //     //if no planets have been fetched, update the message to:
-                    //     this.updateMessage("no planets matching the specified criteria!");
-                    //
-                    // } else if (json.length <= this.props.planetsToDisplay) {
-                    //
-                    //     //if all planets have been loaded, update the message to:
-                    //     this.updateMessage("no more planets matching the specified criteria!");
-                    //
-                    // } else {
-                    //
-                    //     //in the remaining cases, clear the message
-                    //     this.updateMessage("");
-                    //
-                    // }
 
-                    this.handleMessage(json); //display message if no more planets can be found
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
+                    this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
                     // this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
@@ -169,25 +152,8 @@ export class Home extends Component {
                 .then(response => response.json())
                 .then(json => {
 
-                    // //if no planets or no planets matching the specified criteria can be found, display a message
-                    // if (json.length === 0) {
-                    //
-                    //     //if no planets have been fetched, update the message to:
-                    //     this.updateMessage("no planets matching the specified criteria!");
-                    //
-                    // } else if (json.length <= this.props.planetsToDisplay) {
-                    //
-                    //     //if all planets have been loaded, update the message to:
-                    //     this.updateMessage("no more planets matching the specified criteria!");
-                    //
-                    // } else {
-                    //
-                    //     //in the remaining cases, clear the message
-                    //     this.updateMessage("");
-                    //
-                    // }
-                    this.handleMessage(json); //display message if no more planets can be found
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
+                    this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
