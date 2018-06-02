@@ -201,9 +201,8 @@ export class Home extends Component {
             const newPlanetsToDisplay = this.props.planetsToDisplay + 20;
             this.updatePlanetsToDisplay(newPlanetsToDisplay); //update the number of planets to be displayed with the increased number
 
-            //if there is not enough planets stored in memory and all planet data have been already fetched, get more from the API;
-            if (this.state.allDataLoaded && (this.props.planetData.length < newPlanetsToDisplay)) {
-                this.updateDataReload(true); //enable API requests
+            //if there is not enough planets stored in memory and all planet data have been already fetched and API requests are enabled, get more from the API;
+            if (this.state.allDataLoaded && this.props.dataReload && (this.props.planetData.length < newPlanetsToDisplay)) {
                 this.getPlanets(); //get planets from the api
                 console.log('planet data', this.props.planetData);
             }
