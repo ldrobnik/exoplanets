@@ -37,6 +37,7 @@ export class Home extends Component {
     //specifies whether data can be reloaded
     updateDataReload(reload) {
         this.props.setDataReload(reload);
+        console.log("Home - data reload enabled");
     }
 
 
@@ -86,7 +87,6 @@ export class Home extends Component {
     }
 
 
-
     //fetches planets from the NASA Exoplanet Archive
     getPlanets() {
 
@@ -106,19 +106,18 @@ export class Home extends Component {
             const densityMin = density.min;
             const densityMax = (density.max === 12) ? 2000 : density.max; //if the slider is set to maximum, account for all planets with density over 20
 
-                //if the radius slider is not in the default position, add a radius range to the request
-                let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
+            //if the radius slider is not in the default position, add a radius range to the request
+            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
 
-                //if the temperature slider is not in the default position, add a temperature range to the request
-                let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}`;
+            //if the temperature slider is not in the default position, add a temperature range to the request
+            let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}`;
 
-                //if the density slider is not in the default position, add a density range to the request
-                let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
+            //if the density slider is not in the default position, add a density range to the request
+            let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
 
-
-                //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
-                const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+            //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
+            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
 
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
@@ -131,11 +130,10 @@ export class Home extends Component {
                 .then(response => response.json())
                 .then(json => {
 
-
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
-                    // this.updateDataReload(false); //disable API requests
+                    this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     console.log('initial fetch', json);
                 })
@@ -156,7 +154,7 @@ export class Home extends Component {
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
-                    this.updateDataReload(false); //disable API requests
+                    // this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
                     console.log('proper fetch', json);
