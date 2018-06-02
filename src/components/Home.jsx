@@ -4,7 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT, ORDER} from "../data/constants"; //constants to create URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, ORDER, LIMIT} from "../data/constants"; //constants to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
@@ -37,7 +37,6 @@ export class Home extends Component {
     //specifies whether data can be reloaded
     updateDataReload(reload) {
         this.props.setDataReload(reload);
-        console.log("Home - data reload enabled");
     }
 
 
@@ -202,10 +201,11 @@ export class Home extends Component {
             const newPlanetsToDisplay = this.props.planetsToDisplay + 20;
             this.updatePlanetsToDisplay(newPlanetsToDisplay); //update the number of planets to be displayed with the increased number
 
-            //if there is not enough planets stored in memory, get more from the API;
-            if (this.props.planetData.length <= newPlanetsToDisplay) {
-                this.updateDataReload(true); //enable api requests
+            //if there is not enough planets stored in memory and all planet data have been already fetched, get more from the API;
+            if (this.state.allDataLoaded && (this.props.planetData.length < newPlanetsToDisplay)) {
+                this.updateDataReload(true); //enable API requests
                 this.getPlanets(); //get planets from the api
+                console.log('planet data', this.props.planetData);
             }
         }
     }

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home.jsx" afterPath="$PROJECT_DIR$/src/components/Home.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="204" column="99" lean-forward="true" selection-start-line="204" selection-start-column="99" selection-end-line="204" selection-end-column="99" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#513#810#0" expanded="true" />
@@ -154,7 +153,6 @@
       <find>dataR</find>
       <find>dataRel</find>
       <find>dataReloa</find>
-      <find>dataReload</find>
       <find>dataReloadthis</find>
       <find>dataReloadthis.</find>
       <find>console.log(&quot;Home - data reload enabled&quot;);</find>
@@ -162,12 +160,13 @@
       <find>upda</find>
       <find>updateD</find>
       <find>updateDa</find>
-      <find>updateData</find>
       <find>updateDataR</find>
       <find>updateDataRel</find>
       <find>updateDataReloa</find>
       <find>updateDataReload</find>
       <find>updateDataReload(</find>
+      <find>dataReload</find>
+      <find>updateData</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -546,12 +545,12 @@
       <workItem from="1524838044658" duration="707000" />
       <workItem from="1524907893253" duration="34000" />
       <workItem from="1527929097567" duration="7264000" />
-      <workItem from="1527950209043" duration="1114000" />
+      <workItem from="1527950209043" duration="1580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34083000" />
+    <option name="totallyTimeSpent" value="34549000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="26" width="1904" height="954" extended-state="0" />
@@ -941,8 +940,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="204" column="99" lean-forward="true" selection-start-line="204" selection-start-column="99" selection-end-line="204" selection-end-column="99" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#513#810#0" expanded="true" />
