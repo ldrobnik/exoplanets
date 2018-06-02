@@ -86,6 +86,7 @@ export class Home extends Component {
     }
 
 
+
     //fetches planets from the NASA Exoplanet Archive
     getPlanets() {
 
