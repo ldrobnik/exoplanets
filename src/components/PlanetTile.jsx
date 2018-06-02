@@ -61,7 +61,6 @@ export class PlanetTile extends Component {
     //takes the name and tagline from the props, shortens them if necessary and updates the state
     handleDetails() {
 
-        console.log(this.props.pl_hostname);
 
         if (this.props.hostname !== undefined) {
 

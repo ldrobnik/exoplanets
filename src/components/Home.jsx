@@ -4,7 +4,7 @@ import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
 import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT} from "../data/constants"; //constants to create URL for fetching planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, LIMIT, ORDER} from "../data/constants"; //constants to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
@@ -56,6 +56,27 @@ export class Home extends Component {
         this.setState({message});
     }
 
+    //sets the message if no more planets can be found
+    handleMessage(json) {
+        //if no planets or no planets matching the specified criteria can be found, display a message
+        if (json.length === 0) {
+
+            //if no planets have been fetched, update the message to:
+            this.updateMessage("no planets matching the specified criteria!");
+
+        } else if (json.length <= this.props.planetsToDisplay) {
+
+            //if all planets have been loaded, update the message to:
+            this.updateMessage("no more planets matching the specified criteria!");
+
+        } else {
+
+            //in the remaining cases, clear the message
+            this.updateMessage("");
+
+        }
+    }
+
 
     //fetches planets from the NASA Exoplanet Archive
     getPlanets() {
@@ -85,35 +106,78 @@ export class Home extends Component {
                 //if the density slider is not in the default position, add a density range to the request
                 let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
-                //URL address to fetch planets within specified radius, temperature and density ranges
-                const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}`;
-                console.log(FETCH_URL);
 
-            // fetch planet data from the API
+
+                //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
+                const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+
+
+            //the proper URL address to fetch all planets within specified radius, temperature and density ranges
+            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+
+            // fetch initial planet data from the API, limited by distance to the planetary system
+            fetch(INITIAL_URL, {
+                method: "GET"
+            })
+                .then(response => response.json())
+                .then(json => {
+
+                    // //if no planets or no planets matching the specified criteria can be found, display a message
+                    // if (json.length === 0) {
+                    //
+                    //     //if no planets have been fetched, update the message to:
+                    //     this.updateMessage("no planets matching the specified criteria!");
+                    //
+                    // } else if (json.length <= this.props.planetsToDisplay) {
+                    //
+                    //     //if all planets have been loaded, update the message to:
+                    //     this.updateMessage("no more planets matching the specified criteria!");
+                    //
+                    // } else {
+                    //
+                    //     //in the remaining cases, clear the message
+                    //     this.updateMessage("");
+                    //
+                    // }
+
+                    this.handleMessage(json); //display message if no more planets can be found
+                    this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
+                    this.setState({loading: false}); //hide the spinner
+                    // this.updateDataReload(false); //disable API requests
+                    this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+                })
+                .catch(() => {
+                    //in case of an error:
+                    this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
+                    this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message
+                    this.setState({loading: false}); //hide the spinner
+                });
+
+            //fetch all planet data and substitute them for the limited planet data
             fetch(FETCH_URL, {
                 method: "GET"
             })
                 .then(response => response.json())
                 .then(json => {
 
-                    //if no planets or no planets matching the specified criteria can be found, display a message
-                    if (json.length === 0) {
-
-                        //if no planets have been fetched, update the message to:
-                        this.updateMessage("no planets matching the specified criteria!");
-
-                    } else if (json.length <= this.props.planetsToDisplay) {
-
-                        //if all planets have been loaded, update the message to:
-                        this.updateMessage("no more planets matching the specified criteria!");
-
-                    } else {
-
-                        //in the remaining cases, clear the message
-                        this.updateMessage("");
-
-                    }
-
+                    // //if no planets or no planets matching the specified criteria can be found, display a message
+                    // if (json.length === 0) {
+                    //
+                    //     //if no planets have been fetched, update the message to:
+                    //     this.updateMessage("no planets matching the specified criteria!");
+                    //
+                    // } else if (json.length <= this.props.planetsToDisplay) {
+                    //
+                    //     //if all planets have been loaded, update the message to:
+                    //     this.updateMessage("no more planets matching the specified criteria!");
+                    //
+                    // } else {
+                    //
+                    //     //in the remaining cases, clear the message
+                    //     this.updateMessage("");
+                    //
+                    // }
+                    this.handleMessage(json); //display message if no more planets can be found
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
