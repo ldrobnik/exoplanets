@@ -59,22 +59,29 @@ export class Home extends Component {
 
     //sets the message if no more planets can be found
     handleMessage(json) {
-        //if no planets or no planets matching the specified criteria can be found, display a message
-        if (json.length === 0) {
 
-            //if no planets have been fetched, update the message to:
-            this.updateMessage("no planets matching the specified criteria!");
+        if (this.state.allDataLoaded) {
 
-        } else if (json.length <= this.props.planetsToDisplay) {
+            //if no planets or no planets matching the specified criteria can be found, display a message
+            if (json.length === 0) {
 
-            //if all planets have been loaded, update the message to:
-            this.updateMessage("no more planets matching the specified criteria!");
+                //if no planets have been fetched, update the message to:
+                this.updateMessage("no planets matching the specified criteria!");
 
+            } else if (json.length <= this.props.planetsToDisplay) {
+
+                //if all planets have been loaded, update the message to:
+                this.updateMessage("no more planets matching the specified criteria!");
+
+            } else {
+
+                //in the remaining cases, clear the message
+                this.updateMessage("");
+
+            }
         } else {
-
-            //in the remaining cases, clear the message
-            this.updateMessage("");
-
+            //if all data has not been yet loaded, display a message about loading data
+            this.updateMessage("loading planet data…");
         }
     }
 
@@ -184,6 +191,7 @@ export class Home extends Component {
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+                    this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
                     console.log('proper fetch', json);
                 })
                 .catch(() => {
