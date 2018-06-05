@@ -146,7 +146,9 @@ h1 {
       .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetImage {
         display: block;
         margin-left: auto;
-        margin-right: auto; }
+        margin-right: auto;
+        overflow: hidden;
+        max-width: 180px; }
       .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetName {
         margin-top: 5px;
         text-align: center;

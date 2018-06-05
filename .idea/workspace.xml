@@ -4,6 +4,9 @@
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PlanetTile.jsx" afterPath="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css.map" afterPath="$PROJECT_DIR$/src/css/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.scss" afterPath="$PROJECT_DIR$/src/css/main.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="116" column="169" lean-forward="false" selection-start-line="116" selection-start-column="169" selection-end-line="116" selection-end-column="169" />
+            <state relative-caret-position="140">
+              <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -73,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="161" column="26" lean-forward="false" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="26" />
+            <state relative-caret-position="220">
+              <caret line="159" column="23" lean-forward="false" selection-start-line="159" selection-start-column="23" selection-end-line="159" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -164,8 +167,8 @@
       <find>#B6B6B6</find>
       <find>#E3E3E3</find>
       <find>#ffde45</find>
-      <find>table</find>
       <find>planet ti</find>
+      <find>table</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -236,8 +239,8 @@
         <option value="$PROJECT_DIR$/src/components/SliderDensity.jsx" />
         <option value="$PROJECT_DIR$/src/components/SliderRadius.jsx" />
         <option value="$PROJECT_DIR$/src/components/SliderTemperature.jsx" />
-        <option value="$PROJECT_DIR$/src/css/main.scss" />
         <option value="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
+        <option value="$PROJECT_DIR$/src/css/main.scss" />
       </list>
     </option>
   </component>
@@ -253,8 +256,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="114" />
-    <option name="y" value="54" />
+    <option name="x" value="1037" />
+    <option name="y" value="333" />
     <option name="width" value="1708" />
     <option name="height" value="923" />
   </component>
@@ -551,15 +554,15 @@
       <workItem from="1527929097567" duration="7264000" />
       <workItem from="1527950209043" duration="2226000" />
       <workItem from="1527957143041" duration="772000" />
-      <workItem from="1528205234503" duration="6850000" />
+      <workItem from="1528205234503" duration="8776000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42817000" />
+    <option name="totallyTimeSpent" value="44743000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="54" width="1708" height="923" extended-state="0" />
+    <frame x="1037" y="333" width="1708" height="923" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21673691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -940,21 +943,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="161" column="26" lean-forward="false" selection-start-line="161" selection-start-column="26" selection-end-line="161" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="116" column="169" lean-forward="false" selection-start-line="116" selection-start-column="169" selection-end-line="116" selection-end-column="169" />
+        <state relative-caret-position="140">
+          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="159" column="23" lean-forward="false" selection-start-line="159" selection-start-column="23" selection-end-line="159" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
