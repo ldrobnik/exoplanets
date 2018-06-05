@@ -114,20 +114,30 @@ export class PlanetTile extends Component {
 
         let imageName = (this.props.density >= 2) ? "solid.png" : "fluffy.png"; //if planet density is at least 2 g/cm^3, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
 
+        //what to add above -- if planet density is not known, check for radius. if small radius, assume it's rocky; then check for mass - large mass, assume it's jovian
+
         let imageSize = ""; //specifies the width of the planet image
 
         if (this.props.radius !== null) {
 
             //if the planet has a defined radius, calculate the image width as follows:
 
-            imageSize = 20 * (5 + Math.log(this.props.radius*2)) + "px";
+            imageSize = 4 * (Math.log(this.props.radius*100)) + "px";
 
-            console.log("radius: ", this.props.radius, "log: ", (3 + Math.log(this.props.radius*2)), "width: ", imageSize);
+            console.log("radius: ", this.props.radius, "log: ", (Math.log(this.props.radius*100)), "width: ", imageSize);
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following widht:
 
             imageSize = "50px";
+
+            /*
+            * if the planet has definied width and is dense, apply smaller size, otherwise bigger size
+            *
+            * then check for mass
+            *
+            * in all cases lower alpha so it suggests the size is not known
+            * */
         }
 
         if (this.props.name !== null) {

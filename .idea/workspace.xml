@@ -64,8 +64,8 @@
       <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="124" column="66" lean-forward="false" selection-start-line="124" selection-start-column="66" selection-end-line="124" selection-end-column="66" />
+            <state relative-caret-position="218">
+              <caret line="116" column="169" lean-forward="false" selection-start-line="116" selection-start-column="169" selection-end-line="116" selection-end-column="169" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -551,15 +551,15 @@
       <workItem from="1527929097567" duration="7264000" />
       <workItem from="1527950209043" duration="2226000" />
       <workItem from="1527957143041" duration="772000" />
-      <workItem from="1528205234503" duration="6431000" />
+      <workItem from="1528205234503" duration="6850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42398000" />
+    <option name="totallyTimeSpent" value="42817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="54" width="1708" height="923" extended-state="1" />
+    <frame x="114" y="54" width="1708" height="923" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21673691" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -950,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="124" column="66" lean-forward="false" selection-start-line="124" selection-start-column="66" selection-end-line="124" selection-end-column="66" />
+        <state relative-caret-position="218">
+          <caret line="116" column="169" lean-forward="false" selection-start-line="116" selection-start-column="169" selection-end-line="116" selection-end-column="169" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
