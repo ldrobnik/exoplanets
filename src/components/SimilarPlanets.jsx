@@ -186,7 +186,7 @@ export class SimilarPlanets extends Component {
             <div>
                 <div className={loaderClass}>
                     <ScaleLoader
-                        color={"#ffd892"}
+                        color={"#ffab12"}
                         loading={this.state.loading}
                     />
                 </div>
