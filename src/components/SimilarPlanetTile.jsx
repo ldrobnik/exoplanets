@@ -97,7 +97,7 @@ export class SimilarPlanetTile extends Component {
                 <div>
                     <div className={loaderClass}>
                         <ScaleLoader
-                            color={"#838383"}
+                            color={"#ffd892"}
                             loading={this.state.loading}
                         />
                     </div>

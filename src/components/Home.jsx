@@ -244,7 +244,7 @@ export class Home extends Component {
             return (
                 <div className="loaderMainContainer">
                     <ScaleLoader
-                        color={"#838383"}
+                        color={"#ffd892"}
                         loading={this.state.loading}
                     />
                 </div>

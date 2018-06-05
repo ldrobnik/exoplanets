@@ -232,7 +232,7 @@ export class DetailedView extends Component {
             >
                 <div className={loaderClass}>
                     <ScaleLoader
-                        color={"#838383"}
+                        color={"#ffd892"}
                         loading={this.state.loading}
                     />
                 </div>

@@ -1,28 +1,28 @@
 /*** GENERAL STYLES ***/
 body {
-  background-color: #505050; }
+  background-color: #ab6e00; }
   body ::-moz-selection {
-    background: #505050;
-    color: #b6b6b6; }
+    background: #ab6e00;
+    color: #ffcf78; }
   body ::selection {
-    background: #505050;
-    color: #b6b6b6; }
+    background: #ab6e00;
+    color: #ffcf78; }
 
 a {
-  color: #1d1d1d;
+  color: #452d00;
   text-decoration: none;
   cursor: pointer; }
   a:link {
-    color: #1d1d1d;
+    color: #452d00;
     text-decoration: none; }
   a:visited {
-    color: #1d1d1d;
+    color: #452d00;
     text-decoration: none; }
   a:hover {
-    color: #040404;
+    color: #120c00;
     text-decoration: none; }
   a:active {
-    color: #1d1d1d;
+    color: #452d00;
     text-decoration: none; }
 
 .routerLink {
@@ -31,7 +31,7 @@ a {
 /*** TITLE PANEL STYLES ***/
 .titlePanel {
   text-align: center;
-  color: #c3c3c3;
+  color: #ffd892;
   font-family: "Lobster", cursive;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -47,11 +47,11 @@ h1 {
 /*** SLIDER STYLES ***/
 /* modifies the default rc-slider styles */
 .rc-slider-handle:active {
-  box-shadow: 0 0 5px #6a6a6a; }
+  box-shadow: 0 0 5px #de8f00; }
 
 .rc-slider-handle:focus {
-  border-color: #9d9d9d;
-  box-shadow: 0 0 0 5px #6a6a6a; }
+  border-color: #ffbd45;
+  box-shadow: 0 0 0 5px #de8f00; }
 
 .sliderContainer {
   display: -webkit-box;
@@ -102,9 +102,9 @@ h1 {
 /* planet tile colour animation on hover */
 @keyframes focusOnTile {
   from {
-    background-color: #c3c3c3; }
+    background-color: #ffd892; }
   to {
-    background-color: #6a6a6a; } }
+    background-color: #de8f00; } }
 .planetTileContainer {
   margin: 10px 0;
   width: 18%;
@@ -123,12 +123,12 @@ h1 {
     width: 100%;
     padding: 3px 14px;
     height: 220px;
-    background-color: #c3c3c3;
-    color: #1d1d1d;
-    box-shadow: 4px 3px 10px #1d1d1d;
+    background-color: #ffd892;
+    color: #452d00;
+    box-shadow: 4px 3px 10px #452d00;
     cursor: pointer; }
     .planetTileContainer .planetTile:hover {
-      background-color: #6a6a6a;
+      background-color: #de8f00;
       animation-name: focusOnTile;
       animation-duration: 0.8s;
       animation-timing-function: ease-out; }
@@ -185,7 +185,7 @@ tbody {
 
 /*** MESSAGE STYLES ***/
 .messageContainer {
-  color: #c3c3c3;
+  color: #ffd892;
   font-family: "Lobster", cursive;
   font-size: 2em;
   text-align: center;
@@ -271,8 +271,8 @@ depending on the loading status */
 
 /*** DETAILED VIEW STYLES ***/
 .planetView .modal-content {
-  color: #1d1d1d;
-  background-color: #c3c3c3;
+  color: #452d00;
+  background-color: #ffd892;
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
@@ -280,7 +280,7 @@ depending on the loading status */
   /* stops bg color from leaking outside the border: */ }
 
 .modal-header {
-  border-bottom-color: #505050; }
+  border-bottom-color: #ab6e00; }
 
 .detailBody {
   min-height: 250px; }
@@ -303,9 +303,9 @@ depending on the loading status */
 /* similar planet tile colour animation on hover */
 @keyframes focusOnSmallTile {
   from {
-    background-color: #b6b6b6; }
+    background-color: #ffcf78; }
   to {
-    background-color: #6a6a6a; } }
+    background-color: #de8f00; } }
 .similarPlanets {
   clear: left; }
   .similarPlanets p {
@@ -327,14 +327,14 @@ depending on the loading status */
     .similarPlanets .similarPlanetList .similarPlanetTile {
       min-width: 150px;
       height: 150px;
-      border-color: #505050;
+      border-color: #ab6e00;
       border-width: 1px;
       border-style: solid;
       margin: 15px;
       padding: 10px;
-      background-color: #b6b6b6; }
+      background-color: #ffcf78; }
       .similarPlanets .similarPlanetList .similarPlanetTile:hover {
-        background-color: #6a6a6a;
+        background-color: #de8f00;
         animation-name: focusOnTile;
         animation-duration: 0.9s;
         animation-timing-function: ease-out; }
