@@ -146,33 +146,26 @@ h1 {
     }
 
     .contentContainer {
+      @include flex;
+      align-items: center;
+      justify-content: center;
 
-      .imageContainer {
-        padding: 5px 5px 5px 8px;
-        vertical-align: middle;
+      .planetThumbnail {
 
         .planetImage {
-          max-width: 50px;
-          max-height: 120px;
-          float: left;
-          margin: 0 auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
-      }
-
-      .planetText {
-        padding-left: 10px;
-        vertical-align: middle;
 
         .planetName {
+          margin-top: 5px;
+          text-align: center;
           font-size: 0.9em;
-          padding: 4px;
-        }
 
-        .planetTagline {
-          padding: 4px;
-          font-size: 0.8em;
         }
       }
+
     }
   }
 

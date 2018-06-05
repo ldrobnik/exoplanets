@@ -132,23 +132,25 @@ h1 {
       animation-name: focusOnTile;
       animation-duration: 0.8s;
       animation-timing-function: ease-out; }
-    .planetTileContainer .planetTile .contentContainer .imageContainer {
-      padding: 5px 5px 5px 8px;
-      vertical-align: middle; }
-      .planetTileContainer .planetTile .contentContainer .imageContainer .planetImage {
-        max-width: 50px;
-        max-height: 120px;
-        float: left;
-        margin: 0 auto; }
-    .planetTileContainer .planetTile .contentContainer .planetText {
-      padding-left: 10px;
-      vertical-align: middle; }
-      .planetTileContainer .planetTile .contentContainer .planetText .planetName {
-        font-size: 0.9em;
-        padding: 4px; }
-      .planetTileContainer .planetTile .contentContainer .planetText .planetTagline {
-        padding: 4px;
-        font-size: 0.8em; }
+    .planetTileContainer .planetTile .contentContainer {
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;
+      /* NEW, Spec - Firefox, Chrome, Opera */
+      align-items: center;
+      justify-content: center; }
+      .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; }
+      .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetName {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 0.9em; }
   @media screen and (max-width: 480px) {
     .planetTileContainer {
       /* for very small screens, display a list with little padding */
