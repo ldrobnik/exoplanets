@@ -48,17 +48,17 @@ export class SliderTemperature extends Component {
                    max={this.state.max}
                    step={30}
                    onChange={this.onSliderChange}
-                   trackStyle={[{backgroundColor: "#B6B6B6"}]}
+                   trackStyle={[{backgroundColor: "#ffde45"}]}
                    handleStyle={[
                        {
-                           backgroundColor: "#B6B6B6",
-                           borderColor: "#B6B6B6"
+                           backgroundColor: "#ffde45",
+                           borderColor: "#ffde45"
                        },
                        {
-                           backgroundColor: "#B6B6B6",
-                           borderColor: "#B6B6B6"
+                           backgroundColor: "#ffde45",
+                           borderColor: "#ffde45"
                        }]}
-                   railStyle={{backgroundColor: "#E3E3E3"}}
+                   railStyle={{backgroundColor: "#ffd892"}}
                    pushable
             />
         );
