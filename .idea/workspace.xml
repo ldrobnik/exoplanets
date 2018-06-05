@@ -57,8 +57,8 @@
       <file leaf-file-name="SliderTemperature.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/SliderTemperature.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="152">
+              <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -68,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/SliderRadius.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="62" column="49" lean-forward="false" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+              <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -139,7 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loader</find>
       <find>handleDetails</find>
       <find>name</find>
       <find>loading</find>
@@ -169,6 +168,7 @@
       <find>#ffd892</find>
       <find>#B6B6B6</find>
       <find>#E3E3E3</find>
+      <find>#ffde45</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -190,6 +190,7 @@
       <replace>#ffab12</replace>
       <replace>#ffde45</replace>
       <replace>#ffd892</replace>
+      <replace>#f2bc5b</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -553,12 +554,12 @@
       <workItem from="1527929097567" duration="7264000" />
       <workItem from="1527950209043" duration="2226000" />
       <workItem from="1527957143041" duration="772000" />
-      <workItem from="1528205234503" duration="3070000" />
+      <workItem from="1528205234503" duration="3179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39037000" />
+    <option name="totallyTimeSpent" value="39146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="141" y="52" width="1708" height="923" extended-state="0" />
@@ -947,15 +948,15 @@
     <entry file="file://$PROJECT_DIR$/src/components/SliderRadius.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="62" column="49" lean-forward="false" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+          <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SliderTemperature.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state relative-caret-position="152">
+          <caret line="58" column="41" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding />
         </state>
       </provider>

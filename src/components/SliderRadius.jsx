@@ -50,15 +50,15 @@ export class SliderRadius extends Component {
                    max={this.state.max}
                    step={15}
                    onChange={this.onSliderChange}
-                   trackStyle={[{backgroundColor: "#ffde45"}]}
+                   trackStyle={[{backgroundColor: "#f2bc5b"}]}
                    handleStyle={[
                        {
-                           backgroundColor: "#ffde45",
-                           borderColor: "#ffde45"
+                           backgroundColor: "#f2bc5b",
+                           borderColor: "#f2bc5b"
                        },
                        {
-                           backgroundColor: "#ffde45",
-                           borderColor: "#ffde45"
+                           backgroundColor: "#f2bc5b",
+                           borderColor: "#f2bc5b"
                        }]}
                    railStyle={{backgroundColor: "#ffd892"}}
                    pushable
