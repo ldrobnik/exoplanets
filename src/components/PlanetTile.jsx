@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import {Image, Table} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 
 
@@ -103,7 +102,6 @@ export class PlanetTile extends Component {
 
         let containerClass = ""; //specifies the class of the container holding the main content
         let loaderClass = ""; //specifies the class of the container holding the spinner
-        let imageName = (this.props.density >= 2) ? "solid.png" : "fluffy.png"; //if planet density is at least 2 g/cm^3, load the image of a rocky planet; otherwise -- of a Jovian planet
 
         if (this.state.loading) {
             containerClass = "displayNone"; //hides the tile content when loading
@@ -111,6 +109,25 @@ export class PlanetTile extends Component {
         } else {
             containerClass = "contentContainer"; //shows the tile content when loaded
             loaderClass = "displayNone"; //hides the loader when the content has loaded
+        }
+
+
+        let imageName = (this.props.density >= 2) ? "solid.png" : "fluffy.png"; //if planet density is at least 2 g/cm^3, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
+
+        let imageSize = ""; //specifies the width of the planet image
+
+        if (this.props.radius !== null) {
+
+            //if the planet has a defined radius, calculate the image width as follows:
+
+            imageSize = 20 * Math.abs(Math.log(this.props.radius*2)) + "px";
+
+            console.log("radius: ", this.props.radius, "log: ", Math.log(this.props.radius*2), "width: ", imageSize);
+        } else {
+
+            //if the planet has no definied radius (the value is 'null'), apply the following widht:
+
+            imageSize = "50px";
         }
 
         if (this.props.name !== null) {
@@ -130,13 +147,13 @@ export class PlanetTile extends Component {
                             />
                         </div>
 
-                        <Table className={containerClass}>
+                        <div className={containerClass}>
                             <figure className="planetThumbnail">
                                 <img
                                     src={imageName}
                                     alt="planet icon"
                                     className="planetImage"
-                                    width="50px"
+                                    width={imageSize}
                                 />
                                 <figcaption className="planetName">
                                     <strong>{this.state.name}</strong>
@@ -144,7 +161,7 @@ export class PlanetTile extends Component {
                             </figure>
 
 
-                        </Table>
+                        </div>
                     </div>
                 </Link>
             )
