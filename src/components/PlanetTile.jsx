@@ -103,6 +103,7 @@ export class PlanetTile extends Component {
 
         let containerClass = ""; //specifies the class of the container holding the main content
         let loaderClass = ""; //specifies the class of the container holding the spinner
+        let imageName = (this.props.density >= 2) ? "solid" : "fluffy"; //if planet density is at least 2 g/cm^3, load the image of a rocky planet; otherwise -- of a Jovian planet
 
         if (this.state.loading) {
             containerClass = "displayNone"; //hides the tile content when loading
@@ -144,6 +145,7 @@ export class PlanetTile extends Component {
                                     <p className="planetName">
                                         <strong>{this.state.name}</strong>
                                     </p>
+                                    <p>{imageName + " " + this.props.density}</p>
                                     {/*<p className="planetTagline">*/}
                                         {/*{this.state.tagline}*/}
                                     {/*</p>*/}
