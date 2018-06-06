@@ -112,7 +112,7 @@ export class PlanetTile extends Component {
         }
 
 
-        let imageName = (this.props.radius < 0.5 && this.props.radius !== null) ? "solid.png" : "fluffy.png"; //if planet raddius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
+        let imageName = (this.props.radius < 0.25 && this.props.radius !== null) ? "solid.png" : "fluffy.png"; //if planet raddius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
 
         //what to add above -- if planet density is not known, check for radius. if small radius, assume it's rocky; then check for mass - large mass, assume it's jovian
 
@@ -124,7 +124,7 @@ export class PlanetTile extends Component {
 
             // imageSize = 10 * (Math.log(this.props.radius*100)) + "px";
 
-            imageSize = this.props.radius * 70 + "px";
+            imageSize = this.props.radius * 75 + "px";
 
             console.log("planet: ", this.state.name, "radius: ", this.props.radius, "log: ", (Math.log(this.props.radius * 100)), "width: ", imageSize);
         } else {
