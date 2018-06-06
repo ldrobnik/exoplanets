@@ -278,20 +278,20 @@ tbody {
   width: 100%;
 }
 
-/* used when loading Similar Planets list */
-.loaderSimilarPlanetsContainer {
-  @include flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-}
-
-/* used when loading Similar Planet Tile component */
-.loaderSimilarPlanetContainer {
-  @include flex;
-  justify-content: center;
-  padding-top: 45px;
-}
+///* used when loading Similar Planets list */
+//.loaderSimilarPlanetsContainer {
+//  @include flex;
+//  align-items: center;
+//  justify-content: center;
+//  padding: 20px 0;
+//}
+//
+///* used when loading Similar Planet Tile component */
+//.loaderSimilarPlanetContainer {
+//  @include flex;
+//  justify-content: center;
+//  padding-top: 45px;
+//}
 
 /* class applied to elements
 that need to be hidden
@@ -338,67 +338,67 @@ depending on the loading status */
   list-style-type: circle;
 }
 
-/*** SIMILAR PLANETS STYLES ***/
-
-/* similar planet tile colour animation on hover */
-@keyframes focusOnSmallTile {
-  from {
-    background-color: setColor(2);
-  }
-
-  to {
-    background-color: setColor(-1);
-  }
-}
-
-.similarPlanets {
-  clear: left;
-
-  p {
-    margin-left: 20px;
-  }
-
-  .similarPlanetList {
-
-    @include flex;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    .similarPlanetTile {
-      min-width: 150px;
-      height: 150px;
-      border-color: setColor(-2);
-      border-width: 1px;
-      border-style: solid;
-      margin: 15px;
-      padding: 10px;
-      background-color: setColor(2);
-
-      &:hover {
-        background-color: setColor(-1);
-        animation-name: focusOnTile;
-        animation-duration: 0.9s;
-        animation-timing-function: ease-out;
-      }
-
-      figure {
-
-        @include flex;
-        justify-content: center;
-
-        .similarPlanetImage {
-          max-height: 110px;
-          margin-bottom: 10px;
-        }
-      }
-
-      .similarPlanetCaption {
-        font-size: 0.7em;
-        text-align: center;
-      }
-    }
-  }
-}
+///*** SIMILAR PLANETS STYLES ***/
+//
+///* similar planet tile colour animation on hover */
+//@keyframes focusOnSmallTile {
+//  from {
+//    background-color: setColor(2);
+//  }
+//
+//  to {
+//    background-color: setColor(-1);
+//  }
+//}
+//
+//.similarPlanets {
+//  clear: left;
+//
+//  p {
+//    margin-left: 20px;
+//  }
+//
+//  .similarPlanetList {
+//
+//    @include flex;
+//    flex-wrap: wrap;
+//    -webkit-flex-wrap: wrap;
+//    align-items: center;
+//    justify-content: center;
+//    width: 100%;
+//
+//    .similarPlanetTile {
+//      min-width: 150px;
+//      height: 150px;
+//      border-color: setColor(-2);
+//      border-width: 1px;
+//      border-style: solid;
+//      margin: 15px;
+//      padding: 10px;
+//      background-color: setColor(2);
+//
+//      &:hover {
+//        background-color: setColor(-1);
+//        animation-name: focusOnTile;
+//        animation-duration: 0.9s;
+//        animation-timing-function: ease-out;
+//      }
+//
+//      figure {
+//
+//        @include flex;
+//        justify-content: center;
+//
+//        .similarPlanetImage {
+//          max-height: 110px;
+//          margin-bottom: 10px;
+//        }
+//      }
+//
+//      .similarPlanetCaption {
+//        font-size: 0.7em;
+//        text-align: center;
+//      }
+//    }
+//  }
+//}

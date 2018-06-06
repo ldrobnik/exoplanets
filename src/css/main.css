@@ -250,33 +250,6 @@ tbody {
   height: 40vh;
   width: 100%; }
 
-/* used when loading Similar Planets list */
-.loaderSimilarPlanetsContainer {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-  display: flex;
-  /* NEW, Spec - Firefox, Chrome, Opera */
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0; }
-
-/* used when loading Similar Planet Tile component */
-.loaderSimilarPlanetContainer {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-  display: flex;
-  /* NEW, Spec - Firefox, Chrome, Opera */
-  justify-content: center;
-  padding-top: 45px; }
-
 /* class applied to elements
 that need to be hidden
 depending on the loading status */
@@ -312,61 +285,5 @@ depending on the loading status */
 
 .foodPairingList li {
   list-style-type: circle; }
-
-/*** SIMILAR PLANETS STYLES ***/
-/* similar planet tile colour animation on hover */
-@keyframes focusOnSmallTile {
-  from {
-    background-color: #ffcf78; }
-  to {
-    background-color: #de8f00; } }
-.similarPlanets {
-  clear: left; }
-  .similarPlanets p {
-    margin-left: 20px; }
-  .similarPlanets .similarPlanetList {
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;
-    /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;
-    /* NEW, Spec - Firefox, Chrome, Opera */
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%; }
-    .similarPlanets .similarPlanetList .similarPlanetTile {
-      min-width: 150px;
-      height: 150px;
-      border-color: #ab6e00;
-      border-width: 1px;
-      border-style: solid;
-      margin: 15px;
-      padding: 10px;
-      background-color: #ffcf78; }
-      .similarPlanets .similarPlanetList .similarPlanetTile:hover {
-        background-color: #de8f00;
-        animation-name: focusOnTile;
-        animation-duration: 0.9s;
-        animation-timing-function: ease-out; }
-      .similarPlanets .similarPlanetList .similarPlanetTile figure {
-        display: -webkit-box;
-        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-        display: -ms-flexbox;
-        /* TWEENER - IE 10 */
-        display: -webkit-flex;
-        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-        display: flex;
-        /* NEW, Spec - Firefox, Chrome, Opera */
-        justify-content: center; }
-        .similarPlanets .similarPlanetList .similarPlanetTile figure .similarPlanetImage {
-          max-height: 110px;
-          margin-bottom: 10px; }
-      .similarPlanets .similarPlanetList .similarPlanetTile .similarPlanetCaption {
-        font-size: 0.7em;
-        text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

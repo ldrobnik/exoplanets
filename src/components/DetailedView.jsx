@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Modal, Image} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import SimilarPlanets from "./SimilarPlanets"; //component containing a list of similar planets
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 
 export class DetailedView extends Component {
@@ -86,7 +85,7 @@ export class DetailedView extends Component {
         }
     }
 
-    //updates the state with all the details
+    //updates the state with all the details (see descriptions above, starting from line 18)
     setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
         this.setState({pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate});
     }
@@ -124,10 +123,10 @@ export class DetailedView extends Component {
         if (idInPlanetData !== undefined) {
 
             //if the planet is already loaded, take all the details from memory
-            let {name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density} = this.props.planetData[idInPlanetData];
+            let {pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate} = this.props.planetData[idInPlanetData];
 
             //update the detailed view data
-            this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density);
+            this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
 
         } else {
             // &where=pl_hostname like 'Kepler-22'
@@ -146,10 +145,10 @@ export class DetailedView extends Component {
                     if (planetDetails[0] !== undefined) {
 
                         //get planet details from the single-item array containing the details of the requested planet
-                        let {name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density} = planetDetails[0];
+                        let {pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate} = planetDetails[0];
 
                         //update planet details with data fetched from the API
-                        this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density);
+                        this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
                     }
                 })
                 .catch(() => {
@@ -292,14 +291,6 @@ export class DetailedView extends Component {
                                     {/*})}*/}
                                 {/*</ul>*/}
                             {/*</div>*/}
-                        {/*</div>*/}
-                        {/*<div className={secondaryInfoClass}>*/}
-                            {/*<SimilarPlanets*/}
-                                {/*id={this.props.match.params.id}*/}
-                                {/*radius={this.state.radius}*/}
-                                {/*temperature={this.state.temperature}*/}
-                                {/*density={this.state.density}*/}
-                            {/*/>*/}
                         {/*</div>*/}
                     </Modal.Body>
                 </div>
