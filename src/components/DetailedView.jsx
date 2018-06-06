@@ -66,7 +66,7 @@ export class DetailedView extends Component {
     //checks if the requested planet is already in the memory
     searchPlanetInMemory(id) {
 
-        // check if a planet with a given id is in the memory
+        // check if a planet with a given hostname and letter is in the memory
         for (let i = 0; i < this.props.planetData.length; i++) {
             if (this.props.planetData[i].id === Number(id)) return i;
         }
@@ -110,10 +110,11 @@ export class DetailedView extends Component {
         this.setState({showSecondaryInfo: true});
 
         //planet id
-        const planetId = this.props.match.params.id;
+        const hostName = this.props.match.params.hostName;
+        const planetLetter = this.props.match.params.planetLetter;
 
         //checks if this planet is already loaded in the memory:
-        const idInPlanetData = this.searchPlanetInMemory(planetId);
+        const idInPlanetData = this.searchPlanetInMemory(hostName, planetLetter);
 
         if (idInPlanetData !== undefined) {
 
@@ -124,10 +125,10 @@ export class DetailedView extends Component {
             this.setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density);
 
         } else {
-
+            // &where=pl_hostname like 'Kepler-22'
             //if the planet is not in the memory, fetch it from the API
             // const BASE_URL = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&format=json"; //basic URL address
-            const FETCH_URL = `${BASE_URL}${planetId}`; //URL address to get planets of the specified id
+            const FETCH_URL = `${BASE_URL}&where=pl_hostname like ${hostName}&where=pl_letter like ${planetLetter}`; //URL address to get planets of the specified id
 
             //fetch planet data from the API
             fetch(FETCH_URL, {
