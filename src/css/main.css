@@ -143,12 +143,24 @@ h1 {
       /* NEW, Spec - Firefox, Chrome, Opera */
       align-items: center;
       justify-content: center; }
-      .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetImage {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        overflow: hidden;
-        max-width: 180px; }
+      .planetTileContainer .planetTile .contentContainer .planetThumbnail .imageContainer {
+        max-width: 180px;
+        max-height: 180px;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; }
+        .planetTileContainer .planetTile .contentContainer .planetThumbnail .imageContainer .planetImage {
+          display: block;
+          margin-left: auto;
+          margin-right: auto; }
       .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetName {
         margin-top: 5px;
         text-align: center;

@@ -112,7 +112,7 @@ export class PlanetTile extends Component {
         }
 
 
-        let imageName = (this.props.radius < 0.2 && this.props.radius !== null) ? "solid.png" : "fluffy.png"; //if planet raddius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
+        let imageName = (this.props.radius < 0.5 && this.props.radius !== null) ? "solid.png" : "fluffy.png"; //if planet raddius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet (also if null)
 
         //what to add above -- if planet density is not known, check for radius. if small radius, assume it's rocky; then check for mass - large mass, assume it's jovian
 
@@ -124,9 +124,9 @@ export class PlanetTile extends Component {
 
             // imageSize = 10 * (Math.log(this.props.radius*100)) + "px";
 
-            imageSize = this.props.radius*70 + "px";
+            imageSize = this.props.radius * 70 + "px";
 
-            console.log("radius: ", this.props.radius, "log: ", (Math.log(this.props.radius*100)), "width: ", imageSize);
+            console.log("planet: ", this.state.name, "radius: ", this.props.radius, "log: ", (Math.log(this.props.radius * 100)), "width: ", imageSize);
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following widht:
@@ -134,14 +134,14 @@ export class PlanetTile extends Component {
             imageSize = "50px";
 
             /*
-            * if the planet has definied width and is dense, apply smaller size, otherwise bigger size
-            *
-            * then check for mass
-            *
-            * in all cases lower alpha so it suggests the size is not known
-            *
-            * a maximum size can be applied
-            * */
+             * if the planet has definied width and is dense, apply smaller size, otherwise bigger size
+             *
+             * then check for mass
+             *
+             * in all cases lower alpha so it suggests the size is not known
+             *
+             * a maximum size can be applied
+             * */
         }
 
         if (this.props.name !== null) {
@@ -163,12 +163,14 @@ export class PlanetTile extends Component {
 
                         <div className={containerClass}>
                             <figure className="planetThumbnail">
-                                <img
-                                    src={imageName}
-                                    alt="planet icon"
-                                    className="planetImage"
-                                    width={imageSize}
-                                />
+                                <div className="imageContainer">
+                                    <img
+                                        src={imageName}
+                                        alt="planet icon"
+                                        className="planetImage"
+                                        width={imageSize}
+                                    />
+                                </div>
                                 <figcaption className="planetName">
                                     <strong>{this.state.name}</strong>
                                 </figcaption>
