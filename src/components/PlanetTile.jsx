@@ -120,16 +120,16 @@ export class PlanetTile extends Component {
 
         if (this.props.radius !== null) {
 
-            //if the planet has a defined radius, calculate the image width as follows:
+            //if the planet has a defined radius, calculate the image width [flaticon font size] as follows:
 
             // imageSize = 10 * (Math.log(this.props.radius*100)) + "px";
 
             imageSize = this.props.radius * 75 + "px";
 
-            console.log("planet: ", this.state.name, "radius: ", this.props.radius, "log: ", (Math.log(this.props.radius * 100)), "width: ", imageSize);
+            console.log("planet: ", this.state.name, "radius: ", this.props.radius, "width: ", imageSize);
         } else {
 
-            //if the planet has no definied radius (the value is 'null'), apply the following widht:
+            //if the planet has no definied radius (the value is 'null'), apply the following width [flaticon font size]:
 
             imageSize = "50px";
 
