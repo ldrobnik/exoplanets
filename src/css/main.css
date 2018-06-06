@@ -157,8 +157,6 @@ h1 {
         align-items: center;
         justify-content: center;
         overflow: hidden; }
-        .planetTileContainer .planetTile .contentContainer .planetThumbnail .imageContainer .flaticon-jupiter, .planetTileContainer .planetTile .contentContainer .planetThumbnail .imageContainer .flaticon-mars {
-          color: #ffab12; }
       .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetName {
         margin-top: 5px;
         text-align: center;
@@ -273,12 +271,26 @@ depending on the loading status */
   min-height: 250px; }
 
 .detailContentContainer {
-  padding: 20px; }
-  .detailContentContainer .detailImage {
-    max-height: 180px;
-    float: left;
-    padding-right: 30px;
-    padding-bottom: 30px; }
+  padding: 20px;
+  text-align: center; }
+  .detailContentContainer .planetLargeView .imageContainer {
+    max-width: 98%;
+    max-height: 400px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; }
+  .detailContentContainer .planetLargeView .planetName {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 0.9em; }
 
 .foodPairingContainer {
   clear: left; }

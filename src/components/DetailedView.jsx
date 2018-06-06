@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Modal, Image} from "react-bootstrap";
+import {Modal, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 
@@ -87,7 +87,26 @@ export class DetailedView extends Component {
 
     //updates the state with all the details (see descriptions above, starting from line 18)
     setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
-        this.setState({pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate});
+        this.setState({
+            pl_hostname,
+            pl_letter,
+            pl_radj,
+            pl_rade,
+            pl_dens,
+            pl_eqt,
+            pl_discmethod,
+            pl_orbsmax,
+            pl_pnum,
+            pl_orbper,
+            pl_orbeccen,
+            pl_orbincl,
+            pl_bmassj,
+            pl_bmasse,
+            st_dist,
+            st_mass,
+            st_rad,
+            rowupdate
+        });
     }
 
 
@@ -231,7 +250,6 @@ export class DetailedView extends Component {
         let imageName = ""; //specifies the filename of the planet image shown
 
 
-
         if ((this.state.pl_radj !== null) && (this.state.pl_radj !== 0)) {
 
             //if the planet has a defined radius, calculate the image width [flaticon font size] as follows
@@ -269,26 +287,25 @@ export class DetailedView extends Component {
                     </Modal.Header>
                     <Modal.Body className="detailBody">
                         <div className="detailContentContainer">
-                            <div className={secondaryInfoClass}>
-                                <figure className="planetLargeView">
-                                    <div className="imageContainer">
-                                        <img
-                                            src={imageName}
-                                            alt="planet icon"
-                                            className="planetLargeImage"
-                                            width={imageSize}
-                                        />
-                                    </div>
-                                    <figcaption className="planetName">
-                                        <strong>{this.state.pl_hostname}&nbsp;{this.state.pl_letter}</strong>
-                                    </figcaption>
-                                </figure>
-                            </div>
 
-                            <p>
-                                <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
-                                {this.state.pl_discmethod}
-                            </p>
+                                <div className={secondaryInfoClass}>
+                                    <figure className="planetLargeView">
+                                        <div className="imageContainer">
+                                            <img
+                                                src={imageName}
+                                                alt="planet icon"
+                                                className="planetLargeImage"
+                                                width={imageSize}
+                                            />
+                                        </div>
+                                    </figure>
+                                </div>
+
+                                <p>
+                                    <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
+                                    {this.state.pl_discmethod}
+                                </p>
+
 
                         </div>
                     </Modal.Body>
