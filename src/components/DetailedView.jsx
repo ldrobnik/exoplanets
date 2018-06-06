@@ -78,7 +78,7 @@ export class DetailedView extends Component {
         //check whether there are any planet data loaded
         if (this.props.planetData.length > 0) {
             // check if a planet with a given hostname and letter is in the memory
-            for (let i = 0; i <= this.props.planetData.length; i++) {
+            for (let i = 0; i < this.props.planetData.length; i++) {
                 if ((this.props.planetData[i].pl_hostname === hostName) && (this.props.planetData[i].pl_letter === planetLetter)) return i;
                 console.log(this.props.planetData);
             }
@@ -128,6 +128,10 @@ export class DetailedView extends Component {
             //update the detailed view data
             this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
 
+
+            //turn off loader
+            this.turnOffLoader();
+
         } else {
             // &where=pl_hostname like 'Kepler-22'
             //if the planet is not in the memory, fetch it from the API
@@ -149,6 +153,9 @@ export class DetailedView extends Component {
 
                         //update planet details with data fetched from the API
                         this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
+
+                        //turn off loader
+                        this.turnOffLoader();
                     }
                 })
                 .catch(() => {
@@ -156,7 +163,7 @@ export class DetailedView extends Component {
                     this.setState({showSecondaryInfo: false});
 
                     //set the title to 'Error', description to an error message and clear all the other details
-                    this.setDetails("Error", "", "Error fetching planet details. Please check your Internet connection and make sure you have typed a correct URL.", "", [], "", "", "", "");
+                    this.setDetails("Error", "", 0, 0, 0, 0, "Error fetching planet details. Please check your Internet connection and make sure you have typed a correct URL.", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "");
 
                     //hide spinner after a short while
                     setTimeout(() => {
@@ -215,17 +222,28 @@ export class DetailedView extends Component {
             secondaryInfoClass = "displayNone";
         }
 
-        //Wikipedia links explaining the meaning of radius, temperature and density
-        const radiusLink = "https://en.wikipedia.org/";
-        const temperatureLink = "https://en.wikipedia.org/";
-        const densityLink = "https://en.wikipedia.org/";
 
         //rel parameter - precaution against reverse tabnabbing
         const rel = "noopener noreferrer";
 
-        //Food pairing suggestions array
 
-        const foodPairingSuggestions = this.state.food_pairing;
+        let imageSize = ""; //specifies the width of the planet image
+        let imageName = ""; //specifies the filename of the planet image shown
+
+        if (this.props.radius !== null) {
+
+            //if the planet has a defined radius, calculate the image width [flaticon font size] as follows
+            imageSize = this.props.radius * 180 + "px";
+
+            //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
+            imageName = (this.props.radius < 0.25 && this.props.radius !== null) ? "solid.png" : "fluffy.png";
+
+        } else {
+
+            //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
+            imageSize = "60px";
+            imageName = "unknown.png";
+        }
 
         return (
 
@@ -243,55 +261,32 @@ export class DetailedView extends Component {
                 </div>
                 <div className={containerClass}>
                     <Modal.Header closeButton>
-                        <Modal.Title><strong>{this.state.name}</strong></Modal.Title>
-                        <p>{this.state.tagline}</p>
+                        <Modal.Title><strong>{this.state.pl_hostname}&nbsp;{this.state.pl_letter}</strong></Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="detailBody">
-                        {/*<div className="detailContentContainer">*/}
-                            {/*<div className={secondaryInfoClass}>*/}
-                                {/*<Image*/}
-                                    {/*className="detailImage"*/}
-                                    {/*src={this.state.image_url}*/}
-                                    {/*alt={this.state.name}*/}
-                                    {/*onLoad={this.turnOffLoader.bind(this)}*/}
-                                {/*/>*/}
-                            {/*</div>*/}
-                            {/*<p className={secondaryInfoClass}>*/}
-                                {/*<strong>*/}
-                                    {/*<a href={radiusLink} target="_blank" rel={rel}>*/}
-                                        {/*radius:&nbsp;*/}
-                                    {/*</a>*/}
-                                {/*</strong>*/}
-                                {/*{this.state.radius} &#124;*/}
-                                {/*<span> </span>*/}
-                                {/*<strong>*/}
-                                    {/*<a href={temperatureLink} target="_blank" rel={rel}>*/}
-                                        {/*temperature:&nbsp;*/}
-                                    {/*</a>*/}
-                                {/*</strong>*/}
-                                {/*{this.state.temperature} &#124;*/}
-                                {/*<span> </span>*/}
-                                {/*<strong><a href={densityLink} target="_blank" rel={rel}>*/}
-                                    {/*density:&nbsp;*/}
-                                {/*</a>*/}
-                                {/*</strong>{this.state.density}*/}
-                            {/*</p>*/}
-                            {/*<p>{this.state.description}</p>*/}
-                            {/*<p className={secondaryInfoClass}><strong>Brewer&#8217;s*/}
-                                {/*Tips: </strong>{this.state.brewers_tips}</p>*/}
-                            {/*<div className="foodPairingContainer">*/}
-                                {/*<p className={secondaryInfoClass}><strong>Best served with:</strong></p>*/}
-                                {/*<ul className="foodPairingList">*/}
-                                    {/*{foodPairingSuggestions.map((foodPairingSuggestion, k) => {*/}
-                                        {/*return (*/}
-                                            {/*<li key={k}>*/}
-                                                {/*{foodPairingSuggestion}*/}
-                                            {/*</li>*/}
-                                        {/*)*/}
-                                    {/*})}*/}
-                                {/*</ul>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
+                        <div className="detailContentContainer">
+                            <div className={secondaryInfoClass}>
+                                <figure className="planetLargeView">
+                                    <div className="imageContainer">
+                                        <img
+                                            src={imageName}
+                                            alt="planet icon"
+                                            className="planetImage"
+                                            width={imageSize}
+                                        />
+                                    </div>
+                                    <figcaption className="planetName">
+                                        <strong>{this.state.pl_hostname}&nbsp;{this.state.pl_letter}</strong>
+                                    </figcaption>
+                                </figure>
+                            </div>
+
+                            <p>
+                                <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
+                                {this.state.pl_discmethod}
+                            </p>
+
+                        </div>
                     </Modal.Body>
                 </div>
             </Modal>
