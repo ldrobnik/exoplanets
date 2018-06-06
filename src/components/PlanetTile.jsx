@@ -145,11 +145,11 @@ export class PlanetTile extends Component {
              * */
         }
 
-        if (this.props.name !== null) {
+        if ((this.props.hostname !== null) && (this.props.letter !== null)) {
 
             //show a tile if it has details
 
-            const link = "/details/" + this.props.id; //router link path
+            const link = "/details/" + this.props.hostname.replace(/ /g, "%20") + "/" + this.props.letter; //router link path
 
             return (
                 <Link to={link} className="routerLink">

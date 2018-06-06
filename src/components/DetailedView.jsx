@@ -64,11 +64,11 @@ export class DetailedView extends Component {
 
 
     //checks if the requested planet is already in the memory
-    searchPlanetInMemory(id) {
+    searchPlanetInMemory(hostName, planetLetter) {
 
         // check if a planet with a given hostname and letter is in the memory
-        for (let i = 0; i < this.props.planetData.length; i++) {
-            if (this.props.planetData[i].id === Number(id)) return i;
+        for (let i = 0; i <= this.props.planetData.length; i++) {
+            if ((this.props.planetData[i].pl_hostname === hostName) && (this.props.planetData[i].pl_letter === planetLetter)) return i;
         }
     }
 
@@ -110,9 +110,10 @@ export class DetailedView extends Component {
         this.setState({showSecondaryInfo: true});
 
         //planet id
-        const hostName = this.props.match.params.hostName;
+        const hostName = this.props.match.params.hostName.replace(/%20/g, " "); //replace all '%20's with spaces
         const planetLetter = this.props.match.params.planetLetter;
 
+        console.log(hostName);
         //checks if this planet is already loaded in the memory:
         const idInPlanetData = this.searchPlanetInMemory(hostName, planetLetter);
 
