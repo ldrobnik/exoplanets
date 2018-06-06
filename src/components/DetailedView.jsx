@@ -18,15 +18,25 @@ export class DetailedView extends Component {
             show: false, //specifies whether the detailed view modal should be visible
             loading: true, //specifies whether the spinner should be visible
             showSecondaryInfo: true, //specifies whether certain text (such as the 'Brewer’s Tips' heading) should be present; hide when an error is encountered to display an error message
-            name: "", //planet name
-            tagline: "", //planet tagline
-            description: "", //planet description
-            image_url: "", //planet image url
-            food_pairing: [], //food pairing suggestions
-            brewers_tips: "", //brewer’s tips
-            radius: 0, //planet radius value
-            temperature: 0, //planet temperature value
-            density: 0 //planet density value
+            pl_hostname: "", //Host Star Name: Stellar name most commonly used in the literature.
+            pl_letter: "", //Planet Letter: Letter assigned to the planetary component of a planetary system.
+            pl_radj: 0, //Planet Radius (Jupiter radii):	Length of a line segment from the center of the planet to its surface, measured in units of radius of Jupiter.
+            pl_rade: 0, //Planet Radius (Earth radii): Length of a line segment from the center of the planet to its surface, measured in units of radius of the Earth.
+            pl_dens: 0, //Planet Density (g/cm**3): Amount of mass per unit of volume of the planet.
+            pl_pnum: 0, //	Number of Planets in System	Number of planets in the planetary system.
+            pl_discmethod: "", //Discovery Method: Method by which the planet was first identified.
+            pl_orbsmax: 0, //Orbit Semi-Major Axis (AU):	The longest radius of an elliptic orbit, or, for exoplanets detected via gravitational microlensing or direct imaging, the projected separation in the plane of the sky.
+            pl_eqt: 0, //Planet Equilibrium Temperature [K]	The equilibrium temperature of the planet as modeled by a black body heated only by its host star, or for directly imaged planets, the effective temperature of the planet required to match the measured luminosity if the planet were a black body.
+            pl_orbper: 0, //Orbital Period (days): Time the planet takes to make a complete orbit around the host star or system.
+            pl_orbeccen: 0, //Eccentricity: Amount by which the orbit of the planet deviates from a perfect circle.
+            pl_orbincl: 0, //Inclination (deg): Angular distance of the orbital plane from the line of sight.
+            pl_bmassj: 0, //Planet Mass or M*sin(i) [Jupiter mass]: Best planet mass measurement in units of masses of Jupiter. Either Mass, M*sin(i)/sin(i), or M*sin(i). See provenance for source of the measurement.
+            pl_bmasse: 0, //Planet Mass or M*sin(i) [Earth mass]: Best planet mass measurement in units of masses of Earth. Either Mass, M*sin(i)/sin(i), or M*sin(i). See provenance for source of the measurement.
+            st_dist: 0, //Distance (pc): Distance to the planetary system in units of parsecs.
+            st_mass: 0, //	Stellar Mass (solar mass):	Amount of matter contained in the star, measured in units of masses of the Sun.
+            st_rad: 0, //
+            rowupdate: "" //Date of Last Update:	Date of last update of the planet parameters.
+
         };
     }
 
@@ -248,59 +258,59 @@ export class DetailedView extends Component {
                         <p>{this.state.tagline}</p>
                     </Modal.Header>
                     <Modal.Body className="detailBody">
-                        <div className="detailContentContainer">
-                            <div className={secondaryInfoClass}>
-                                <Image
-                                    className="detailImage"
-                                    src={this.state.image_url}
-                                    alt={this.state.name}
-                                    onLoad={this.turnOffLoader.bind(this)}
-                                />
-                            </div>
-                            <p className={secondaryInfoClass}>
-                                <strong>
-                                    <a href={radiusLink} target="_blank" rel={rel}>
-                                        radius:&nbsp;
-                                    </a>
-                                </strong>
-                                {this.state.radius} &#124;
-                                <span> </span>
-                                <strong>
-                                    <a href={temperatureLink} target="_blank" rel={rel}>
-                                        temperature:&nbsp;
-                                    </a>
-                                </strong>
-                                {this.state.temperature} &#124;
-                                <span> </span>
-                                <strong><a href={densityLink} target="_blank" rel={rel}>
-                                    density:&nbsp;
-                                </a>
-                                </strong>{this.state.density}
-                            </p>
-                            <p>{this.state.description}</p>
-                            <p className={secondaryInfoClass}><strong>Brewer&#8217;s
-                                Tips: </strong>{this.state.brewers_tips}</p>
-                            <div className="foodPairingContainer">
-                                <p className={secondaryInfoClass}><strong>Best served with:</strong></p>
-                                <ul className="foodPairingList">
-                                    {foodPairingSuggestions.map((foodPairingSuggestion, k) => {
-                                        return (
-                                            <li key={k}>
-                                                {foodPairingSuggestion}
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </div>
-                        <div className={secondaryInfoClass}>
-                            <SimilarPlanets
-                                id={this.props.match.params.id}
-                                radius={this.state.radius}
-                                temperature={this.state.temperature}
-                                density={this.state.density}
-                            />
-                        </div>
+                        {/*<div className="detailContentContainer">*/}
+                            {/*<div className={secondaryInfoClass}>*/}
+                                {/*<Image*/}
+                                    {/*className="detailImage"*/}
+                                    {/*src={this.state.image_url}*/}
+                                    {/*alt={this.state.name}*/}
+                                    {/*onLoad={this.turnOffLoader.bind(this)}*/}
+                                {/*/>*/}
+                            {/*</div>*/}
+                            {/*<p className={secondaryInfoClass}>*/}
+                                {/*<strong>*/}
+                                    {/*<a href={radiusLink} target="_blank" rel={rel}>*/}
+                                        {/*radius:&nbsp;*/}
+                                    {/*</a>*/}
+                                {/*</strong>*/}
+                                {/*{this.state.radius} &#124;*/}
+                                {/*<span> </span>*/}
+                                {/*<strong>*/}
+                                    {/*<a href={temperatureLink} target="_blank" rel={rel}>*/}
+                                        {/*temperature:&nbsp;*/}
+                                    {/*</a>*/}
+                                {/*</strong>*/}
+                                {/*{this.state.temperature} &#124;*/}
+                                {/*<span> </span>*/}
+                                {/*<strong><a href={densityLink} target="_blank" rel={rel}>*/}
+                                    {/*density:&nbsp;*/}
+                                {/*</a>*/}
+                                {/*</strong>{this.state.density}*/}
+                            {/*</p>*/}
+                            {/*<p>{this.state.description}</p>*/}
+                            {/*<p className={secondaryInfoClass}><strong>Brewer&#8217;s*/}
+                                {/*Tips: </strong>{this.state.brewers_tips}</p>*/}
+                            {/*<div className="foodPairingContainer">*/}
+                                {/*<p className={secondaryInfoClass}><strong>Best served with:</strong></p>*/}
+                                {/*<ul className="foodPairingList">*/}
+                                    {/*{foodPairingSuggestions.map((foodPairingSuggestion, k) => {*/}
+                                        {/*return (*/}
+                                            {/*<li key={k}>*/}
+                                                {/*{foodPairingSuggestion}*/}
+                                            {/*</li>*/}
+                                        {/*)*/}
+                                    {/*})}*/}
+                                {/*</ul>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                        {/*<div className={secondaryInfoClass}>*/}
+                            {/*<SimilarPlanets*/}
+                                {/*id={this.props.match.params.id}*/}
+                                {/*radius={this.state.radius}*/}
+                                {/*temperature={this.state.temperature}*/}
+                                {/*density={this.state.density}*/}
+                            {/*/>*/}
+                        {/*</div>*/}
                     </Modal.Body>
                 </div>
             </Modal>
