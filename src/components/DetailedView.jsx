@@ -230,20 +230,24 @@ export class DetailedView extends Component {
         let imageSize = ""; //specifies the width of the planet image
         let imageName = ""; //specifies the filename of the planet image shown
 
-        if (this.props.radius !== null) {
+
+
+        if ((this.state.pl_radj !== null) && (this.state.pl_radj !== 0)) {
 
             //if the planet has a defined radius, calculate the image width [flaticon font size] as follows
-            imageSize = this.props.radius * 180 + "px";
+            imageSize = this.state.pl_radj * 180 + "px";
 
             //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
-            imageName = (this.props.radius < 0.25 && this.props.radius !== null) ? "solid.png" : "fluffy.png";
+            imageName = (this.state.pl_radj < 0.25 && this.state.pl_radj !== null) ? "../../solid.png" : "../../fluffy.png";
 
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
             imageSize = "60px";
-            imageName = "unknown.png";
+            imageName = "../../unknown.png";
         }
+
+        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
 
         return (
 
@@ -271,7 +275,7 @@ export class DetailedView extends Component {
                                         <img
                                             src={imageName}
                                             alt="planet icon"
-                                            className="planetImage"
+                                            className="planetLargeImage"
                                             width={imageSize}
                                         />
                                     </div>
