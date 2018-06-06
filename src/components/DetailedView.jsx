@@ -87,18 +87,8 @@ export class DetailedView extends Component {
     }
 
     //updates the state with all the details
-    setDetails(name, tagline, description, image_url, food_pairing, brewers_tips, radius, temperature, density) {
-        this.setState({
-            name, //planetn ame
-            tagline, //planet tagline
-            description, //planet description
-            image_url, //planet image url
-            food_pairing, //food pairing suggestions
-            brewers_tips, //brewer’s tips
-            radius, //planet radius value
-            temperature, //planet temperature value
-            density //planet density value
-        });
+    setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
+        this.setState({pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate});
     }
 
 
