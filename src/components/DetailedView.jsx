@@ -345,6 +345,10 @@ export class DetailedView extends Component {
                                 <strong>Planet equilibrium temperature:&nbsp;</strong>
                                 {this.state.pl_radj}&nbsp;[K]
                             </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Planet density:&nbsp;</strong>
+                                {this.state.pl_radj}&nbsp;[g/cm<sup>3</sup>]
+                            </p>
                             <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
                                 <strong>Orbital Period:&nbsp;</strong>
