@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/SliderTemperature.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/SliderTemperature.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/reducers/reducer_temperature.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.test.js" afterPath="$PROJECT_DIR$/src/actions/index.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/DetailedView.jsx" afterPath="$PROJECT_DIR$/src/components/DetailedView.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home.jsx" afterPath="$PROJECT_DIR$/src/components/Home.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Options.jsx" afterPath="$PROJECT_DIR$/src/components/Options.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Options.test.js" afterPath="$PROJECT_DIR$/src/components/Options.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PlanetTile.jsx" afterPath="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants.js" afterPath="$PROJECT_DIR$/src/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.test.js" afterPath="$PROJECT_DIR$/src/reducers/index.test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,10 +17,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
+            <state relative-caret-position="-964">
               <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -76,7 +63,7 @@
       <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="836">
               <caret line="320" column="55" lean-forward="false" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="55" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -85,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="167" column="54" lean-forward="false" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
+            <state relative-caret-position="96">
+              <caret line="123" column="84" lean-forward="false" selection-start-line="123" selection-start-column="84" selection-end-line="123" selection-end-column="84" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -172,7 +159,6 @@
       <find>Detailed</find>
       <find>pl_dens</find>
       <find>&lt;hr/&gt;</find>
-      <find>src</find>
       <find>te</find>
       <find>tempe</find>
       <find>temp</find>
@@ -180,10 +166,11 @@
       <find>temper</find>
       <find>tempera</find>
       <find>temperatu</find>
-      <find>temperature</find>
       <find>$</find>
       <find>$ima</find>
       <find>$image</find>
+      <find>temperature</find>
+      <find>src</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -251,7 +238,6 @@
         <option value="$PROJECT_DIR$/src/css/main.scss" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/components/DetailedView.jsx" />
-        <option value="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
         <option value="$PROJECT_DIR$/src/components/Options.test.js" />
         <option value="$PROJECT_DIR$/src/components/Options.jsx" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
@@ -260,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/reducers/index.test.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/components/Home.jsx" />
+        <option value="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
       </list>
     </option>
   </component>
@@ -577,12 +564,12 @@
       <workItem from="1528270238578" duration="11998000" />
       <workItem from="1528307443951" duration="4580000" />
       <workItem from="1528365424753" duration="121000" />
-      <workItem from="1528389563150" duration="6843000" />
+      <workItem from="1528389563150" duration="7196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70733000" />
+    <option name="totallyTimeSpent" value="71086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="196" width="1688" height="891" extended-state="0" />
@@ -845,26 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="320" column="55" lean-forward="false" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="167" column="54" lean-forward="false" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Options.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -947,11 +914,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
+        <state relative-caret-position="-964">
           <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#500#797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="320" column="55" lean-forward="false" selection-start-line="320" selection-start-column="55" selection-end-line="320" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="123" column="84" lean-forward="false" selection-start-line="123" selection-start-column="84" selection-end-line="123" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
