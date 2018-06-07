@@ -390,7 +390,6 @@ export class DetailedView extends Component {
                             </p>
 
 
-
                         </div>
                     </Modal.Body>
                 </div>

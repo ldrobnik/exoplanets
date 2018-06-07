@@ -1,6 +1,5 @@
 import {
     SET_RADIUS,
-    SET_TEMPERATURE,
     SET_DENSITY,
     SET_PLANET_DATA,
     SET_DATA_RELOAD,
@@ -12,16 +11,6 @@ import {
 export function setRadius(min, max) {
     const action = {
         type: SET_RADIUS,
-        min,
-        max
-    };
-    return action;
-}
-
-//changes the temperature min and max values
-export function setTemperature(min, max) {
-    const action = {
-        type: SET_TEMPERATURE,
         min,
         max
     };

@@ -10,9 +10,6 @@ describe("Options", () => {
         expect(options.find("Connect(SliderRadius)").exists()).toBe(true);
     });
 
-    it("renders the temperature slider", () => {
-        expect(options.find("Connect(SliderTemperature)").exists()).toBe(true);
-    });
 
     it("renders the density slider", () => {
         expect(options.find("Connect(SliderDensity)").exists()).toBe(true);

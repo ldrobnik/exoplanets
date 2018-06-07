@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
+import Options from "./Options"; //component containing sliders adjusting the radius and density values
 import Planets from "./Planets"; //component containing the list of planets
 import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, ORDER, LIMIT} from "../data/constants"; //constants to create URL for fetching planets
 import {
@@ -92,15 +92,13 @@ export class Home extends Component {
         //fetch data only if API requests are allowed (dataReload is true)
         if (this.props.dataReload === true) {
 
-            // get the radius, temperature and density min and max values as specified by the sliders
-            const {radius, temperature, density} = this.props;
+            // get the radius and density min and max values as specified by the sliders
+            const {radius, density} = this.props;
 
-            //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
+            //based on the above values, set radius and density min and max values to be used to fetch planet data
             const radiusMin = radius.min;
             const radiusMax = (radius.max === 60) ? 2000 : radius.max; //if the slider is set to maximum, account for all planets with radius over 60
 
-            const temperatureMin = temperature.min;
-            const temperatureMax = (temperature.max === 120) ? 2000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over 150
 
             const densityMin = density.min;
             const densityMax = (density.max === 12) ? 2000 : density.max; //if the slider is set to maximum, account for all planets with density over 20
@@ -108,19 +106,17 @@ export class Home extends Component {
             //if the radius slider is not in the default position, add a radius range to the request
             let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
 
-            //if the temperature slider is not in the default position, add a temperature range to the request
-            let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}`;
 
             //if the density slider is not in the default position, add a density range to the request
             let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
 
 
-            //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
-            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+            //the initial URL address to fetch planets within specified radius and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
+            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${densityRange}${LIMIT}${ORDER}`;
 
 
-            //the proper URL address to fetch all planets within specified radius, temperature and density ranges
-            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${ORDER}`;
+            //the proper URL address to fetch all planets within specified radius and density ranges
+            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${densityRange}${ORDER}`;
 
             // fetch initial planet data from the API, limited by distance to the planetary system
             fetch(INITIAL_URL, {
@@ -276,7 +272,6 @@ function mapStateToProps(state) {
 
     const {
         radius, //radius min and max values
-        temperature, //temperature min and max values
         density, //density min and max values
         planetData, //planet details
         dataReload, //specifies whether API requests are allowed
@@ -286,7 +281,6 @@ function mapStateToProps(state) {
 
     return {
         radius,
-        temperature,
         density,
         planetData,
         dataReload,

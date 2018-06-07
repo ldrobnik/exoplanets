@@ -1,6 +1,5 @@
 import {
     SET_RADIUS,
-    SET_TEMPERATURE,
     SET_DENSITY,
     SET_PLANET_DATA,
     SET_DATA_RELOAD,
@@ -26,17 +25,6 @@ describe("actions", () => {
         };
 
         expect(actions.setRadius(min, max)).toEqual(expectedAction);
-    });
-
-    it("creates an action to change the temperature min and max values", () => {
-
-        const expectedAction = {
-            type: SET_TEMPERATURE,
-            min,
-            max
-        };
-
-        expect(actions.setTemperature(min, max)).toEqual(expectedAction);
     });
 
     it("creates an action to change the density min and max values", () => {
