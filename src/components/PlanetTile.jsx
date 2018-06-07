@@ -112,6 +112,7 @@ export class PlanetTile extends Component {
         }
 
 
+
         let imageSize = ""; //specifies the width of the planet image
         let imageName = ""; //specifies the filename of the planet image shown
 
@@ -130,6 +131,7 @@ export class PlanetTile extends Component {
             //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
             imageSize = "40px";
             imageName = "unknown.png";
+
 
 
             /*

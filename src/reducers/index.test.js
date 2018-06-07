@@ -1,5 +1,6 @@
 import rootReducer from "./index";
 import radius from "./reducer_radius"; //reducer for changing the radius min and max values
+import temperature from "./reducer_temperature"; //reducer for changing the temperature min and max values
 import density from "./reducer_density"; //reducer for changing the density min and max values
 import planetData from "./reducer_planet_data"; //reducer for updating info about planets
 import dataReload from "./reducer_data_reload"; //reducer for enabling or disabling API requests
@@ -31,7 +32,8 @@ describe("root reducer", () => {
             "planetsDisplayed": 0,
             "planetsToDisplay": 20,
             "dataReload": true,
-            "radius": {"max": 60, "min": 0}
+            "radius": {"max": 60, "min": 0},
+            "temperature": {"max": 120, "min": 0}
         });
     });
 });
@@ -42,6 +44,16 @@ describe("radius reducer", () => {
     it("changes the radius min and max values", () => {
 
         expect(radius({}, {type: SET_RADIUS, min, max})).toEqual({min, max});
+
+    });
+});
+
+
+describe("temperature reducer", () => {
+
+    it("changes the temperature min and max values", () => {
+
+        expect(temperature({}, {type: SET_TEMPERATURE, min, max})).toEqual({min, max});
 
     });
 });
