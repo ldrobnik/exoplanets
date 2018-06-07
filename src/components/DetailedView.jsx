@@ -89,21 +89,24 @@ export class DetailedView extends Component {
     //updates the state with all the details (see descriptions above, starting from line 18)
     setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
 
-        //for null values replace with 'unknown'
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_rade = (pl_rade === null) ? "unknown" : pl_rade;
-        // pl_pl_dens = (pl_pl_dens === null) ? "unknown" : pl_dens;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
-        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        //for null values replace with '?'
+        pl_radj = (pl_radj === null) ? "?" : pl_radj;
+        pl_rade = (pl_rade === null) ? "?" : pl_rade;
+        pl_dens = (pl_dens === null) ? "?" : pl_dens;
+        pl_eqt = (pl_eqt === null) ? "?" : pl_eqt;
+        pl_discmethod = (pl_discmethod === null) ? "?" : pl_discmethod;
+        pl_orbsmax = (pl_orbsmax === null) ? "?" : pl_orbsmax;
+        pl_orbper = (pl_orbper === null) ? "?" : pl_orbper;
+        pl_orbeccen = (pl_orbeccen === null) ? "?" : pl_orbeccen;
+        pl_orbincl = (pl_orbincl === null) ? "?" : pl_orbincl;
+        pl_bmassj = (pl_bmassj === null) ? "?" : pl_bmassj;
+        pl_bmasse = (pl_bmasse === null) ? "?" : pl_bmasse;
+        st_dist = (st_dist === null) ? "?" : st_dist;
+        st_mass = (st_mass === null) ? "?" : st_mass;
+        st_rad = (st_rad === null) ? "?" : st_rad;
+
+        //format date of data update
+        rowupdate = (rowupdate === null) ? "?" : moment(rowupdate).fromNow();
 
 
         this.setState({
@@ -261,21 +264,23 @@ export class DetailedView extends Component {
         }
 
 
-        //rel parameter - precaution against reverse tabnabbing
-        const rel = "noopener noreferrer";
+        // //rel parameter - precaution against reverse tabnabbing
+        // const rel = "noopener noreferrer";
 
 
         let imageSize = ""; //specifies the width of the planet image
         let imageName = ""; //specifies the filename of the planet image shown
 
 
-        if ((this.state.pl_radj !== null) && (this.state.pl_radj !== 0)) {
+        if ((this.state.pl_radj !== null) && (this.state.pl_radj !== 0) && (this.state.pl_radj !== "?")) {
 
             //if the planet has a defined radius, calculate the image width [flaticon font size] as follows
             imageSize = this.state.pl_radj * 180 + "px";
 
+            console.log('this.state.pl_radj', this.state.pl_radj);
+
             //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
-            imageName = (this.state.pl_radj < 0.25 && this.state.pl_radj !== null) ? "../../solid.png" : "../../fluffy.png";
+            imageName = ((this.state.pl_radj < 0.25) && (this.state.pl_radj !== null) && (this.state.pl_radj !== "?")) ? "../../solid.png" : "../../fluffy.png";
 
         } else {
 
@@ -283,6 +288,9 @@ export class DetailedView extends Component {
             imageSize = "60px";
             imageName = "../../unknown.png";
         }
+
+
+        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
 
         return (
 
@@ -322,6 +330,7 @@ export class DetailedView extends Component {
                                 <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
                                 {this.state.pl_discmethod}
                             </p>
+                            <hr/>
                             <p className={secondaryInfoClass}>
                                 <strong>Planet mass:&nbsp;</strong>
                                 {this.state.pl_bmassj}&nbsp;[Jupiter mass];&nbsp;
@@ -336,6 +345,7 @@ export class DetailedView extends Component {
                                 <strong>Planet equilibrium temperature:&nbsp;</strong>
                                 {this.state.pl_radj}&nbsp;[K]
                             </p>
+                            <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
                                 <strong>Orbital Period:&nbsp;</strong>
                                 {this.state.pl_orbper}&nbsp;[days]
@@ -352,6 +362,7 @@ export class DetailedView extends Component {
                                 <strong>Inclination:&nbsp;</strong>
                                 {this.state.pl_orbincl}&nbsp;[deg]
                             </p>
+                            <hr/>
                             <p className={secondaryInfoClass}>
                                 <strong>Distance to the planetary system:&nbsp;</strong>
                                 {this.state.st_dist}&nbsp;[pc]
@@ -361,13 +372,14 @@ export class DetailedView extends Component {
                                 {this.state.pl_pnum}
                             </p>
                             <p className={secondaryInfoClass}>
-                                <strong>Host star mass ({this.state.pl_hostname}):&nbsp;</strong>
+                                <strong>Host star ({this.state.pl_hostname}) mass:&nbsp;</strong>
                                 {this.state.st_mass}&nbsp;[solar mass]
                             </p>
                             <p className={secondaryInfoClass}>
                                 <strong>Host star radius:&nbsp;</strong>
                                 {this.state.st_rad}&nbsp;[solar radii]
                             </p>
+                            <hr/>
                             <p className={secondaryInfoClass}>
                                 <strong>Updated:&nbsp;</strong>
                                 {this.state.rowupdate}&nbsp;
@@ -381,7 +393,6 @@ export class DetailedView extends Component {
             </Modal>
         );
 
-        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
     }
 }
 

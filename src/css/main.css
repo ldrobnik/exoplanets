@@ -275,7 +275,7 @@ depending on the loading status */
   text-align: center; }
   .detailContentContainer .planetLargeView .imageContainer {
     max-width: 98%;
-    max-height: 400px;
+    max-height: 1000px;
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6, BB7 */
     display: -ms-flexbox;
@@ -288,15 +288,8 @@ depending on the loading status */
     justify-content: center;
     overflow: hidden;
     margin-bottom: 20px; }
-  .detailContentContainer .planetLargeView .planetName {
-    margin-top: 5px;
-    text-align: center;
-    font-size: 0.9em; }
 
-.foodPairingContainer {
-  clear: left; }
-
-.foodPairingList li {
-  list-style-type: circle; }
+hr {
+  border-top-color: #ab6e00; }
 
 /*# sourceMappingURL=main.css.map */

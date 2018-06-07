@@ -330,7 +330,7 @@ depending on the loading status */
   .planetLargeView {
     .imageContainer {
       max-width: 98%;
-      max-height: 400px;
+      max-height: 1000px;
       @include flex;
       align-items: center;
       justify-content: center;
@@ -347,25 +347,16 @@ depending on the loading status */
     }
 
 
-    .planetName {
-      margin-top: 5px;
-      text-align: center;
-      font-size: 0.9em;
-
-    }
 
   }
 
 
 }
 
-.foodPairingContainer {
-  clear: left;
+hr {
+  border-top-color: setColor(-2);
 }
 
-.foodPairingList li {
-  list-style-type: circle;
-}
 
 ///*** SIMILAR PLANETS STYLES ***/
 //
