@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Modal, Row} from "react-bootstrap";
+import {Modal} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
+import moment from 'moment'; //Moment.js
 import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
 
 export class DetailedView extends Component {
@@ -33,7 +34,7 @@ export class DetailedView extends Component {
             pl_bmasse: 0, //Planet Mass or M*sin(i) [Earth mass]: Best planet mass measurement in units of masses of Earth. Either Mass, M*sin(i)/sin(i), or M*sin(i). See provenance for source of the measurement.
             st_dist: 0, //Distance (pc): Distance to the planetary system in units of parsecs.
             st_mass: 0, //	Stellar Mass (solar mass):	Amount of matter contained in the star, measured in units of masses of the Sun.
-            st_rad: 0, //
+            st_rad: 0, //Stellar Radius (solar radii):	Length of a line segment from the center of the star to its surface, measured in units of radius of the Sun.
             rowupdate: "" //Date of Last Update:	Date of last update of the planet parameters.
 
         };
@@ -87,6 +88,24 @@ export class DetailedView extends Component {
 
     //updates the state with all the details (see descriptions above, starting from line 18)
     setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
+
+        //for null values replace with 'unknown'
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_rade = (pl_rade === null) ? "unknown" : pl_rade;
+        // pl_pl_dens = (pl_pl_dens === null) ? "unknown" : pl_dens;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+        // pl_radj = (pl_radj === null) ? "unknown" : pl_radj;
+
+
         this.setState({
             pl_hostname,
             pl_letter,
@@ -265,8 +284,6 @@ export class DetailedView extends Component {
             imageName = "../../unknown.png";
         }
 
-        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
-
         return (
 
             <Modal
@@ -288,23 +305,74 @@ export class DetailedView extends Component {
                     <Modal.Body className="detailBody">
                         <div className="detailContentContainer">
 
-                                <div className={secondaryInfoClass}>
-                                    <figure className="planetLargeView">
-                                        <div className="imageContainer">
-                                            <img
-                                                src={imageName}
-                                                alt="planet icon"
-                                                className="planetLargeImage"
-                                                width={imageSize}
-                                            />
-                                        </div>
-                                    </figure>
-                                </div>
+                            <div className={secondaryInfoClass}>
+                                <figure className="planetLargeView">
+                                    <div className="imageContainer">
+                                        <img
+                                            src={imageName}
+                                            alt="planet icon"
+                                            className="planetLargeImage"
+                                            width={imageSize}
+                                        />
+                                    </div>
+                                </figure>
+                            </div>
 
-                                <p>
-                                    <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
-                                    {this.state.pl_discmethod}
-                                </p>
+                            <p>
+                                <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
+                                {this.state.pl_discmethod}
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Planet mass:&nbsp;</strong>
+                                {this.state.pl_bmassj}&nbsp;[Jupiter mass];&nbsp;
+                                {this.state.pl_bmasse}&nbsp;[Earth mass]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Planet radius:&nbsp;</strong>
+                                {this.state.pl_radj}&nbsp;[Jupiter radii];&nbsp;
+                                {this.state.pl_rade}&nbsp;[Earth radii]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Planet equilibrium temperature:&nbsp;</strong>
+                                {this.state.pl_radj}&nbsp;[K]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Orbital Period:&nbsp;</strong>
+                                {this.state.pl_orbper}&nbsp;[days]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Orbit semi-major axis:&nbsp;</strong>
+                                {this.state.pl_orbsmax}&nbsp;[AU]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Eccentricity:&nbsp;</strong>
+                                {this.state.pl_orbeccen}
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Inclination:&nbsp;</strong>
+                                {this.state.pl_orbincl}&nbsp;[deg]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Distance to the planetary system:&nbsp;</strong>
+                                {this.state.st_dist}&nbsp;[pc]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Number of planets in the system:&nbsp;</strong>
+                                {this.state.pl_pnum}
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Host star mass ({this.state.pl_hostname}):&nbsp;</strong>
+                                {this.state.st_mass}&nbsp;[solar mass]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Host star radius:&nbsp;</strong>
+                                {this.state.st_rad}&nbsp;[solar radii]
+                            </p>
+                            <p className={secondaryInfoClass}>
+                                <strong>Updated:&nbsp;</strong>
+                                {this.state.rowupdate}&nbsp;
+                            </p>
+
 
 
                         </div>
@@ -312,6 +380,8 @@ export class DetailedView extends Component {
                 </div>
             </Modal>
         );
+
+        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
     }
 }
 
