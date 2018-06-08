@@ -372,7 +372,7 @@ export class DetailedView extends Component {
                                 {this.state.st_dist}&nbsp;[pc]
                             </p>
                             <p className={secondaryInfoClass}>
-                                <strong>Number of planets in the system:&nbsp;</strong>
+                                <strong>Number of known planets in the system:&nbsp;</strong>
                                 {this.state.pl_pnum}
                             </p>
                             <p className={secondaryInfoClass}>

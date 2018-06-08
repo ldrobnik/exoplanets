@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.test.js" afterPath="$PROJECT_DIR$/src/actions/index.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/.idea/components.iml" afterPath="$PROJECT_DIR$/src/components/.idea/components.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/.idea/modules.xml" afterPath="$PROJECT_DIR$/src/components/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/.idea/workspace.xml" afterPath="$PROJECT_DIR$/src/components/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home.jsx" afterPath="$PROJECT_DIR$/src/components/Home.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Options.jsx" afterPath="$PROJECT_DIR$/src/components/Options.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Options.test.js" afterPath="$PROJECT_DIR$/src/components/Options.test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PlanetTile.jsx" afterPath="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants.js" afterPath="$PROJECT_DIR$/src/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.test.js" afterPath="$PROJECT_DIR$/src/reducers/index.test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,7 +74,7 @@
       <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="1850">
               <caret line="123" column="84" lean-forward="false" selection-start-line="123" selection-start-column="84" selection-end-line="123" selection-end-column="84" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -568,12 +557,12 @@
       <workItem from="1528307443951" duration="4580000" />
       <workItem from="1528365424753" duration="121000" />
       <workItem from="1528389563150" duration="7196000" />
-      <workItem from="1528409371003" duration="9000" />
+      <workItem from="1528409371003" duration="139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71095000" />
+    <option name="totallyTimeSpent" value="71225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="196" width="1688" height="891" extended-state="0" />
@@ -924,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="1850">
           <caret line="123" column="84" lean-forward="false" selection-start-line="123" selection-start-column="84" selection-end-line="123" selection-end-column="84" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
