@@ -14,8 +14,8 @@ export class SliderTemperature extends Component {
 
         this.state = {
             min: 0,
-            max: 120,
-            temperature: {min: 0, max: 120},
+            max: 2000,
+            temperature: {min: 0, max: 2000},
         };
     }
 
@@ -43,10 +43,10 @@ export class SliderTemperature extends Component {
 
     render() {
         return (
-            <Range defaultValue={[0, 120]}
+            <Range defaultValue={[0, 2000]}
                    min={this.state.min}
                    max={this.state.max}
-                   step={30}
+                   step={500}
                    onChange={this.onSliderChange}
                    trackStyle={[{backgroundColor: "#f2bc5b"}]}
                    handleStyle={[

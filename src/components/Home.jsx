@@ -113,9 +113,9 @@ export class Home extends Component {
 
 
              values for the slider:
-                radius - range: 0-4, step: 0.4
-                temperature - range: 0-2000, step: 200
-                density - range: 0-70, step: 7
+                radius - range: 0-4, step: 1
+                temperature - range: 0-2000, step: 500
+                density - range: 0-60, step: 15
 
             */
 
