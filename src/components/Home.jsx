@@ -157,6 +157,26 @@ export class Home extends Component {
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
                     console.log('proper fetch', json);
+
+                    //temporary code to check the min and max values
+                    let min = 0;
+                    let max = 0;
+                    let current = 0;
+
+                    for (let i = 0; i < json.length; i++) {
+
+                        current = json[i].density;
+
+                        if (current !== null) {
+
+                            min = (current < min) ? current : min;
+                            max = (current > max) ? current : max;
+
+                        }
+
+                    }
+
+                    console.log('min', min, 'max', max);
                 })
                 .catch(() => {
                     //in case of an error:
