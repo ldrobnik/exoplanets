@@ -125,7 +125,7 @@ export class PlanetTile extends Component {
             imageName = (this.props.radius < 0.25 && this.props.radius !== null) ? "solid.png" : "fluffy.png";
 
 
-            console.log("planet: ", this.state.name, "radius: ", this.props.radius, "width: ", imageSize);
+            // console.log("planet: ", this.state.name, "radius: ", this.props.radius, "width: ", imageSize);
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet

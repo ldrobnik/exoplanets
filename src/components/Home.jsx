@@ -135,6 +135,7 @@ export class Home extends Component {
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     console.log('initial fetch', json);
+
                 })
                 .catch(() => {
                     //in case of an error:
@@ -159,13 +160,31 @@ export class Home extends Component {
                     console.log('proper fetch', json);
 
                     //temporary code to check the min and max values
-                    let min = 0;
-                    let max = 0;
-                    let current = 0;
+                    let min = {
+                        temp: 0,
+                        dens: 0,
+                        rad: 0
+                    };
+                    let max = {
+                        temp: 0,
+                        dens: 0,
+                        rad: 0
+                    };
+                    let current = {
+                        temp: 0,
+                        dens: 0,
+                        rad: 0
+                    };
 
                     for (let i = 0; i < json.length; i++) {
 
-                        current = json[i].density;
+                        current = {
+                            temp: json[i].pl_eqt,
+                            dens: json[i].pl_dens,
+                            rad: json[i].pl_radj
+                        };
+
+                        console.log('current', current);
 
                         if (current !== null) {
 
@@ -176,7 +195,9 @@ export class Home extends Component {
 
                     }
 
+
                     console.log('min', min, 'max', max);
+
                 })
                 .catch(() => {
                     //in case of an error:
