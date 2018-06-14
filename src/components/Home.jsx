@@ -98,9 +98,6 @@ export class Home extends Component {
         if (this.props.dataReload === true) {
 
 
-            //turn off data reload
-            this.updateDataReload(false);
-
             // get the radius, temperature and density min and max values as specified by the sliders
             const {radius, temperature, density} = this.props;
 
@@ -121,13 +118,13 @@ export class Home extends Component {
 
             //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
             const radiusMin = radius.min;
-            const radiusMax = (radius.max === 60) ? 2000 : radius.max; //if the slider is set to maximum, account for all planets with radius over 60
+            const radiusMax = (radius.max === 4) ? 10000 : radius.max; //if the slider is set to maximum, account for all planets with radius over the maximum value
 
             const temperatureMin = temperature.min;
-            const temperatureMax = (temperature.max === 120) ? 2000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over 150
+            const temperatureMax = (temperature.max === 2000) ? 10000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over the maximum value
 
             const densityMin = density.min;
-            const densityMax = (density.max === 12) ? 2000 : density.max; //if the slider is set to maximum, account for all planets with density over 20
+            const densityMax = (density.max === 60) ? 10000 : density.max; //if the slider is set to maximum, account for all planets with density over the maximum value
 
             //if the radius slider is not in the default position, add a radius range to the request
             let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
