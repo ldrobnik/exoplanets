@@ -57,6 +57,11 @@ export class Home extends Component {
         this.setState({message});
     }
 
+    //specifies whether API requests are allowed
+    updateDataReload(reload) {
+        this.props.setDataReload(reload);
+    }
+
     //sets the message if no more planets can be found
     handleMessage(json) {
 
@@ -92,15 +97,25 @@ export class Home extends Component {
         //fetch data only if API requests are allowed (dataReload is true)
         if (this.props.dataReload === true) {
 
+
+            //turn off data reload
+            this.updateDataReload(false);
+
             // get the radius, temperature and density min and max values as specified by the sliders
             const {radius, temperature, density} = this.props;
 
             /*
-                minimum and maximum values for the currently available exoplanets:
+             minimum and maximum values for the currently available exoplanets:
 
-                temperature: min - 50, max - 4050
-                density: min - 0.03, max - 77.7
-                radius: min - 0.03, max - 6.9
+             radius: min - 0.03, max - 6.9
+             temperature: min - 50, max - 4050
+             density: min - 0.03, max - 77.7
+
+
+             values for the slider:
+                radius - range: 0-4, step: 0.4
+                temperature - range: 0-2000, step: 200
+                density - range: 0-70, step: 7
 
             */
 

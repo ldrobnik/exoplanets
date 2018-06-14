@@ -14,8 +14,8 @@ export class SliderRadius extends Component {
 
         this.state = {
             min: 0,
-            max: 60,
-            radius: {min: 0, max: 60},
+            max: 4,
+            radius: {min: 0, max: 4},
         };
     }
 
@@ -45,10 +45,10 @@ export class SliderRadius extends Component {
 
     render() {
         return (
-            <Range defaultValue={[0, 60]}
+            <Range defaultValue={[0, 4]}
                    min={this.state.min}
                    max={this.state.max}
-                   step={15}
+                   step={0.4}
                    onChange={this.onSliderChange}
                    trackStyle={[{backgroundColor: "#f2bc5b"}]}
                    handleStyle={[
