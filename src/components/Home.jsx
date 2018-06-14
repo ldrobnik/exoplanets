@@ -95,6 +95,15 @@ export class Home extends Component {
             // get the radius, temperature and density min and max values as specified by the sliders
             const {radius, temperature, density} = this.props;
 
+            /*
+                minimum and maximum values for the currently available exoplanets:
+
+                temperature: min - 50, max - 4050
+                density: min - 0.03, max - 77.7
+                radius: min - 0.03, max - 6.9
+
+            */
+
             //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
             const radiusMin = radius.min;
             const radiusMax = (radius.max === 60) ? 2000 : radius.max; //if the slider is set to maximum, account for all planets with radius over 60
@@ -159,57 +168,57 @@ export class Home extends Component {
                     this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
                     console.log('proper fetch', json);
 
-                    //temporary code to check the min and max values
-                    let min = {
-                        temp: 1000,
-                        dens: 1000,
-                        rad: 1000
-                    };
-                    let max = {
-                        temp: 0,
-                        dens: 0,
-                        rad: 0
-                    };
-                    let current = {
-                        temp: 0,
-                        dens: 0,
-                        rad: 0
-                    };
-
-                    for (let i = 0; i < json.length; i++) {
-
-                        current = {
-                            temp: json[i].pl_eqt,
-                            dens: json[i].pl_dens,
-                            rad: json[i].pl_radj
-                        };
-
-                        console.log('current', current);
-
-                        if (current.temp > 0) {
-
-                            min.temp = (current.temp < min.temp) ? current.temp : min.temp;
-                            max.temp = (current.temp > max.temp) ? current.temp : max.temp;
-
-                        }
-
-                        if (current.dens > 0) {
-
-                            min.dens = (current.dens < min.dens) ? current.dens : min.dens;
-                            max.dens = (current.dens > max.dens) ? current.dens : max.dens;
-
-                        }
-
-                        if (current.rad > 0) {
-
-                            min.rad = (current.rad < min.rad) ? current.rad : min.rad;
-                            max.rad = (current.rad > max.rad) ? current.rad : max.rad;
-
-                        }
-
-                    }
-
-                    console.log('min', min, 'max', max);
+                    // //temporary code to check the min and max values
+                    // let min = {
+                    //     temp: 1000,
+                    //     dens: 1000,
+                    //     rad: 1000
+                    // };
+                    // let max = {
+                    //     temp: 0,
+                    //     dens: 0,
+                    //     rad: 0
+                    // };
+                    // let current = {
+                    //     temp: 0,
+                    //     dens: 0,
+                    //     rad: 0
+                    // };
+                    //
+                    // for (let i = 0; i < json.length; i++) {
+                    //
+                    //     current = {
+                    //         temp: json[i].pl_eqt,
+                    //         dens: json[i].pl_dens,
+                    //         rad: json[i].pl_radj
+                    //     };
+                    //
+                    //     console.log('current', current);
+                    //
+                    //     if (current.temp > 0) {
+                    //
+                    //         min.temp = (current.temp < min.temp) ? current.temp : min.temp;
+                    //         max.temp = (current.temp > max.temp) ? current.temp : max.temp;
+                    //
+                    //     }
+                    //
+                    //     if (current.dens > 0) {
+                    //
+                    //         min.dens = (current.dens < min.dens) ? current.dens : min.dens;
+                    //         max.dens = (current.dens > max.dens) ? current.dens : max.dens;
+                    //
+                    //     }
+                    //
+                    //     if (current.rad > 0) {
+                    //
+                    //         min.rad = (current.rad < min.rad) ? current.rad : min.rad;
+                    //         max.rad = (current.rad > max.rad) ? current.rad : max.rad;
+                    //
+                    //     }
+                    //
+                    // }
+                    //
+                    // console.log('min', min, 'max', max);
 
                 })
                 .catch(() => {

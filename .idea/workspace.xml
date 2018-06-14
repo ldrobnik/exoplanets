@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Home.jsx" afterPath="$PROJECT_DIR$/src/components/Home.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,10 +21,11 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="211" column="56" lean-forward="false" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
+            <state relative-caret-position="960">
+              <caret line="220" column="59" lean-forward="true" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <marker date="1529002391273" expanded="true" signature="8015:10138" ph="..." />
               </folding>
             </state>
           </provider>
@@ -258,8 +260,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="y" value="43" />
+    <option name="x" value="5" />
+    <option name="y" value="5" />
     <option name="width" value="1771" />
     <option name="height" value="965" />
   </component>
@@ -563,15 +565,15 @@
       <workItem from="1528389563150" duration="7196000" />
       <workItem from="1528409371003" duration="1308000" />
       <workItem from="1528448272958" duration="47000" />
-      <workItem from="1528991430487" duration="3029000" />
+      <workItem from="1528991430487" duration="3455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75470000" />
+    <option name="totallyTimeSpent" value="75896000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="43" width="1771" height="965" extended-state="0" />
+    <frame x="5" y="5" width="1771" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25958702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -923,10 +925,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="211" column="56" lean-forward="false" selection-start-line="211" selection-start-column="56" selection-end-line="211" selection-end-column="56" />
+        <state relative-caret-position="960">
+          <caret line="220" column="59" lean-forward="true" selection-start-line="220" selection-start-column="59" selection-end-line="220" selection-end-column="59" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <marker date="1529002391273" expanded="true" signature="8015:10138" ph="..." />
           </folding>
         </state>
       </provider>
