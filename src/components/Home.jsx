@@ -161,9 +161,9 @@ export class Home extends Component {
 
                     //temporary code to check the min and max values
                     let min = {
-                        temp: 0,
-                        dens: 0,
-                        rad: 0
+                        temp: 1000,
+                        dens: 1000,
+                        rad: 1000
                     };
                     let max = {
                         temp: 0,
@@ -186,15 +186,28 @@ export class Home extends Component {
 
                         console.log('current', current);
 
-                        if (current !== null) {
+                        if (current.temp > 0) {
 
-                            min = (current < min) ? current : min;
-                            max = (current > max) ? current : max;
+                            min.temp = (current.temp < min.temp) ? current.temp : min.temp;
+                            max.temp = (current.temp > max.temp) ? current.temp : max.temp;
+
+                        }
+
+                        if (current.dens > 0) {
+
+                            min.dens = (current.dens < min.dens) ? current.dens : min.dens;
+                            max.dens = (current.dens > max.dens) ? current.dens : max.dens;
+
+                        }
+
+                        if (current.rad > 0) {
+
+                            min.rad = (current.rad < min.rad) ? current.rad : min.rad;
+                            max.rad = (current.rad > max.rad) ? current.rad : max.rad;
 
                         }
 
                     }
-
 
                     console.log('min', min, 'max', max);
 
