@@ -99,6 +99,8 @@ h1 {
     color: #ffc65f; }
   .infoPanel a:active {
     color: #ffd892; }
+  .infoPanel p {
+    margin: 0 !important; }
 
 /*** PLANET GALLERY STYLES ***/
 .tileGallery {

@@ -110,19 +110,24 @@ h1 {
   margin: 0 27%;
   a {
     &:link {
-      color:setColor(2.5);
+      color: setColor(2.5);
     }
     &:visited {
-      color:setColor(2.5);
+      color: setColor(2.5);
     }
     &:hover {
-      color:setColor(1.5);
+      color: setColor(1.5);
     }
     &:active {
-      color:setColor(2.5);
+      color: setColor(2.5);
     }
+
+  }
+  p {
+    margin: 0 !important;
   }
 }
+
 
 /*** PLANET GALLERY STYLES ***/
 
