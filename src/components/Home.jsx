@@ -150,7 +150,6 @@ export class Home extends Component {
             })
                 .then(response => response.json())
                 .then(json => {
-
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
