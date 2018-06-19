@@ -84,7 +84,21 @@ h1 {
 
 /*** INFO PANEL STYLES ***/
 .infoPanel {
-  border: 1px solid #ffd892; }
+  border: 1px solid #ffd892;
+  color: #ffd892;
+  font-size: 0.8em;
+  font-style: "Karla", sans-serif;
+  text-align: center;
+  padding: 10px;
+  margin: 0 27%; }
+  .infoPanel a:link {
+    color: #ffd892; }
+  .infoPanel a:visited {
+    color: #ffd892; }
+  .infoPanel a:hover {
+    color: #ffc65f; }
+  .infoPanel a:active {
+    color: #ffd892; }
 
 /*** PLANET GALLERY STYLES ***/
 .tileGallery {

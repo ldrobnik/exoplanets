@@ -102,7 +102,26 @@ h1 {
 
 .infoPanel {
   border: 1px solid setColor(2.5);
-
+  color: setColor(2.5);
+  font-size: 0.8em;
+  font-style: $regularFont;
+  text-align: center;
+  padding: 10px;
+  margin: 0 27%;
+  a {
+    &:link {
+      color:setColor(2.5);
+    }
+    &:visited {
+      color:setColor(2.5);
+    }
+    &:hover {
+      color:setColor(1.5);
+    }
+    &:active {
+      color:setColor(2.5);
+    }
+  }
 }
 
 /*** PLANET GALLERY STYLES ***/
