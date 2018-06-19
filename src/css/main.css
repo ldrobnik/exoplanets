@@ -82,6 +82,10 @@ h1 {
   font-size: 1.8em;
   width: 100px; }
 
+/*** INFO PANEL STYLES ***/
+.infoPanel {
+  border: 1px solid #ffd892; }
+
 /*** PLANET GALLERY STYLES ***/
 .tileGallery {
   display: -webkit-box;
