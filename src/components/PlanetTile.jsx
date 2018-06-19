@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 import {Link} from "react-router-dom";
-import {ScaleLoader} from "react-spinners"; //spinner
+import {ScaleLoader} from "react-spinners"; //spinnerimport {
 
 
 export class PlanetTile extends Component {
@@ -11,7 +12,7 @@ export class PlanetTile extends Component {
         this.turnOffLoader = this.turnOffLoader.bind(this);
 
         this.state = {
-            loading: true, //specifies whether the spinner should be visible
+            // loading: this.props.dataReload, //turn on the spinner when dataReload is enabled (when the initial fetch is performed)
             name: ""
         }
     }
@@ -100,10 +101,11 @@ export class PlanetTile extends Component {
 
     render() {
 
+
         let containerClass = ""; //specifies the class of the container holding the main content
         let loaderClass = ""; //specifies the class of the container holding the spinner
 
-        if (this.state.loading) {
+        if (this.props.dataReload) {
             containerClass = "displayNone"; //hides the tile content when loading
             loaderClass = "loaderTileContainer"; //shows the loader when loading
         } else {
@@ -158,7 +160,7 @@ export class PlanetTile extends Component {
                         <div className={loaderClass}>
                             <ScaleLoader
                                 color={"#ffab12"}
-                                loading={this.state.loading}
+                                loading={this.props.dataReload}
                             />
                         </div>
 
@@ -190,5 +192,15 @@ export class PlanetTile extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    const {
+        dataReload //specifies whether API requests are allowed
+    } = state;
 
-export default PlanetTile;
+    return {
+        dataReload
+    }
+}
+
+
+export default connect(mapStateToProps)(PlanetTile);
