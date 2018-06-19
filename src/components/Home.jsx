@@ -175,7 +175,7 @@ export class Home extends Component {
                     this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
                     this.handleMessage(json); //display message if no more planets can be found
                     this.setState({loading: false}); //hide the spinner
-                    // this.updateDataReload(false); //disable API requests
+                    this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
                     console.log('proper fetch', json);
