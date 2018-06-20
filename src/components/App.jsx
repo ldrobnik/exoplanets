@@ -13,7 +13,7 @@ class App extends Component {
             <Router>
                 <div>
                     <Route path="/" component={Home}/>
-                    <Route path="/details/:hostName/:planetLetter" component={DetailedView}/>
+                    <Route exact path="/details/:hostName/:planetLetter" component={DetailedView}/>
                 </div>
             </Router>
         );
