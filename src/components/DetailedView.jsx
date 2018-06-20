@@ -330,7 +330,7 @@ export class DetailedView extends Component {
                                 <span className={secondaryInfoClass}><strong>Discovery method:&nbsp;</strong></span>
                                 {this.state.pl_discmethod}
                             </p>
-                            <hr/>
+                            <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
                                 <strong>Planet mass:&nbsp;</strong>
                                 {this.state.pl_bmassj}&nbsp;[Jupiter mass];&nbsp;
@@ -366,7 +366,7 @@ export class DetailedView extends Component {
                                 <strong>Inclination:&nbsp;</strong>
                                 {this.state.pl_orbincl}&nbsp;[deg]
                             </p>
-                            <hr/>
+                            <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
                                 <strong>Distance to the planetary system:&nbsp;</strong>
                                 {this.state.st_dist}&nbsp;[pc]
@@ -383,7 +383,7 @@ export class DetailedView extends Component {
                                 <strong>Host star radius:&nbsp;</strong>
                                 {this.state.st_rad}&nbsp;[solar radii]
                             </p>
-                            <hr/>
+                            <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
                                 <strong>Updated:&nbsp;</strong>
                                 {this.state.rowupdate}&nbsp;
