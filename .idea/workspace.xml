@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/DetailedView.jsx" afterPath="$PROJECT_DIR$/src/components/DetailedView.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css" afterPath="$PROJECT_DIR$/src/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.css.map" afterPath="$PROJECT_DIR$/src/css/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/main.scss" afterPath="$PROJECT_DIR$/src/css/main.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="53">
@@ -69,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/css/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3920">
-              <caret line="196" column="33" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
+            <state relative-caret-position="196">
+              <caret line="96" column="14" lean-forward="false" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -139,7 +141,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>pl_dens</find>
-      <find>&lt;hr/&gt;</find>
       <find>te</find>
       <find>tempe</find>
       <find>temp</find>
@@ -168,6 +169,7 @@
       <find>TEMPERATURE</find>
       <find>ABV</find>
       <find>4</find>
+      <find>&lt;hr/&gt;</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -187,7 +189,6 @@
       <replace>#ffd892</replace>
       <replace>#f2bc5b</replace>
       <replace>pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate</replace>
-      <replace>&lt;hr className={secondaryInfoClass}/&gt;</replace>
       <replace>&quot;?&quot;</replace>
       <replace>.den</replace>
       <replace>.dens</replace>
@@ -198,6 +199,7 @@
       <replace>density</replace>
       <replace>radius</replace>
       <replace>temperature</replace>
+      <replace>&lt;hr className={secondaryInfoClass}/&gt;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -241,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/reducers/index.test.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/css/_variables.scss" />
-        <option value="$PROJECT_DIR$/src/css/main.scss" />
         <option value="$PROJECT_DIR$/src/components/InfoPanel.jsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -254,6 +255,7 @@
         <option value="$PROJECT_DIR$/src/components/SliderRadius.jsx" />
         <option value="$PROJECT_DIR$/src/components/Home.jsx" />
         <option value="$PROJECT_DIR$/src/components/DetailedView.jsx" />
+        <option value="$PROJECT_DIR$/src/css/main.scss" />
       </list>
     </option>
   </component>
@@ -269,7 +271,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
+    <option name="x" value="355" />
+    <option name="y" value="49" />
     <option name="width" value="1839" />
     <option name="height" value="989" />
   </component>
@@ -577,15 +580,15 @@
       <workItem from="1529053637677" duration="11000" />
       <workItem from="1529388282532" duration="324000" />
       <workItem from="1529425682006" duration="3299000" />
-      <workItem from="1529485104701" duration="894000" />
+      <workItem from="1529485104701" duration="1618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89625000" />
+    <option name="totallyTimeSpent" value="90349000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="0" width="1839" height="989" extended-state="0" />
+    <frame x="355" y="49" width="1839" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29017857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -832,14 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3920">
-          <caret line="196" column="33" lean-forward="false" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/css/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -966,6 +961,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="53">
           <caret line="332" column="64" lean-forward="false" selection-start-line="332" selection-start-column="64" selection-end-line="332" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="96" column="14" lean-forward="false" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
           <folding />
         </state>
       </provider>
