@@ -168,7 +168,7 @@ export class PlanetTile extends Component {
                             <figure className="planetThumbnail">
                                 <div className="imageContainer">
                                     <img
-                                        src={imageName}
+                                        src={`/${imageName}`}
                                         alt="planet icon"
                                         className="planetImage"
                                         width={imageSize}
