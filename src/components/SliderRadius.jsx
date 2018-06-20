@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Range} from "rc-slider"; //range slider
 import "rc-slider/assets/index.css"; //slider stylesheet
 import {
-    setRadius, //sets EBV min and max values
+    setRadius, //sets radius min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
 } from "../actions";
@@ -14,12 +14,12 @@ export class SliderRadius extends Component {
 
         this.state = {
             min: 0,
-            max: 4,
-            radius: {min: 0, max: 4},
+            max: 2,
+            radius: {min: 0, max: 2},
         };
     }
 
-    //sets the min and max ABV values
+    //sets the min and max radius values
     updateRadius(min, max) {
         this.props.setRadius(min, max);
     }
@@ -45,10 +45,10 @@ export class SliderRadius extends Component {
 
     render() {
         return (
-            <Range defaultValue={[0, 4]}
+            <Range defaultValue={[0, 2]}
                    min={this.state.min}
                    max={this.state.max}
-                   step={1}
+                   step={0.5}
                    onChange={this.onSliderChange}
                    trackStyle={[{backgroundColor: "#f2bc5b"}]}
                    handleStyle={[

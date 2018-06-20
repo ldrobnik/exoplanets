@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Range} from "rc-slider"; //range slider
 import "rc-slider/assets/index.css"; //slider stylesheet
 import {
-    setTemperature, //sets TEMPERATURE min and max values
+    setTemperature, //sets temperature min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
 } from "../actions";
@@ -19,7 +19,7 @@ export class SliderTemperature extends Component {
         };
     }
 
-    //sets the min and max DENSITY values
+    //sets the min and max temperature values
     updateTemperature(min, max) {
         this.props.setTemperature(min, max);
     }
@@ -36,7 +36,7 @@ export class SliderTemperature extends Component {
 
     //specifies what happens when the slider position changes
     onSliderChange = (value) => {
-        this.updateTemperature(value[0], value[1]); //set TEMPERATURE range
+        this.updateTemperature(value[0], value[1]); //set temperature range
         this.updatePlanetsToDisplay(20); //set the default number of planets to display
         this.updateDataReload(true); //allow reloading of data
     };
@@ -67,7 +67,7 @@ export class SliderTemperature extends Component {
 
 function mapStateToProps(state) {
     const {
-        temperature, //TEMPERATURE max and min values
+        temperature, //temperature max and min values
         dataReload //specifies whether API requests are allowed
     } = state;
     return {
@@ -77,7 +77,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    setTemperature, //sets TEMPERATURE min and max values
+    setTemperature, //sets temperature min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the number of planets that need to be displayed
 })(SliderTemperature);

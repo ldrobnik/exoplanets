@@ -1,11 +1,11 @@
 import React from "react";
 import {shallow} from "enzyme";
-import {SliderAbv} from "./SliderAbv";
+import {SliderDensity} from "./SliderDensity";
 
-describe("SliderAbv", () => {
-    const sliderAbv = shallow(<SliderAbv />);
+describe("SliderDensity", () => {
+    const sliderDensity = shallow(<SliderDensity />);
 
     it("renders the Range component", () => {
-        expect(sliderAbv.find("ComponentEnhancer(Range)").exists()).toBe(true);
+        expect(sliderDensity.find("ComponentEnhancer(Range)").exists()).toBe(true);
     })
 });

@@ -119,7 +119,7 @@ export class Home extends Component {
 
             //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
             const radiusMin = radius.min;
-            const radiusMax = (radius.max === 4) ? 10000 : radius.max; //if the slider is set to maximum, account for all planets with radius over the maximum value
+            const radiusMax = (radius.max === 2) ? 10000 : radius.max; //if the slider is set to maximum, account for all planets with radius over the maximum value
 
             const temperatureMin = temperature.min;
             const temperatureMax = (temperature.max === 2000) ? 10000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over the maximum value
