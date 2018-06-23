@@ -126,8 +126,6 @@ export class PlanetTile extends Component {
             //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
             imageName = (this.props.radius < 0.25 && this.props.radius !== null) ? "solid.png" : "fluffy.png";
 
-
-            // console.log("planet: ", this.state.name, "radius: ", this.props.radius, "width: ", imageSize);
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
@@ -137,7 +135,7 @@ export class PlanetTile extends Component {
 
 
             /*
-             * if the planet has definied width and is dense, apply smaller size, otherwise bigger size
+             * if the planet has defined width and is dense, apply smaller size, otherwise bigger size
              *
              * then check for mass
              *

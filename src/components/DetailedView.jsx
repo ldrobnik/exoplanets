@@ -81,7 +81,6 @@ export class DetailedView extends Component {
             // check if a planet with a given hostname and letter is in the memory
             for (let i = 0; i < this.props.planetData.length; i++) {
                 if ((this.props.planetData[i].pl_hostname === hostName) && (this.props.planetData[i].pl_letter === planetLetter)) return i;
-                console.log(this.props.planetData);
             }
         }
     }
@@ -157,7 +156,6 @@ export class DetailedView extends Component {
         const hostName = this.props.match.params.hostName.replace(/%20/g, " "); //replace all '%20's with spaces
         const planetLetter = this.props.match.params.planetLetter;
 
-        console.log(hostName, ", ", planetLetter);
         //checks if this planet is already loaded in the memory:
         const idInPlanetData = this.searchPlanetInMemory(hostName, planetLetter);
 
@@ -277,8 +275,6 @@ export class DetailedView extends Component {
             //if the planet has a defined radius, calculate the image width [flaticon font size] as follows
             imageSize = this.state.pl_radj * 180 + "px";
 
-            console.log('this.state.pl_radj', this.state.pl_radj);
-
             //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
             imageName = ((this.state.pl_radj < 0.25) && (this.state.pl_radj !== null) && (this.state.pl_radj !== "?")) ? "../../solid.png" : "../../fluffy.png";
 
@@ -288,9 +284,6 @@ export class DetailedView extends Component {
             imageSize = "60px";
             imageName = "../../unknown.png";
         }
-
-
-        console.log("Radius:", this.state.pl_radj, "imageSize", imageSize, "imageName", imageName);
 
         return (
 

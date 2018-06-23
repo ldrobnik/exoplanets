@@ -225,7 +225,6 @@ export class Home extends Component {
             //if there is not enough planets stored in memory and all planet data have been already fetched and API requests are enabled, get more from the API;
             if (this.state.allDataLoaded && this.props.dataReload && (this.props.planetData.length < newPlanetsToDisplay)) {
                 this.getPlanets(); //get planets from the api
-                console.log('planet data', this.props.planetData);
             }
         }
     }
