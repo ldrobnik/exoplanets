@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedView.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlanetTile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlanetTile.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="226" column="61" selection-start-line="226" selection-start-column="61" selection-end-line="226" selection-end-column="61" />
+            <state relative-caret-position="147">
+              <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#174#210#0" expanded="true" />
@@ -80,11 +78,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="138" column="14" lean-forward="true" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
+            <state relative-caret-position="179">
+              <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateData</find>
       <find>imageName</find>
       <find>dataReload</find>
       <find>reload</find>
@@ -157,6 +157,7 @@
       <find>radius</find>
       <find>console.log</find>
       <find>console.l</find>
+      <find>updateDa</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -241,9 +242,9 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/App.jsx" />
         <option value="$PROJECT_DIR$/src/components/SliderRadius.jsx" />
-        <option value="$PROJECT_DIR$/src/components/Home.jsx" />
         <option value="$PROJECT_DIR$/src/components/DetailedView.jsx" />
         <option value="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Home.jsx" />
       </list>
     </option>
   </component>
@@ -375,12 +376,12 @@
       <workItem from="1529388282532" duration="324000" />
       <workItem from="1529425682006" duration="3299000" />
       <workItem from="1529485104701" duration="11782000" />
-      <workItem from="1529776882097" duration="516000" />
+      <workItem from="1529776882097" duration="672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101029000" />
+    <option name="totallyTimeSpent" value="101185000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="1" width="1494" height="770" extended-state="0" />
@@ -713,18 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="226" column="61" selection-start-line="226" selection-start-column="61" selection-end-line="226" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#174#210#0" expanded="true" />
-            <element signature="e#550#847#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -734,8 +723,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="138" column="14" lean-forward="true" selection-start-line="138" selection-start-column="14" selection-end-line="138" selection-end-column="14" />
+        <state relative-caret-position="179">
+          <caret line="61" column="16" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#174#210#0" expanded="true" />
+            <element signature="e#550#847#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

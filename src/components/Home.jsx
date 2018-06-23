@@ -58,11 +58,6 @@ export class Home extends Component {
         this.setState({message});
     }
 
-    //specifies whether API requests are allowed
-    updateDataReload(reload) {
-        this.props.setDataReload(reload);
-    }
-
     //sets the message if no more planets can be found
     handleMessage(json) {
 
