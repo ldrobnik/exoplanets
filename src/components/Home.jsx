@@ -111,15 +111,15 @@ export class Home extends Component {
 
 
              values for the slider:
-                radius - range: 0-4, step: 1
+                radius - range: 0-2, step: 0.5
                 temperature - range: 0-2000, step: 500
                 density - range: 0-60, step: 15
 
             */
 
-            //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data
-            const radiusMin = radius.min;
-            const radiusMax = (radius.max === 2) ? 10000 : radius.max; //if the slider is set to maximum, account for all planets with radius over the maximum value
+            //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data [divide the value by 2 - slider fails to behave correctly when step is a fraction, so the value is double the required value]
+            const radiusMin = radius.min/2;
+            const radiusMax = (radius.max === 4) ? 10000 : radius.max/2; //if the slider is set to maximum, account for all planets with radius over the maximum value
 
             const temperatureMin = temperature.min;
             const temperatureMax = (temperature.max === 2000) ? 10000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over the maximum value
@@ -155,7 +155,6 @@ export class Home extends Component {
                     this.setState({loading: false}); //hide the spinner
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
-                    console.log('initial fetch', json);
 
                 })
                 .catch(() => {
@@ -178,59 +177,6 @@ export class Home extends Component {
                     this.updateDataReload(false); //disable API requests
                     this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
                     this.setState({allDataLoaded: true}); //let the module know that all planet data has been loaded
-                    console.log('proper fetch', json);
-
-                    // //temporary code to check the min and max values
-                    // let min = {
-                    //     temp: 1000,
-                    //     dens: 1000,
-                    //     rad: 1000
-                    // };
-                    // let max = {
-                    //     temp: 0,
-                    //     dens: 0,
-                    //     rad: 0
-                    // };
-                    // let current = {
-                    //     temp: 0,
-                    //     dens: 0,
-                    //     rad: 0
-                    // };
-                    //
-                    // for (let i = 0; i < json.length; i++) {
-                    //
-                    //     current = {
-                    //         temp: json[i].pl_eqt,
-                    //         dens: json[i].pl_dens,
-                    //         rad: json[i].pl_radj
-                    //     };
-                    //
-                    //     console.log('current', current);
-                    //
-                    //     if (current.temp > 0) {
-                    //
-                    //         min.temp = (current.temp < min.temp) ? current.temp : min.temp;
-                    //         max.temp = (current.temp > max.temp) ? current.temp : max.temp;
-                    //
-                    //     }
-                    //
-                    //     if (current.dens > 0) {
-                    //
-                    //         min.dens = (current.dens < min.dens) ? current.dens : min.dens;
-                    //         max.dens = (current.dens > max.dens) ? current.dens : max.dens;
-                    //
-                    //     }
-                    //
-                    //     if (current.rad > 0) {
-                    //
-                    //         min.rad = (current.rad < min.rad) ? current.rad : min.rad;
-                    //         max.rad = (current.rad > max.rad) ? current.rad : max.rad;
-                    //
-                    //     }
-                    //
-                    // }
-                    //
-                    // console.log('min', min, 'max', max);
 
                 })
                 .catch(() => {
