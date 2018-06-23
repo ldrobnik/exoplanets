@@ -135,6 +135,8 @@ export class Home extends Component {
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
             const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
 
+            console.log(INITIAL_URL);
+
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
             const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${ORDER}`;
 
