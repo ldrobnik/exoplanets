@@ -123,22 +123,22 @@ export class Home extends Component {
             const densityMax = (density.max === 8) ? 10000 : density.max; //if the slider is set to maximum, account for all planets with density over the maximum value
 
             //if the radius slider is not in the default position, add a radius range to the request
-            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}&${RADIUS}<${radiusMax}`;
+            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `%20and%20${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
 
             //if the temperature slider is not in the default position, add a temperature range to the request
-            let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `&${TEMP}>${temperatureMin}&${TEMP}<${temperatureMax}`;
+            let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `%20and%20${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
 
             //if the density slider is not in the default position, add a density range to the request
-            let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `&${DENSITY}>${densityMin}&${DENSITY}<${densityMax}`;
+            let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 12)) ? "" : `%20and%20${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
 
 
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
-            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${LIMIT}${ORDER}`;
+            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
 
             console.log(INITIAL_URL);
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
-            const FETCH_URL = `${BASE_URL}${SELECTION}${WHERE}${radiusRange}${temperatureRange}${densityRange}${ORDER}`;
+            const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
 
             // fetch initial planet data from the API, limited by distance to the planetary system
             fetch(INITIAL_URL, {

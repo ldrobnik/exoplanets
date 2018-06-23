@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="" />
+    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +20,8 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="135" column="72" selection-start-line="135" selection-start-column="72" selection-end-line="135" selection-end-column="72" />
+            <state relative-caret-position="-108">
+              <caret line="125" column="113" selection-start-line="125" selection-start-column="113" selection-end-line="125" selection-end-column="113" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#174#210#0" expanded="true" />
@@ -380,15 +383,16 @@
       <workItem from="1529425682006" duration="3299000" />
       <workItem from="1529485104701" duration="11782000" />
       <workItem from="1529776882097" duration="1295000" />
-      <workItem from="1529788699794" duration="2934000" />
+      <workItem from="1529788699794" duration="3823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104742000" />
+    <option name="totallyTimeSpent" value="105631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1495" height="771" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28532237" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -725,8 +729,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="135" column="72" selection-start-line="135" selection-start-column="72" selection-end-line="135" selection-end-column="72" />
+        <state relative-caret-position="-108">
+          <caret line="125" column="113" selection-start-line="125" selection-start-column="113" selection-end-line="125" selection-end-column="113" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#174#210#0" expanded="true" />
