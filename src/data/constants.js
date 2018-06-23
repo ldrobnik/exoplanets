@@ -9,7 +9,7 @@ export const WHERE = "&where="; //bit of the URL to specify parameter ranges
 
 export const RADIUS = "pl_radj"; //name of the column specifying planet radius (Jupiter radii)
 export const TEMP = "pl_eqt"; //name of the column specifying planet equilibrium temperature [K]
-export const DENSITY = "pl_density"; //name of the column specifying planet density (g/cm**3)
+export const DENSITY = "pl_dens"; //name of the column specifying planet density (g/cm**3)
 
 
 export const LIMIT = "st_dist<20"; //initial limit of the distance to the planetary system in parsecs to be used so that the initial fetch doesn't take too long

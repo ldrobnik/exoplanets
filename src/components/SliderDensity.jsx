@@ -14,8 +14,8 @@ export class SliderDensity extends Component {
 
         this.state = {
             min: 0,
-            max: 60,
-            density: {min: 0, max: 60},
+            max: 8,
+            density: {min: 0, max: 8},
         };
     }
 
@@ -45,10 +45,10 @@ export class SliderDensity extends Component {
 
     render() {
         return (
-            <Range defaultValue={[0, 60]}
+            <Range defaultValue={[0, 8]}
                    min={this.state.min}
                    max={this.state.max}
-                   step={15}
+                   step={2}
                    onChange={this.onSliderChange}
                    trackStyle={[{backgroundColor: "#f2bc5b"}]}
                    handleStyle={[
