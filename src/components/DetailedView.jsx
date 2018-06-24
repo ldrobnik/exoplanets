@@ -280,19 +280,19 @@ export class DetailedView extends Component {
 
             if (this.state.pl_dens !== null) {
                 //if density is defined, choose the image based on density
-                imageName = (this.state.pl_dens >= 3) ? "../../solid.png" : "../../fluffy.png";
+                imageName = (this.state.pl_dens >= 3) ? "solid.png" : "fluffy.png";
 
             } else {
 
                 //if density is not defined, choose the image based on radius
-                imageName = (this.state.pl_radj < 0.25 && this.state.pl_radj !== null) ? "../../solid.png" : "../../fluffy.png";
+                imageName = (this.state.pl_radj < 0.25 && this.state.pl_radj !== null) ? "solid.png" : "fluffy.png";
             }
 
         } else {
 
             //if the planet has no definied radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
             imageSize = "60px";
-            imageName = "../../unknown.png";
+            imageName = "unknown.png";
         }
 
         return (
@@ -320,7 +320,7 @@ export class DetailedView extends Component {
                                 <figure className="planetLargeView">
                                     <div className="imageContainer">
                                         <img
-                                            src={imageName}
+                                            src={`/${imageName}`}
                                             alt="planet icon"
                                             className="planetLargeImage"
                                             width={imageSize}
