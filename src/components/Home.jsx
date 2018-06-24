@@ -126,10 +126,44 @@ export class Home extends Component {
             let radiusRange = ((radiusMin === 0) && (radiusMax >= 10000)) ? "" : `${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
 
             //if the temperature slider is not in the default position, add a temperature range to the request
-            let temperatureRange = ((temperatureMin === 0) && (temperatureMax >= 10000)) ? "" : `%20and%20${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
+            let temperatureRange = ((temperatureMin === 0) && (temperatureMax >= 10000)) ? "" : `${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
 
             //if the density slider is not in the default position, add a density range to the request
-            let densityRange = ((densityMin === 0) && (densityMax >= 10000)) ? "" : `%20and%20${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
+            let densityRange = ((densityMin === 0) && (densityMax >= 10000)) ? "" : `${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
+
+            //operators used in the URL
+            let operator1 ="";
+            let operator2 = "";
+
+            let radiusRangeExists = (radiusRange !== ""); //true if the radius range is not set to ""
+            let temperatureRangeExists = (temperatureRange !== ""); //true if the temperature range is not set to ""
+            let densityRangeExists = (densityRange !== ""); //true if the density range is not set to ""
+
+            //set the value of operator to either '' or '%20and%20' depending on range values
+            if (radiusRangeExists && temperatureRangeExists && densityRangeExists) {
+                //if all the ranges exist, set both parameters to '%20and%20'
+                operator1 = "%20and%20";
+                operator2 = "%20and%20";
+
+            } else if (!radiusRangeExists && temperatureRangeExists && densityRangeExists) {
+                //if the radius range doesn't exists, but the temperature and density ranges do, set the first operator to '', the second to '%20and%20'
+                operator1 = "";
+                operator2 = "%20and%20";
+            } else if (radiusRangeExists && !temperatureRangeExists && densityRangeExists) {
+                //if the temperature range doesn't exist, but the radius and density ranges do, set the first operator to '%20and%20', the second to '%20and%20'
+                operator1 = "%20and%20";
+                operator2 = "";
+            } else if (radiusRangeExists && temperatureRangeExists && !densityRangeExists) {
+                //if the density range doesn't exist, bu the radius and temperature ranges do, set the first operator to %20and%20, the second to ''
+                operator1 = "%20and%20";
+                operator2 = "";
+
+            }  else {
+                //in the remaining cases, set both operators to ''
+                operator1 = "";
+                operator2 = "";
+            }
+
 
 
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
@@ -138,7 +172,9 @@ export class Home extends Component {
 
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
-            const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
+            const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${operator1}${temperatureRange}${operator2}${densityRange}`;
+
+            console.log(FETCH_URL);
 
             // if sliders are in the starting position (all data need to be fetched), fetch initial planet data from the API, limited by distance to the planetary system
 
