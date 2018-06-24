@@ -42,7 +42,7 @@ export class PlanetTile extends Component {
         if (this.props.hostname !== undefined) {
 
 
-            const planetName = this.props.hostname + " " + this.props.letter;
+            const planetName = this.props.hostname + this.props.letter;
 
             this.setState({name: planetName}); //update the state with a new name
 
