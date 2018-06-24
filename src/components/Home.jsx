@@ -114,24 +114,24 @@ export class Home extends Component {
 
             //based on the above values, set radius, temperature and density min and max values to be used to fetch planet data [divide the value by 2 - slider fails to behave correctly when step is a fraction, so the value is double the required value]
             const radiusMin = radius.min/2;
-            const radiusMax = (radius.max === 4) ? 10000 : radius.max/2; //if the slider is set to maximum, account for all planets with radius over the maximum value
+            const radiusMax = (radius.max >= 4) ? 10000 : radius.max/2; //if the slider is set to maximum, account for all planets with radius over the maximum value
 
             const temperatureMin = temperature.min;
-            const temperatureMax = (temperature.max === 2000) ? 10000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over the maximum value
+            const temperatureMax = (temperature.max >= 120) ? 10000 : temperature.max; //if the slider is set to maximum, account for all planets with temperature over the maximum value
 
             const densityMin = density.min;
-            const densityMax = (density.max === 8) ? 10000 : density.max; //if the slider is set to maximum, account for all planets with density over the maximum value
+            const densityMax = (density.max >= 8) ? 10000 : density.max; //if the slider is set to maximum, account for all planets with density over the maximum value
 
             //if the radius slider is not in the default position, add a radius range to the request
-            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 4)) ? "" : `${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
+            let radiusRange = ((radiusMin === 0) && (radiusMax >= 10000)) ? "" : `${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
 
             //if the temperature slider is not in the default position, add a temperature range to the request
-            let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 2000)) ? "" : `%20and%20${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
+            let temperatureRange = ((temperatureMin === 0) && (temperatureMax >= 10000)) ? "" : `%20and%20${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
 
             //if the density slider is not in the default position, add a density range to the request
-            let densityRange = ((this.props.density.min === 0) && (this.props.density.max === 8)) ? "" : `%20and%20${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
+            let densityRange = ((densityMin === 0) && (densityMax >= 10000)) ? "" : `%20and%20${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
 
-
+            console.log('radiusMin', radiusMin, 'radiusMax', radiusMax, 'temperatureMin', temperatureMin, 'temperatureMax', temperatureMax, 'densityMin', densityMin, 'densityMax', densityMax);
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
             // const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
 
@@ -184,6 +184,7 @@ export class Home extends Component {
 
                 })
                 .catch(() => {
+
                     //in case of an error:
                     this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
                     this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message
