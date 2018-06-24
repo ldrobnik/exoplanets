@@ -133,32 +133,41 @@ export class Home extends Component {
 
 
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
-            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
+            // const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
 
+            const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}`;
             console.log(INITIAL_URL);
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
             const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
 
-            // fetch initial planet data from the API, limited by distance to the planetary system
-            fetch(INITIAL_URL, {
-                method: "GET"
-            })
-                .then(response => response.json())
-                .then(json => {
-                    this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
-                    this.handleMessage(json); //display message if no more planets can be found
-                    this.setState({loading: false}); //hide the spinner
-                    this.updateDataReload(false); //disable API requests
-                    this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+            // if sliders are in the starting position (all data need to be fetched), fetch initial planet data from the API, limited by distance to the planetary system
 
+            if((radiusMin === 0) && (radiusMax >= 10000) && (temperatureMin === 0) && (temperatureMax >= 10000) && (densityMin === 0) && (densityMax >= 10000)) {
+
+                console.log("initial");
+
+                fetch(INITIAL_URL, {
+                    method: "GET"
                 })
-                .catch(() => {
-                    //in case of an error:
-                    this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
-                    this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message
-                    this.setState({loading: false}); //hide the spinner
-                });
+                    .then(response => response.json())
+                    .then(json => {
+                        this.updatePlanetData(json); //replace stored planet data with data just fetched from the API
+                        this.handleMessage(json); //display message if no more planets can be found
+                        this.setState({loading: false}); //hide the spinner
+                        this.updateDataReload(false); //disable API requests
+                        this.updatePlanetsDisplayed(this.props.planetsToDisplay); //set the number of planets currently displayed equal to the number of planets that were supposed to be displayed
+
+                    })
+                    .catch(() => {
+                        //in case of an error:
+                        this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
+                        this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message
+                        this.setState({loading: false}); //hide the spinner
+                    });
+            }
+
+
 
             //fetch all planet data and substitute them for the limited planet data
             fetch(FETCH_URL, {
