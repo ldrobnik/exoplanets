@@ -131,9 +131,7 @@ export class Home extends Component {
             //if the density slider is not in the default position, add a density range to the request
             let densityRange = ((densityMin === 0) && (densityMax >= 10000)) ? "" : `%20and%20${DENSITY}>${densityMin}%20and%20${DENSITY}<${densityMax}`;
 
-            console.log('radiusMin', radiusMin, 'radiusMax', radiusMax, 'temperatureMin', temperatureMin, 'temperatureMax', temperatureMax, 'densityMin', densityMin, 'densityMax', densityMax);
             //the initial URL address to fetch planets within specified radius, temperature and density ranges, limited by distance to the planetary system, so the fetch doesn't take too long
-            // const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
 
             const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}`;
 

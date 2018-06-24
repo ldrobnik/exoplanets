@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+            <state relative-caret-position="148">
+              <caret line="133" column="191" selection-start-line="133" selection-start-column="191" selection-end-line="133" selection-end-column="191" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#174#210#0" expanded="true" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="SliderDensity.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SliderDensity.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+            <state relative-caret-position="16">
+              <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -383,12 +381,12 @@
       <workItem from="1529485104701" duration="11782000" />
       <workItem from="1529776882097" duration="1295000" />
       <workItem from="1529788699794" duration="4978000" />
-      <workItem from="1529830993299" duration="2861000" />
+      <workItem from="1529830993299" duration="3036000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109647000" />
+    <option name="totallyTimeSpent" value="109822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1496" height="772" extended-state="0" />
@@ -722,15 +720,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SliderDensity.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
+        <state relative-caret-position="16">
+          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+        <state relative-caret-position="148">
+          <caret line="133" column="191" selection-start-line="133" selection-start-column="191" selection-end-line="133" selection-end-column="191" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#174#210#0" expanded="true" />
