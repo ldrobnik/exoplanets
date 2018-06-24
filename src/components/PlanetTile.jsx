@@ -34,29 +34,6 @@ export class PlanetTile extends Component {
     }
 
 
-    /* shortens a string based on a lower limit
-     - it searches for the next space or full stop after the limit
-     and replaces it and the rest of the string with an ellipsis */
-    shortenString(string, limit) {
-
-        let shortenedString = string;
-
-        //don't shorten if the string is shorter, equal to or just one character longer than the limit
-        if (string.length - limit > 1) {
-
-            //iterate through the remaining part of the string, find the nearest space or full stop and replace it and the rest with an ellipsis
-            for (let i = limit; i < string.length - 1; i++) {
-
-                if ((string.substr(i, 1) === " ") || (string.substr(i, 1) === ".")) {
-                    shortenedString = string.slice(0, i) + "…";
-                    return shortenedString;
-                }
-
-            }
-        }
-
-        return shortenedString;
-    }
 
     //takes the name and tagline from the props, shortens them if necessary and updates the state
     handleDetails() {
@@ -64,8 +41,6 @@ export class PlanetTile extends Component {
 
         if (this.props.hostname !== undefined) {
 
-            // const adjustedName = this.shortenString(this.props.name, 35); //shorten the name if too long
-            // const adjustedTagline = this.shortenString(this.props.tagline, 35); //shorten the tagline if too long
 
             const planetName = this.props.hostname + " " + this.props.letter;
 
@@ -123,7 +98,6 @@ export class PlanetTile extends Component {
             //if the planet has a defined radius, calculate the image width as follows
             imageSize = this.props.radius * 120 + "px";
 
-            //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
 
             if (this.props.density !== null) {
                 //if density is defined, choose the image based on density
@@ -140,17 +114,6 @@ export class PlanetTile extends Component {
             imageSize = "40px";
             imageName = "unknown.png";
 
-
-
-            /*
-             * if the planet has defined width and is dense, apply smaller size, otherwise bigger size
-             *
-             * then check for mass
-             *
-             * in all cases lower alpha so it suggests the size is not known
-             *
-             * a maximum size can be applied
-             * */
         }
 
         if ((this.props.hostname !== null) && (this.props.letter !== null)) {
