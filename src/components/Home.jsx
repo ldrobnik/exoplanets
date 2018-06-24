@@ -123,7 +123,7 @@ export class Home extends Component {
             const densityMax = (density.max === 8) ? 10000 : density.max; //if the slider is set to maximum, account for all planets with density over the maximum value
 
             //if the radius slider is not in the default position, add a radius range to the request
-            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `%20and%20${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
+            let radiusRange = ((this.props.radius.min === 0) && (this.props.radius.max === 60)) ? "" : `${RADIUS}>${radiusMin}%20and%20${RADIUS}<${radiusMax}`;
 
             //if the temperature slider is not in the default position, add a temperature range to the request
             let temperatureRange = ((this.props.temperature.min === 0) && (this.props.temperature.max === 120)) ? "" : `%20and%20${TEMP}>${temperatureMin}%20and%20${TEMP}<${temperatureMax}`;
@@ -185,6 +185,7 @@ export class Home extends Component {
 
                 })
                 .catch(() => {
+                    console.log(FETCH_URL);
                     //in case of an error:
                     this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
                     this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message
