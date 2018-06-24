@@ -72,8 +72,8 @@
       <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="278" column="163" lean-forward="true" selection-start-line="278" selection-start-column="163" selection-end-line="278" selection-end-column="163" />
+            <state relative-caret-position="132">
+              <caret line="275" column="56" selection-start-line="275" selection-start-column="56" selection-end-line="275" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -383,12 +383,12 @@
       <workItem from="1529485104701" duration="11782000" />
       <workItem from="1529776882097" duration="1295000" />
       <workItem from="1529788699794" duration="4978000" />
-      <workItem from="1529830993299" duration="1352000" />
+      <workItem from="1529830993299" duration="1499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108138000" />
+    <option name="totallyTimeSpent" value="108285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1496" height="772" extended-state="0" />
@@ -734,8 +734,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="278" column="163" lean-forward="true" selection-start-line="278" selection-start-column="163" selection-end-line="278" selection-end-column="163" />
+        <state relative-caret-position="132">
+          <caret line="275" column="56" selection-start-line="275" selection-start-column="56" selection-end-line="275" selection-end-column="56" />
         </state>
       </provider>
     </entry>

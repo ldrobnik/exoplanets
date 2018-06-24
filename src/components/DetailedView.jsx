@@ -275,9 +275,6 @@ export class DetailedView extends Component {
             //if the planet has a defined radius, calculate the image width as follows
             imageSize = this.state.pl_radj * 180 + "px";
 
-            // //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
-            // imageName = ((this.state.pl_radj < 0.25) && (this.state.pl_radj !== null) && (this.state.pl_radj !== "?")) ? "../../solid.png" : "../../fluffy.png";
-
             if (this.state.pl_dens !== null) {
                 //if density is defined, choose the image based on density
                 imageName = (this.state.pl_dens >= 3) ? "solid.png" : "fluffy.png";
