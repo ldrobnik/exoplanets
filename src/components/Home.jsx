@@ -174,7 +174,6 @@ export class Home extends Component {
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
             const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${operator1}${temperatureRange}${operator2}${densityRange}`;
 
-            console.log(FETCH_URL);
 
             // if sliders are in the starting position (all data need to be fetched), fetch initial planet data from the API, limited by distance to the planetary system
 

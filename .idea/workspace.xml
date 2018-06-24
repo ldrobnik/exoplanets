@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/DetailedView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DetailedView.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PlanetTile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PlanetTile.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -385,16 +382,15 @@
       <workItem from="1529776882097" duration="1295000" />
       <workItem from="1529788699794" duration="4978000" />
       <workItem from="1529830993299" duration="4135000" />
-      <workItem from="1529841454339" duration="3399000" />
+      <workItem from="1529841454339" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114320000" />
+    <option name="totallyTimeSpent" value="114813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1520" height="772" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28051248" />
       <window_info anchor="bottom" id="TODO" order="6" />
