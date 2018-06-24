@@ -282,12 +282,12 @@ export class DetailedView extends Component {
             imageSize = this.state.pl_radj * 180 + "px";
 
             if (this.state.pl_dens !== null) {
-                //if density is defined, choose the image based on density
-                imageName = (this.state.pl_dens >= 3) ? "solid.png" : "fluffy.png";
+                //if density is defined, and the planet isn't too large, choose the image based on density
+                imageName = ((this.state.pl_dens >= 3) && (this.state.pl_radj < 0.6)) ? "solid.png" : "fluffy.png";
 
             } else {
 
-                //if density is not defined, choose the image based on radius
+                //if density is not defined, or the planet is too large, choose the image based on radius
                 imageName = (this.state.pl_radj < 0.25 && this.state.pl_radj !== null) ? "solid.png" : "fluffy.png";
             }
 

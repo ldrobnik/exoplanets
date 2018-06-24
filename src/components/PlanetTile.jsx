@@ -101,7 +101,7 @@ export class PlanetTile extends Component {
 
             if (this.props.density !== null) {
                 //if density is defined, and the planet isn't too large, choose the image based on density
-                imageName = (this.props.density >= 3) ? "solid.png" : "fluffy.png";
+                imageName = ((this.props.density >= 3) && (this.props.radius) < 0.6) ? "solid.png" : "fluffy.png";
 
             } else {
 
