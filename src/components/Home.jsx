@@ -136,7 +136,6 @@ export class Home extends Component {
             // const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}${radiusRange}${temperatureRange}${densityRange}`;
 
             const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}`;
-            console.log(INITIAL_URL);
 
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
             const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
@@ -145,7 +144,6 @@ export class Home extends Component {
 
             if((radiusMin === 0) && (radiusMax >= 10000) && (temperatureMin === 0) && (temperatureMax >= 10000) && (densityMin === 0) && (densityMax >= 10000)) {
 
-                console.log("initial");
 
                 fetch(INITIAL_URL, {
                     method: "GET"
@@ -185,7 +183,6 @@ export class Home extends Component {
 
                 })
                 .catch(() => {
-                    console.log(FETCH_URL);
                     //in case of an error:
                     this.updatePlanetsToDisplay(0); //set the number of planets that should be displayed to 0
                     this.updateMessage("error connecting to the server. please check your internet connection or try again later."); //display an error message

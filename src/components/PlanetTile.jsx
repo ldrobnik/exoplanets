@@ -126,7 +126,6 @@ export class PlanetTile extends Component {
             //if planet radius is lower than 1/3 of Jupiter radius, load the image of a rocky planet; otherwise -- of a Jovian planet;
 
             if (this.props.density !== null) {
-            console.log(this.props.density)
                 //if density is defined, choose the image based on density
                 imageName = (this.props.density >= 3) ? "solid.png" : "fluffy.png";
 
