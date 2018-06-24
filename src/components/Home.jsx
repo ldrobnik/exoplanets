@@ -137,6 +137,7 @@ export class Home extends Component {
 
             const INITIAL_URL = `${BASE_URL}${SELECTION}${WHERE}${LIMIT}`;
 
+
             //the proper URL address to fetch all planets within specified radius, temperature and density ranges
             const FETCH_URL = `${BASE_URL}${SELECTION}${ORDER}${WHERE}${radiusRange}${temperatureRange}${densityRange}`;
 
