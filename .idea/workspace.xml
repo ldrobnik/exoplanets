@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="" />
+    <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Options.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Options.jsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +20,7 @@
       <file leaf-file-name="Home.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
+            <state relative-caret-position="2432">
               <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -31,7 +34,7 @@
       <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="224">
               <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
@@ -49,7 +52,7 @@
       <file leaf-file-name="SliderRadius.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SliderRadius.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
+            <state relative-caret-position="176">
               <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
             </state>
           </provider>
@@ -58,7 +61,7 @@
       <file leaf-file-name="PlanetTile.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="1584">
               <caret line="102" column="72" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="72" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -67,11 +70,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailedView.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="285" column="83" selection-start-line="285" selection-start-column="83" selection-end-line="285" selection-end-column="83" />
+            <state relative-caret-position="240">
+              <caret line="295" column="37" selection-start-line="295" selection-start-column="37" selection-end-line="295" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Options.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Options.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -80,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+              <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -106,15 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4064">
-              <caret line="254" column="16" selection-start-line="254" selection-start-column="16" selection-end-line="254" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -126,7 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main.css</find>
       <find>4</find>
       <find>&lt;hr/&gt;</find>
       <find>include</find>
@@ -142,7 +144,6 @@
       <find>60</find>
       <find>pl_dens</find>
       <find>density</find>
-      <find>console.log</find>
       <find>console.</find>
       <find>initial</find>
       <find>shortenString</find>
@@ -156,6 +157,8 @@
       <find>link</find>
       <find>hostName</find>
       <find>fluffy</find>
+      <find>console.log</find>
+      <find>solid</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -220,7 +223,6 @@
         <option value="$PROJECT_DIR$/src/components/SimilarPlanets.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/Options.test.js" />
-        <option value="$PROJECT_DIR$/src/components/Options.jsx" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/constants.js" />
         <option value="$PROJECT_DIR$/src/actions/index.test.js" />
@@ -243,6 +245,7 @@
         <option value="$PROJECT_DIR$/src/components/Home.jsx" />
         <option value="$PROJECT_DIR$/src/components/PlanetTile.jsx" />
         <option value="$PROJECT_DIR$/src/components/DetailedView.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Options.jsx" />
       </list>
     </option>
   </component>
@@ -273,7 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,6 +309,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,19 +386,23 @@
       <workItem from="1529788699794" duration="4978000" />
       <workItem from="1529830993299" duration="4135000" />
       <workItem from="1529841454339" duration="3892000" />
+      <workItem from="1529852953462" duration="732000" />
+      <workItem from="1529911166960" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114813000" />
+    <option name="totallyTimeSpent" value="115564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1520" height="772" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28051248" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50213283" side_tool="true" weight="0.14430015" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827586" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32863188" />
       <window_info id="npm" order="2" side_tool="true" />
@@ -409,7 +416,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32827586" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24955752" />
@@ -642,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Options.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137008">
@@ -673,7 +672,7 @@
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+          <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -689,14 +688,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/constants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="224">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
+        <state relative-caret-position="2432">
           <caret line="161" column="40" selection-start-line="161" selection-start-column="40" selection-end-line="161" selection-end-column="40" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -715,7 +714,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/PlanetTile.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="1584">
           <caret line="102" column="72" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="72" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -725,15 +724,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/SliderRadius.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
+        <state relative-caret-position="176">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DetailedView.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="285" column="83" selection-start-line="285" selection-start-column="83" selection-end-line="285" selection-end-column="83" />
+        <state relative-caret-position="240">
+          <caret line="295" column="37" selection-start-line="295" selection-start-column="37" selection-end-line="295" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Options.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
         </state>
       </provider>
     </entry>
