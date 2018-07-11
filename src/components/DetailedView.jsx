@@ -314,7 +314,7 @@ export class DetailedView extends Component {
                 </div>
                 <div className={containerClass}>
                     <Modal.Header closeButton>
-                        <Modal.Title><strong>{this.state.pl_hostname}{this.state.pl_letter}</strong></Modal.Title>
+                        <Modal.Title><strong>{this.state.pl_hostname}&nbsp;{this.state.pl_letter}</strong></Modal.Title>
                     </Modal.Header>
                     <Modal.Body className="detailBody">
                         <div className="detailContentContainer">
