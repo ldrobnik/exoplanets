@@ -131,17 +131,17 @@ export class DetailedView extends Component {
     }
 
 
-    //handles fetch errors
-    handleErrors(response) {
-
-
-        if (!response.ok) {
-
-            throw Error(response.status);
-        }
-
-        return response;
-    }
+    // //handles fetch errors
+    // handleErrors(response) {
+    //
+    //
+    //     if (!response.ok) {
+    //
+    //         throw Error(response.status);
+    //     }
+    //
+    //     return response;
+    // }
 
     //gets planet details from memory or fetches them from the API
     getPlanetDetails() {
@@ -186,7 +186,7 @@ export class DetailedView extends Component {
             fetch(FETCH_URL, {
                 method: "GET"
             })
-                .then(this.handleErrors)
+                // .then(this.handleErrors)
                 .then(response => response.json())
                 .then(json => {
                     const planetDetails = json;
