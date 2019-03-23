@@ -357,7 +357,7 @@ export class DetailedView extends Component {
                             </p>
                             <hr className={secondaryInfoClass}/>
                             <p className={secondaryInfoClass}>
-                                <strong>Orbital Period:&nbsp;</strong>
+                                <strong>Orbital period:&nbsp;</strong>
                                 {this.state.pl_orbper}&nbsp;[days]
                             </p>
                             <p className={secondaryInfoClass}>
