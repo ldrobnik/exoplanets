@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -81,8 +82,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-254">
-              <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="222">
+              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -91,11 +92,11 @@
       <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5849">
-              <caret line="8894" column="18" lean-forward="false" selection-start-line="8894" selection-start-column="18" selection-end-line="8894" selection-end-column="18" />
+            <state relative-caret-position="7787">
+              <caret line="9008" column="18" lean-forward="false" selection-start-line="9008" selection-start-column="18" selection-end-line="9008" selection-end-column="18" />
               <folding>
-                <marker date="1553365669764" expanded="true" signature="383345:383359" ph="{&quot;camelcase&quot;: &quot;3.0.0&quot;...}" />
-                <marker date="1553365669764" expanded="true" signature="383345:383604" ph="{&quot;version&quot;: &quot;5.0.0&quot;...}" />
+                <marker date="1553366294713" expanded="true" signature="388362:388376" ph="{&quot;camelcase&quot;: &quot;3.0.0&quot;...}" />
+                <marker date="1553366294713" expanded="true" signature="388362:388621" ph="{&quot;version&quot;: &quot;5.0.0&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -270,8 +271,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="360" />
-    <option name="y" value="54" />
+    <option name="x" value="203" />
+    <option name="y" value="85" />
     <option name="width" value="968" />
     <option name="height" value="589" />
   </component>
@@ -432,17 +433,18 @@
       <workItem from="1531474487614" duration="629000" />
       <workItem from="1531681491577" duration="754000" />
       <workItem from="1553348076841" duration="817000" />
-      <workItem from="1553350133297" duration="3944000" />
+      <workItem from="1553350133297" duration="4358000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126180000" />
+    <option name="totallyTimeSpent" value="126594000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="360" y="54" width="968" height="589" extended-state="0" />
+    <frame x="203" y="85" width="968" height="589" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -786,19 +788,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5849">
-          <caret line="8894" column="18" lean-forward="false" selection-start-line="8894" selection-start-column="18" selection-end-line="8894" selection-end-column="18" />
+        <state relative-caret-position="7787">
+          <caret line="9008" column="18" lean-forward="false" selection-start-line="9008" selection-start-column="18" selection-end-line="9008" selection-end-column="18" />
           <folding>
-            <marker date="1553365669764" expanded="true" signature="383345:383359" ph="{&quot;camelcase&quot;: &quot;3.0.0&quot;...}" />
-            <marker date="1553365669764" expanded="true" signature="383345:383604" ph="{&quot;version&quot;: &quot;5.0.0&quot;...}" />
+            <marker date="1553366294713" expanded="true" signature="388362:388376" ph="{&quot;camelcase&quot;: &quot;3.0.0&quot;...}" />
+            <marker date="1553366294713" expanded="true" signature="388362:388621" ph="{&quot;version&quot;: &quot;5.0.0&quot;...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="222">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
       </provider>

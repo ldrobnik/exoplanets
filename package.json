@@ -16,11 +16,14 @@
     "react-spinners": "^0.2.6",
     "redux": "^3.7.2"
   },
+  "homepage": "http://ldrobnik.github.io/exoplanets",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
