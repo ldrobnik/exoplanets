@@ -1,6 +1,6 @@
 # you like your exoplanets…
 
-**WORK IN PROGRESS.** A simple tool to search through the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/).  You can find a demo [here](http://youlikeyourexoplanets.herokuapp.com/).
+**WORK IN PROGRESS.** A simple tool to search through the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/).  You can find a demo [here](https://youlikeyourexoplanets.netlify.com/).
 
 ## Technologies used
 
