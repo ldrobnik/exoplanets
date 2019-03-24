@@ -6,7 +6,7 @@ import {
     setRadius, //sets radius min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
-} from "../actions";
+} from "../../../actions/index";
 
 export class SliderRadius extends Component {
     constructor(props) {

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {Modal} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
 import moment from 'moment'; //Moment.js
-import {BASE_URL} from "../data/constants"; //basic URL for fetching planets
+import {BASE_URL} from "../../data/constants"; //basic URL for fetching planets
 
 export class DetailedView extends Component {
 

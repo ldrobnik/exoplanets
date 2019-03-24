@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import SliderRadius from "./SliderRadius"; //component containing the EBC slider
-import SliderTemperature from "./SliderTemperature"; //component containing the TEMPERATURE slider
-import SliderDensity from "./SliderDensity"; //component containing the DENSITY slider
+import SliderRadius from "../../containers/Sliders/Slider Radius/SliderRadius"; //component containing the EBC slider
+import SliderTemperature from "../../containers/Sliders/Slider Temperature/SliderTemperature"; //component containing the TEMPERATURE slider
+import SliderDensity from "../../containers/Sliders/Slider Density/SliderDensity"; //component containing the DENSITY slider
 
 export class Options extends Component {
 

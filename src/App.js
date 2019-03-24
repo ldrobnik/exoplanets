@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
-import Home from "./Home";
-import DetailedView from "./DetailedView";
+import Home from "./containers/Home/Home";
+import DetailedView from "./containers/Detailed View/DetailedView";
 
 
 class App extends Component {

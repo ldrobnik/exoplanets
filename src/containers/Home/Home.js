@@ -2,16 +2,16 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Grid, Row} from "react-bootstrap";
 import {ScaleLoader} from "react-spinners"; //spinner
-import InfoPanel from "./InfoPanel";
-import Options from "./Options"; //component containing sliders adjusting the radius, temperature and density values
-import Planets from "./Planets"; //component containing the list of planets
-import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, ORDER, LIMIT} from "../data/constants"; //constants to create URL for fetching planets
+import InfoPanel from "../../components/Info Panel/InfoPanel";
+import Options from "../../components/Options/Options"; //component containing sliders adjusting the radius, temperature and density values
+import Planets from "../Planet Panel/Planets/Planets"; //component containing the list of planets
+import {BASE_URL, SELECTION, WHERE, RADIUS, TEMP, DENSITY, ORDER, LIMIT} from "../../data/constants"; //constants to create URL for fetching planets
 import {
     setPlanetData, //updates info about stored planet data
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay, //changes the numbers of planets that need to be displayed
     setPlanetsDisplayed //updates the number of planets already displayed
-} from "../actions";
+} from "../../actions/index";
 
 
 export class Home extends Component {

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import PlanetTile from "./PlanetTile"; //component containing a single item displaying planet data
+import PlanetTile from "../Planet Tile/PlanetTile"; //component containing a single item displaying planet data
 
 export class Planets extends Component {
 
