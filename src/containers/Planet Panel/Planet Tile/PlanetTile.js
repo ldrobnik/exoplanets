@@ -111,7 +111,7 @@ export class PlanetTile extends Component {
 
             //if the planet has no defined radius (the value is 'null'), apply the following default width [flaticon font size] and set the image of an unknown planet
             imageSize = "40px";
-            imageName = "unknown.png";gi
+            imageName = "unknown.png";
 
         }
 
