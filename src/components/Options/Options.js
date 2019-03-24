@@ -1,12 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import SliderRadius from "../../containers/Sliders/Slider Radius/SliderRadius"; //component containing the EBC slider
 import SliderTemperature from "../../containers/Sliders/Slider Temperature/SliderTemperature"; //component containing the TEMPERATURE slider
 import SliderDensity from "../../containers/Sliders/Slider Density/SliderDensity"; //component containing the DENSITY slider
 
-export class Options extends Component {
-
-    render() {
-        return (
+const options = (props) => (
             <div>
                 <div className="sliderContainer">
                     <div className="sliderLabel">small</div>
@@ -25,7 +22,5 @@ export class Options extends Component {
                 </div>
             </div>
         );
-    }
-}
 
-export default Options;
+export default options;
