@@ -221,15 +221,6 @@ export class DetailedView extends Component {
     }
 
 
-    componentDidMount() {
-
-        //get planet details
-        setTimeout(() => {
-            this.getPlanetDetails()
-        }, 500); //timeout allows loading of a correct planet
-
-    }
-
 
     componentWillReceiveProps() {
 
