@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28653c15-1ef0-46ad-9b81-433ea5af4a09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/unknown.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/unknown.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3703">
-              <caret line="170" column="68" selection-start-line="170" selection-start-column="68" selection-end-line="170" selection-end-column="68" />
+            <state relative-caret-position="118">
+              <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
               <folding>
                 <element signature="e#624#930#0" expanded="true" />
               </folding>
@@ -29,29 +27,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planet Tile/PlanetTile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="97" column="53" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planets/Planets.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="65">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/constants.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/_functions.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="19" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -125,13 +123,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.l</find>
-      <find>updateDa</find>
       <find>60</find>
       <find>pl_dens</find>
       <find>density</find>
       <find>console.</find>
-      <find>initial</find>
       <find>shortenString</find>
       <find>unknown</find>
       <find>../..</find>
@@ -155,6 +150,9 @@
       <find>.png</find>
       <find>componentdid</find>
       <find>lazy</find>
+      <find>setPlanetData</find>
+      <find>radius</find>
+      <find>initial</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -236,14 +234,14 @@
         <option value="$PROJECT_DIR$/src/components/Slider Density/SliderDensity.js" />
         <option value="$PROJECT_DIR$/src/components/Sliders/Slider Density/SliderDensity.js" />
         <option value="$PROJECT_DIR$/src/components/Info Panel/InfoPanel.js" />
-        <option value="$PROJECT_DIR$/src/containers/Home/Home.js" />
         <option value="$PROJECT_DIR$/src/components/Options/Options.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/containers/Planet Panel/Planet Tile/PlanetTile.js" />
         <option value="$PROJECT_DIR$/src/containers/Detailed View/DetailedView.js" />
         <option value="$PROJECT_DIR$/build/_redirects" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/containers/Planet Panel/Planet Tile/PlanetTile.js" />
+        <option value="$PROJECT_DIR$/src/containers/Home/Home.js" />
       </list>
     </option>
   </component>
@@ -330,6 +328,14 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="Planet Panel" type="462c0819:PsiDirectoryNode" />
               <item name="Planet Tile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="exoplanets" type="b2602c69:ProjectViewProjectNode" />
+              <item name="exoplanets" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Planet Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="Planets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="exoplanets" type="b2602c69:ProjectViewProjectNode" />
@@ -472,17 +478,18 @@
       <workItem from="1555228215631" duration="305000" />
       <workItem from="1555264651780" duration="18000" />
       <workItem from="1555480820315" duration="1337000" />
-      <workItem from="1556718831543" duration="658000" />
+      <workItem from="1556718831543" duration="2020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151297000" />
+    <option name="totallyTimeSpent" value="152659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="92" y="92" width="1579" height="817" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14990266" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14990266" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -494,7 +501,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21428572" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.21428572" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -709,13 +716,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/chalk/index.js" />
     <entry file="file://$PROJECT_DIR$/build/static/js/main.a92cf4d0.js" />
-    <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planets/Planets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Info Panel/InfoPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -728,28 +728,11 @@
     <entry file="file://$PROJECT_DIR$/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planet Tile/PlanetTile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/_redirects" />
     <entry file="file://$PROJECT_DIR$/src/containers/Detailed View/DetailedView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5106">
           <caret line="225" selection-start-line="225" selection-end-line="225" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3703">
-          <caret line="170" column="68" selection-start-line="170" selection-start-column="68" selection-end-line="170" selection-end-column="68" />
-          <folding>
-            <element signature="e#624#930#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,10 +801,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planet Tile/PlanetTile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="97" column="53" selection-start-line="97" selection-start-column="51" selection-end-line="97" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Planet Panel/Planets/Planets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/constants.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="170" column="64" selection-start-line="170" selection-start-column="64" selection-end-line="170" selection-end-column="64" />
+          <folding>
+            <element signature="e#624#930#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
