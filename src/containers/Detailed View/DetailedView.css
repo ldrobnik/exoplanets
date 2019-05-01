@@ -1,0 +1,52 @@
+.planetView .modal-content {
+  color: #452d00;
+  background-color: #ffd892;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */ }
+
+.modal-header {
+  border-bottom-color: #ab6e00; }
+
+.detailBody {
+  min-height: 250px; }
+
+.detailContentContainer {
+  padding: 20px;
+  text-align: center; }
+  .detailContentContainer .planetLargeView .imageContainer {
+    max-width: 98%;
+    max-height: 1000px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px; }
+
+hr {
+  border-top-color: #ab6e00; }
+
+.loaderViewContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 100%; }
+
+/*# sourceMappingURL=DetailedView.css.map */

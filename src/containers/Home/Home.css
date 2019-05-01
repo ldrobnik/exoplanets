@@ -1,0 +1,59 @@
+/*** page title ***/
+.titlePanel {
+  text-align: center;
+  color: #ffd892;
+  font-family: "Lobster", cursive;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: 10px;
+  margin-bottom: 5px; }
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 350%; }
+
+/*** information panel ***/
+.infoPanel {
+  border: 1px solid #ffd892;
+  color: #ffd892;
+  font-size: 0.8em;
+  font-style: "Karla", sans-serif;
+  text-align: center;
+  padding: 10px;
+  margin: 0 27%; }
+  .infoPanel a:link {
+    color: #ffd892; }
+  .infoPanel a:visited {
+    color: #ffd892; }
+  .infoPanel a:hover {
+    color: #ffc65f; }
+  .infoPanel a:active {
+    color: #ffd892; }
+  .infoPanel p {
+    margin: 0 !important; }
+
+/*** message ***/
+.messageContainer {
+  color: #ffd892;
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  text-align: center;
+  margin: 8px 0 20px 0; }
+
+/*** spinner ***/
+.loaderMainContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+/*# sourceMappingURL=Home.css.map */

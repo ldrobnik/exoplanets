@@ -28,22 +28,6 @@ a {
 .routerLink {
   text-decoration: none; }
 
-/*** TITLE PANEL STYLES ***/
-.titlePanel {
-  text-align: center;
-  color: #ffd892;
-  font-family: "Lobster", cursive;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-top: 10px;
-  margin-bottom: 5px; }
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 350%; }
-
 /*** SLIDER STYLES ***/
 /* modifies the default rc-slider styles */
 .rc-slider-handle:active {
@@ -82,26 +66,6 @@ h1 {
   font-size: 1.8em;
   min-width: 80px;
   max-width: 150px; }
-
-/*** INFO PANEL STYLES ***/
-.infoPanel {
-  border: 1px solid #ffd892;
-  color: #ffd892;
-  font-size: 0.8em;
-  font-style: "Karla", sans-serif;
-  text-align: center;
-  padding: 10px;
-  margin: 0 27%; }
-  .infoPanel a:link {
-    color: #ffd892; }
-  .infoPanel a:visited {
-    color: #ffd892; }
-  .infoPanel a:hover {
-    color: #ffc65f; }
-  .infoPanel a:active {
-    color: #ffd892; }
-  .infoPanel p {
-    margin: 0 !important; }
 
 /*** PLANET GALLERY STYLES ***/
 .tileGallery {
@@ -216,29 +180,7 @@ h1 {
 tbody {
   border-style: hidden; }
 
-/*** MESSAGE STYLES ***/
-.messageContainer {
-  color: #ffd892;
-  font-family: "Lobster", cursive;
-  font-size: 2em;
-  text-align: center;
-  margin: 8px 0 20px 0; }
-
 /*** LOADER STYLES ***/
-/* used when loading the Home component */
-.loaderMainContainer {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-  display: flex;
-  /* NEW, Spec - Firefox, Chrome, Opera */
-  align-items: center;
-  justify-content: center;
-  height: 100vh; }
-
 /* used when loading the Planet Tile component */
 .loaderTileContainer {
   display: -webkit-box;
@@ -254,21 +196,6 @@ tbody {
   height: 100%;
   width: 100%; }
 
-/* used when loading the Detailed View component */
-.loaderViewContainer {
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-  display: flex;
-  /* NEW, Spec - Firefox, Chrome, Opera */
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
-  width: 100%; }
-
 /* class applied to elements
 that need to be hidden
 depending on the loading status */
@@ -276,41 +203,5 @@ depending on the loading status */
   display: none; }
 
 /*** DETAILED VIEW STYLES ***/
-.planetView .modal-content {
-  color: #452d00;
-  background-color: #ffd892;
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */ }
-
-.modal-header {
-  border-bottom-color: #ab6e00; }
-
-.detailBody {
-  min-height: 250px; }
-
-.detailContentContainer {
-  padding: 20px;
-  text-align: center; }
-  .detailContentContainer .planetLargeView .imageContainer {
-    max-width: 98%;
-    max-height: 1000px;
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
-    display: -ms-flexbox;
-    /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
-    display: flex;
-    /* NEW, Spec - Firefox, Chrome, Opera */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    margin-bottom: 20px; }
-
-hr {
-  border-top-color: #ab6e00; }
 
 /*# sourceMappingURL=main.css.map */

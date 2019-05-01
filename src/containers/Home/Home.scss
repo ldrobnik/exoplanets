@@ -1,0 +1,62 @@
+@import '../../css/common';
+
+/*** page title ***/
+.titlePanel {
+  text-align: center;
+  color: setColor(2.5);
+  font-family: $fancyFont;
+  @include no-select;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 350%;
+}
+
+/*** information panel ***/
+.infoPanel {
+  border: 1px solid setColor(2.5);
+  color: setColor(2.5);
+  font-size: 0.8em;
+  font-style: $regularFont;
+  text-align: center;
+  padding: 10px;
+  margin: 0 27%;
+  a {
+    &:link {
+      color: setColor(2.5);
+    }
+    &:visited {
+      color: setColor(2.5);
+    }
+    &:hover {
+      color: setColor(1.5);
+    }
+    &:active {
+      color: setColor(2.5);
+    }
+
+  }
+  p {
+    margin: 0 !important;
+  }
+}
+
+/*** message ***/
+.messageContainer {
+  color: setColor(2.5);
+  font-family: $fancyFont;
+  font-size: 2em;
+  text-align: center;
+  margin: 8px 0 20px 0;
+}
+
+/*** spinner ***/
+.loaderMainContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

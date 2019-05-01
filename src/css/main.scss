@@ -1,6 +1,4 @@
-@import "variables";
-@import "functions";
-@import "mixins";
+@import "common";
 
 /*** GENERAL STYLES ***/
 
@@ -38,22 +36,6 @@ a {
 
 .routerLink {
   text-decoration: none;
-}
-
-/*** TITLE PANEL STYLES ***/
-
-.titlePanel {
-  text-align: center;
-  color: setColor(2.5);
-  font-family: $fancyFont;
-  @include no-select;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-h1 {
-  margin-bottom: 20px;
-  font-size: 350%;
 }
 
 /*** SLIDER STYLES ***/
@@ -98,35 +80,6 @@ h1 {
   max-width: 150px;
 }
 
-/*** INFO PANEL STYLES ***/
-
-.infoPanel {
-  border: 1px solid setColor(2.5);
-  color: setColor(2.5);
-  font-size: 0.8em;
-  font-style: $regularFont;
-  text-align: center;
-  padding: 10px;
-  margin: 0 27%;
-  a {
-    &:link {
-      color: setColor(2.5);
-    }
-    &:visited {
-      color: setColor(2.5);
-    }
-    &:hover {
-      color: setColor(1.5);
-    }
-    &:active {
-      color: setColor(2.5);
-    }
-
-  }
-  p {
-    margin: 0 !important;
-  }
-}
 
 /*** PLANET GALLERY STYLES ***/
 
@@ -259,25 +212,10 @@ tbody {
   border-style: hidden;
 }
 
-/*** MESSAGE STYLES ***/
-
-.messageContainer {
-  color: setColor(2.5);
-  font-family: $fancyFont;
-  font-size: 2em;
-  text-align: center;
-  margin: 8px 0 20px 0;
-}
 
 /*** LOADER STYLES ***/
 
-/* used when loading the Home component */
-.loaderMainContainer {
-  @include flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+
 
 /* used when loading the Planet Tile component */
 .loaderTileContainer {
@@ -288,14 +226,6 @@ tbody {
   width: 100%;
 }
 
-/* used when loading the Detailed View component */
-.loaderViewContainer {
-  @include flex;
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
-  width: 100%;
-}
 
 /* class applied to elements
 that need to be hidden
@@ -307,42 +237,5 @@ depending on the loading status */
 
 /*** DETAILED VIEW STYLES ***/
 
-.planetView .modal-content {
-  color: setColor(-4);
-  background-color: setColor(2.5);
-  @include border-radius(0);
-}
 
-.modal-header {
-  border-bottom-color: setColor(-2);
-}
-
-.detailBody {
-  min-height: 250px;
-}
-
-.detailContentContainer {
-
-  padding: 20px;
-  text-align: center;
-
-  .planetLargeView {
-    .imageContainer {
-      max-width: 98%;
-      max-height: 1000px;
-      @include flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      margin-bottom: 20px;
-
-    }
-
-  }
-
-}
-
-hr {
-  border-top-color: setColor(-2);
-}
 

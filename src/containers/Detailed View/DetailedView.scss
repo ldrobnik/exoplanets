@@ -1,0 +1,48 @@
+@import '../../css/common';
+
+.planetView .modal-content {
+  color: setColor(-4);
+  background-color: setColor(2.5);
+  @include border-radius(0);
+}
+
+.modal-header {
+  border-bottom-color: setColor(-2);
+}
+
+.detailBody {
+  min-height: 250px;
+}
+
+.detailContentContainer {
+
+  padding: 20px;
+  text-align: center;
+
+  .planetLargeView {
+    .imageContainer {
+      max-width: 98%;
+      max-height: 1000px;
+      @include flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 20px;
+
+    }
+
+  }
+
+}
+
+hr {
+  border-top-color: setColor(-2);
+}
+
+.loaderViewContainer {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  width: 100%;
+}

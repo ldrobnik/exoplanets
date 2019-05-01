@@ -1,9 +1,10 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {Modal} from "react-bootstrap";
-import {ScaleLoader} from "react-spinners"; //spinner
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Modal} from 'react-bootstrap';
+import {ScaleLoader} from 'react-spinners'; //spinner
 import moment from 'moment'; //Moment.js
-import {BASE_URL} from "../../data/constants"; //basic URL for fetching planets
+import './DetailedView.css'; //stylesheet
+import {BASE_URL} from '../../data/constants'; //basic URL for fetching planets
 
 export class DetailedView extends Component {
 
@@ -86,7 +87,24 @@ export class DetailedView extends Component {
     }
 
     //updates the state with all the details (see descriptions above, starting from line 18)
-    setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate) {
+    setDetails(pl_hostname,
+               pl_letter,
+               pl_radj,
+               pl_rade,
+               pl_dens,
+               pl_eqt,
+               pl_discmethod,
+               pl_orbsmax,
+               pl_pnum,
+               pl_orbper,
+               pl_orbeccen,
+               pl_orbincl,
+               pl_bmassj,
+               pl_bmasse,
+               st_dist,
+               st_mass,
+               st_rad,
+               rowupdate) {
 
         //for null values replace with '?'
         pl_radj = (pl_radj === null) ? "?" : pl_radj;
@@ -163,10 +181,45 @@ export class DetailedView extends Component {
         if (idInPlanetData !== undefined) {
 
             //if the planet is already loaded, take all the details from memory
-            let {pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate} = this.props.planetData[idInPlanetData];
+            let {pl_hostname,
+                pl_letter,
+                pl_radj,
+                pl_rade,
+                pl_dens,
+                pl_eqt,
+                pl_discmethod,
+                pl_orbsmax,
+                pl_pnum,
+                pl_orbper,
+                pl_orbeccen,
+                pl_orbincl,
+                pl_bmassj,
+                pl_bmasse,
+                st_dist,
+                st_mass,
+                st_rad,
+                rowupdate} = this.props.planetData[idInPlanetData];
 
             //update the detailed view data
-            this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
+            this.setDetails(
+                pl_hostname,
+                pl_letter,
+                pl_radj,
+                pl_rade,
+                pl_dens,
+                pl_eqt,
+                pl_discmethod,
+                pl_orbsmax,
+                pl_pnum,
+                pl_orbper,
+                pl_orbeccen,
+                pl_orbincl,
+                pl_bmassj,
+                pl_bmasse,
+                st_dist,
+                st_mass,
+                st_rad,
+                rowupdate);
 
 
             //turn off loader
@@ -194,10 +247,46 @@ export class DetailedView extends Component {
                     if (planetDetails[0] !== undefined) {
 
                         //get planet details from the single-item array containing the details of the requested planet
-                        let {pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate} = planetDetails[0];
+                        let {
+                            pl_hostname,
+                            pl_letter,
+                            pl_radj,
+                            pl_rade,
+                            pl_dens,
+                            pl_eqt,
+                            pl_discmethod,
+                            pl_orbsmax,
+                            pl_pnum,
+                            pl_orbper,
+                            pl_orbeccen,
+                            pl_orbincl,
+                            pl_bmassj,
+                            pl_bmasse,
+                            st_dist,
+                            st_mass,
+                            st_rad,
+                            rowupdate} = planetDetails[0];
 
                         //update planet details with data fetched from the API
-                        this.setDetails(pl_hostname, pl_letter, pl_radj, pl_rade, pl_dens, pl_eqt, pl_discmethod, pl_orbsmax, pl_pnum, pl_orbper, pl_orbeccen, pl_orbincl, pl_bmassj, pl_bmasse, st_dist, st_mass, st_rad, rowupdate);
+                        this.setDetails(
+                            pl_hostname,
+                            pl_letter,
+                            pl_radj,
+                            pl_rade,
+                            pl_dens,
+                            pl_eqt,
+                            pl_discmethod,
+                            pl_orbsmax,
+                            pl_pnum,
+                            pl_orbper,
+                            pl_orbeccen,
+                            pl_orbincl,
+                            pl_bmassj,
+                            pl_bmasse,
+                            st_dist,
+                            st_mass,
+                            st_rad,
+                            rowupdate);
 
                         //turn off loader
                         this.turnOffLoader();
@@ -208,7 +297,25 @@ export class DetailedView extends Component {
                     this.setState({showSecondaryInfo: false});
 
                     //set the title to 'Error', description to an error message and clear all the other details
-                    this.setDetails("Error", "", 0, 0, 0, 0, "Error fetching planet details. Please check your Internet connection and make sure you have typed a correct URL.", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "");
+                    this.setDetails(
+                        "Error",
+                        "",
+                        0,
+                        0,
+                        0,
+                        0,
+                        "Error fetching planet details. Please check your Internet connection and make sure you have typed a correct URL.",
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        "");
 
                     //hide spinner after a short while
                     setTimeout(() => {
@@ -228,20 +335,6 @@ export class DetailedView extends Component {
         }, 500); //timeout allows loading of a correct planet
     }
 
-    componentWillReceiveProps() {
-
-        // this.setState({show: false}); //hide the modal when new data received
-
-        // this.setState({image_url: ""}); //clear the planet image url (as turning the spinner off depends on loading the image)
-        //
-        // this.setState({loading: true}); //show the spinner
-
-
-        // //get planet details
-        // setTimeout(() => {
-        //     this.getPlanetDetails()
-        // }, 500); //timeout allows loading of a correct planet
-    }
 
     componentDidUpdate(prevProps, prevState) {
         //get planet details
