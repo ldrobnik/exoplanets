@@ -15,7 +15,7 @@ export class DetailedView extends Component {
         this.getPlanetDetails = this.getPlanetDetails.bind(this);
 
         this.state = {
-            show: false, //specifies whether the detailed view modal should be visible
+            show: true, //specifies whether the detailed view modal should be visible
             loading: true, //specifies whether the spinner should be visible
             showSecondaryInfo: true, //specifies whether certain text (such as the 'Brewer’s Tips' heading) should be present; hide when an error is encountered to display an error message
             pl_hostname: "", //Host Star Name: Stellar name most commonly used in the literature.
@@ -47,13 +47,13 @@ export class DetailedView extends Component {
 
     }
 
-
-    //sets loading to true and thus turns on the loader
-    turnOnLoader() {
-
-        this.setState({loading: true});
-
-    }
+    //
+    // //sets loading to true and thus turns on the loader
+    // turnOnLoader() {
+    //
+    //     this.setState({loading: true});
+    //
+    // }
 
 
     //turns the detailed view modal on
@@ -154,7 +154,7 @@ export class DetailedView extends Component {
 
         //planet id
         const hostName = this.props.match.params.hostName; //host star name
-        const hostNameForLink = this.props.match.params.hostName.replace(/ /g, "/%20/g"); //raplace all spaces with '%20's for the fetch url link
+        const hostNameForLink = this.props.match.params.hostName.replace(/ /g, "/%20/g"); //replace all spaces with '%20's for the fetch url link
         const planetLetter = this.props.match.params.planetLetter; //planet letter in the system
 
         //checks if this planet is already loaded in the memory:
@@ -221,22 +221,34 @@ export class DetailedView extends Component {
     }
 
 
-
-    componentWillReceiveProps() {
-
-        this.setState({show: false}); //hide the modal when new data received
-
-        this.setState({image_url: ""}); //clear the planet image url (as turning the spinner off depends on loading the image)
-
-        this.setState({loading: true}); //show the spinner
-
-
+    componentWillMount() {
         //get planet details
         setTimeout(() => {
             this.getPlanetDetails()
         }, 500); //timeout allows loading of a correct planet
     }
 
+    componentWillReceiveProps() {
+
+        // this.setState({show: false}); //hide the modal when new data received
+
+        // this.setState({image_url: ""}); //clear the planet image url (as turning the spinner off depends on loading the image)
+        //
+        // this.setState({loading: true}); //show the spinner
+
+
+        // //get planet details
+        // setTimeout(() => {
+        //     this.getPlanetDetails()
+        // }, 500); //timeout allows loading of a correct planet
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        //get planet details
+        setTimeout(() => {
+            this.getPlanetDetails()
+        }, 500); //timeout allows loading of a correct planet
+    }
 
     render() {
 
