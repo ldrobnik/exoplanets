@@ -1,0 +1,39 @@
+/* modifies the default rc-slider styles */
+.rc-slider-handle:active {
+  box-shadow: 0 0 5px #de8f00; }
+
+.rc-slider-handle:focus {
+  border-color: #ffbd45;
+  box-shadow: 0 0 0 5px #de8f00; }
+
+.sliderContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  /* adjust the slider width depending on screen width */ }
+  @media screen and (max-width: 480px) {
+    .sliderContainer {
+      width: 100% !important; } }
+  @media screen and (min-width: 481px) and (max-width: 920px) {
+    .sliderContainer {
+      width: 72% !important; } }
+  @media screen and (min-width: 921px) and (max-width: 1000px) {
+    .sliderContainer {
+      width: 92% !important; } }
+
+.sliderLabel {
+  padding: 14px;
+  margin-top: -4px;
+  font-size: 1.8em;
+  min-width: 80px;
+  max-width: 150px; }
+
+/*# sourceMappingURL=Sliders.css.map */

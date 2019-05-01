@@ -1,7 +1,8 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {ScaleLoader} from "react-spinners"; //spinnerimport
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {ScaleLoader} from 'react-spinners'; //spinner import
+import './PlanetTile.css';
 
 export class PlanetTile extends Component {
     constructor(props) {

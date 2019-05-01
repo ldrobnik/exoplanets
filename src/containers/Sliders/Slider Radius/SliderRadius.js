@@ -1,12 +1,13 @@
-import React, {Component} from "react";
-import {connect} from "react-redux";
-import {Range} from "rc-slider"; //range slider
-import "rc-slider/assets/index.css"; //slider stylesheet
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Range} from 'rc-slider'; //range slider
+import 'rc-slider/assets/index.css'; //slider stylesheet
+import '../Sliders.css'; //stylesheet
 import {
     setRadius, //sets radius min and max values
     setDataReload, //enables/disables API requests
     setPlanetsToDisplay //changes the numbers of planets that need to be displayed
-} from "../../../actions/index";
+} from '../../../actions/index';
 
 export class SliderRadius extends Component {
     constructor(props) {

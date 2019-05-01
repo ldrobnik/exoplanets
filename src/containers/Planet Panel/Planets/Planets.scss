@@ -1,0 +1,10 @@
+@import '../../../css/common';
+
+.tileGallery {
+  @include flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: $regularFont;
+  margin: 15px auto;
+}

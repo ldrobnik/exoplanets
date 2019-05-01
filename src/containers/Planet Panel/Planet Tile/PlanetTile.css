@@ -1,0 +1,111 @@
+/* planet tile colour animation on hover */
+@keyframes focusOnTile {
+  from {
+    background-color: #ffd892; }
+  to {
+    background-color: #de8f00; } }
+.planetTileContainer {
+  margin: 10px 0;
+  width: 18%;
+  /* display five tiles in a row by default */ }
+  .planetTileContainer .planetTile {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;
+    /* NEW, Spec - Firefox, Chrome, Opera */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3px 14px;
+    height: 220px;
+    background-color: #ffd892;
+    color: #452d00;
+    box-shadow: 4px 3px 10px #452d00;
+    cursor: pointer; }
+    .planetTileContainer .planetTile:hover {
+      background-color: #de8f00;
+      animation-name: focusOnTile;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-out; }
+    .planetTileContainer .planetTile .contentContainer {
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+      display: flex;
+      /* NEW, Spec - Firefox, Chrome, Opera */
+      align-items: center;
+      justify-content: center; }
+      .planetTileContainer .planetTile .contentContainer .planetThumbnail .imageContainer {
+        max-width: 170px;
+        max-height: 170px;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;
+        /* NEW, Spec - Firefox, Chrome, Opera */
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; }
+      .planetTileContainer .planetTile .contentContainer .planetThumbnail .planetName {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 0.9em; }
+  @media screen and (max-width: 480px) {
+    .planetTileContainer {
+      /* for very small screens, display a list with little padding */
+      width: 90% !important; }
+      .planetTileContainer .planetTile {
+        height: 200px;
+        padding: 10%; }
+        .planetTileContainer .planetTile .planetName {
+          font-size: 1em !important; }
+        .planetTileContainer .planetTile .planetTagline {
+          font-size: 0.9em !important; } }
+  @media screen and (min-width: 481px) and (max-width: 920px) {
+    .planetTileContainer {
+      /* for small screens, display a list with more padding */
+      width: 70% !important; }
+      .planetTileContainer .planetTile {
+        height: 200px;
+        padding: 10% 20%; }
+        .planetTileContainer .planetTile .planetName {
+          font-size: 1em !important; }
+        .planetTileContainer .planetTile .planetTagline {
+          font-size: 0.9em !important; } }
+  @media screen and (min-width: 921px) and (max-width: 1000px) {
+    .planetTileContainer {
+      /* for mid-sized screens, display four tiles */
+      width: 22% !important; }
+      .planetTileContainer .planetName {
+        font-size: 0.8em !important; }
+      .planetTileContainer .planetTagline {
+        font-size: 0.8em !important; } }
+
+tbody {
+  border-style: hidden; }
+
+.loaderTileContainer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;
+  /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%; }
+
+/*# sourceMappingURL=PlanetTile.css.map */
