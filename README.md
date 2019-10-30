@@ -12,6 +12,7 @@ Three **draggable sliders** allow the user to filter exoplanets based on the fol
 * density (the **puffy/solid** slider).
 
 Planets that meet the search criteria are displayed as tiles, ordered by increasing distance to the planetary system.
+
 After clicking one of the tiles, a modal with detailed information is displayed.
 
 ## Technicalities
