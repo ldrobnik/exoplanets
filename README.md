@@ -1,16 +1,24 @@
 # you like your exoplanets…
 
-**WORK IN PROGRESS.** A simple tool to search through the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/).  You can find a demo [here](https://youlikeyourexoplanets.netlify.com/).
+A simple tool to search through the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/). You can find a demo [here](https://youlikeyourexoplanets.netlify.com/).
 
-## Technologies used
+## Instructions
 
-* **React.js**
-* **React-Router**
-* **React-Bootstrap**
-* **Redux**
-* **SCSS**
-* **Moment.js**
+The app provides a visual representation of the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/).
 
-## A few words about the project
+Three **draggable sliders** allow the user to filter exoplanets based on the following properties:
+* radius (the **small/big** slider);
+* equilibrium temperature (the **cold/hot** slider);
+* density (the **puffy/solid** slider).
 
-The app provides a visual representation of the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/) by means of the **Exoplanet Archive API**. The user can filter the exoplanets based on their radius, temperature and density. After clicking a planet, a modal with detailed information is displayed.
+Planets that meet the search criteria are displayed as tiles, ordered by increasing distance to the planetary system.
+After clicking one of the tiles, a modal with detailed information is displayed.
+
+## Technicalities
+
+* a single-page app created with **React.js**;
+* routes managed with **React-Router**;
+* app state controlled with **Redux**;
+* neat styles thanks to **SCSS**;
+* responsive design utilising **React-Bootstrap**;
+* **Moment.js** for nice date formatting.
