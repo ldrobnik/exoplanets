@@ -11,7 +11,7 @@ Three **draggable sliders** allow the user to filter exoplanets based on the fol
 * equilibrium temperature (the **cold/hot** slider);
 * density (the **puffy/solid** slider).
 
-Planets that meet the search criteria are displayed as tiles, ordered by increasing distance from The Solar System.
+Planets that meet the search criteria are displayed as tiles, ordered by increasing distance from the Solar System.
 
 After clicking one of the tiles, a modal is displayed providing detailed information about a given planet.
 
